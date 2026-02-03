@@ -4,20 +4,142 @@ export const PROJECTS: Project[] = [
   // --- TUS PROYECTOS (Ingeniería Telemática & Desarrollo) ---
 
   {
+    id: "personal-portfolio",
+    title: "Portfolio",
+    period: {
+      start: "01.2026",
+      // Sin 'end' para que salga "Present"
+    },
+    link: "https://github.com/Jsanchezv2201/portfolio", // Ajusta si el nombre del repo es distinto
+    skills: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+      "Shadcn UI",
+      "Vercel",
+    ],
+    description: `Diseño y desarrollo de este portafolio personal interactivo y minimalista enfocado en el rendimiento y la experiencia de usuario.
+- Arquitectura basada en **Next.js 14 (App Router)** para renderizado híbrido (SSR/SSG) y optimización SEO.
+- Diseño de interfaz responsivo y accesible implementando **Tailwind CSS** y componentes de **Shadcn UI**.
+- Integración de sistema de gestión de contenidos (MDX) para blog y renderizado dinámico de proyectos.`,
+    // Logo de Next.js (Icono "N" limpio)
+    logo: "https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_light_background.png", 
+  },
+
+{
+    id: "rust-tcp-chat",
+    title: "Concurrent TCP Group Chat",
+    period: {
+      start: "12.2024",
+      end: "05.2025",
+    },
+    link: "https://github.com/Jsanchezv2201/Concurrent-TCP-GroupChat",
+    skills: [
+      "Rust",
+      "TCP/IP",
+      "Socket Programming",
+      "Concurrency",
+      "Multithreading",
+      "System Design",
+    ],
+    description: `Diseño e implementación de un sistema de chat distribuido bajo arquitectura **Cliente-Servidor** sobre sockets **TCP** puros.
+- Gestión de concurrencia mediante **Multithreading**, permitiendo múltiples clientes simultáneos sin bloqueo.
+- Sincronización de estado compartido y seguridad de memoria utilizando primitivas como **Arc** y **Mutex**.
+- Definición de un protocolo de comunicación personalizado para la gestión de salas (crear, unirse, listar) y mensajería en tiempo real.
+
+🔗 **Demos del Proyecto:**
+- [ Ver Explicación del Código](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
+- [ Ver Demo de Ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
+    // Logo oficial de Rust (Wikimedia)
+    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+  },
+
+  {
+    id: "dog-breed-identification",
+    title: "Dog Breed Identification (CNNs)",
+    period: {
+      start: "11.2023",
+      end: "01.2024",
+    },
+    link: "https://github.com/Jsanchezv2201/CNNs-Dog_Breed_Identification/tree/main",
+    skills: [
+      "Computer Vision",
+      "Signal Processing",
+      "CNNs",
+      "Deep Learning",
+      "TensorFlow",
+      "Keras",
+    ],
+    description: `Sistema de clasificación de 120 clases basado en el procesamiento digital de señales 2D (imágenes).
+- Implementación de **Redes Neuronales Convolucionales (CNNs)** como bancos de filtros adaptativos para la extracción de características.
+- **Preprocesamiento de señal**: Normalización, diezmado y Data Augmentation para robustez frente a ruido y variaciones.
+- Evaluación de arquitecturas de **Transfer Learning** (Xception, NASNet) optimizando el compromiso precisión-coste computacional.`,
+    // Logo oficial de TensorFlow
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg",
+  },
+
+  {
+    id: "shell-photo-organizer",
+    title: "Automated Photo Collection Manager",
+    period: {
+      start: "12.2025",
+      end: "12.2025",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "Shell Scripting",
+      "Linux Automation",
+      "Bash/Sh",
+      "Regular Expressions",
+      "System Administration",
+    ],
+    description: `Herramienta de automatización en **Shell Script** para la organización masiva y normalización de bibliotecas multimedia.
+- Implementación de búsqueda recursiva y filtrado de formatos (JPEG, PNG, TIFF) utilizando **find** y **grep**.
+- Normalización automática de nombres de archivo y extensiones mediante manipulación de streams con **sed** y **tr**.
+- Generación de informes de metadatos y cálculo de estadísticas de almacenamiento con **awk**.
+- Gestión robusta de errores, detección de colisiones y limpieza automática de entornos temporales.`,
+    // Logo de GNU Bash
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
+  },
+
+  {
+    id: "riscv-interactive-docs",
+    title: "Interactive RISC-V Assembly Guide",
+    period: {
+      start: "2025",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "RISC-V",
+      "Assembly",
+      "Computer Architecture",
+      "HTML5",
+      "JavaScript",
+      "Technical Documentation",
+    ],
+    description: `Plataforma web interactiva desarrollada para documentar y agilizar el aprendizaje de la arquitectura **RISC-V**.
+- Recopilación estructurada de patrones de diseño en bajo nivel: manipulación de **Strings**, operaciones con **Matrices** y aritmética de **Punto Flotante** (IEEE 754).
+- Interfaz reactiva construida con **HTML/CSS/JS** que incluye buscador en tiempo real y visualización dinámica de snippets de código.
+- Referencia técnica rápida para gestión de registros, llamadas al sistema (Syscalls) y manejo de la pila (Stack).`,
+    // Logo de RISC-V
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/RISC-V_icon.svg/120px-RISC-V_icon.svg.png?20241207195945",  },
+
+  {
     id: "ros2-nav-bot",
     title: "Autonomous Navigation Robot",
     period: {
       start: "2023",
       end: "Present",
     },
-    // Pon aquí el enlace a tu repo si lo tienes, si no, pon tu perfil
     link: "https://github.com/Jsanchezv2201",
     skills: ["Robotics", "ROS 2", "Gazebo", "Python", "C++", "SLAM", "Nav2"],
     description: `Desarrollo de un sistema de navegación autónoma para robots móviles utilizando el framework **ROS 2**.
 - Implementación de algoritmos de **SLAM** (Simultaneous Localization and Mapping) para mapeo en tiempo real.
 - Simulación de entornos físicos complejos utilizando **Gazebo**.
 - Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
-    logo: "", // Asegúrate de tener este icono o borra la línea
+    // Logo de ROS
+    logo: "https://www.vectorlogo.zone/logos/ros/ros-icon.svg",
     isExpanded: true,
   },
 
@@ -40,6 +162,8 @@ export const PROJECTS: Project[] = [
 - Captura y disección de paquetes en tiempo real (similar a Wireshark pero en terminal).
 - Análisis de protocolos **TCP/IP, UDP e ICMP**.
 - Implementación de filtros de paquetes personalizados y estadísticas de tráfico.`,
+    // Repetimos el de Rust
+    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
   },
 
   {
@@ -61,28 +185,10 @@ export const PROJECTS: Project[] = [
 - Entrenamiento de redes neuronales convolucionales (**CNNs**) con TensorFlow/Keras.
 - Preprocesamiento de imágenes y detección de bordes con **OpenCV**.
 - Optimización del modelo para inferencia rápida en dispositivos con recursos limitados.`,
+    // Logo de OpenCV
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg",
   },
 
-  {
-    id: "network-topology-sim",
-    title: "Network Topology Simulator",
-    period: {
-      start: "2022",
-    },
-    link: "https://github.com/Jsanchezv2201",
-    skills: [
-      "Networking",
-      "Cisco Packet Tracer",
-      "GNS3",
-      "OSPF",
-      "BGP",
-      "VLAN",
-    ],
-    description: `Diseño y simulación de redes empresariales complejas a gran escala.
-- Configuración de protocolos de enrutamiento dinámico (**OSPF, BGP**).
-- Implementación de seguridad de red, **VLANs** y listas de control de acceso (ACLs).
-- Análisis de fallos y redundancia en infraestructuras críticas.`,
-  },
 
   // =========================================================================
   // PROYECTOS ORIGINALES (COMENTADOS)

@@ -19,7 +19,6 @@ function getWebSiteJsonLd(): WithContext<WebSite> {
   };
 }
 
-// Thanks @shadcn-ui, @tailwindcss
 const darkModeScript = String.raw`
   try {
     if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -47,11 +46,11 @@ export const metadata: Metadata = {
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "ncdai",
+      name: "Juan Sánchez", // <--- Pon tu nombre aquí
       url: SITE_INFO.url,
     },
   ],
-  creator: "ncdai",
+  creator: "Juan Sánchez", // <--- Pon tu nombre aquí
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
@@ -71,26 +70,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@iamncdai", // Twitter username
+    creator: "@TuUsuario", // <--- Pon tu usuario o bórralo
     images: [SITE_INFO.ogImage],
   },
+  // ❌ BORRA ESTO (El bloque icons entero):
+  /*
   icons: {
     icon: [
       {
         url: "https://assets.chanhdai.com/images/favicon.ico",
         sizes: "any",
       },
-      {
-        url: "https://assets.chanhdai.com/images/favicon.svg",
-        type: "image/svg+xml",
-      },
+      ...
     ],
-    apple: {
-      url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
-      type: "image/png",
-      sizes: "180x180",
-    },
+    apple: { ... },
   },
+  */
 };
 
 export const viewport: Viewport = {
@@ -116,10 +111,6 @@ export default function RootLayout({
           type="text/javascript"
           dangerouslySetInnerHTML={{ __html: darkModeScript }}
         />
-        {/*
-          Thanks @tailwindcss. We inject the script via the `<Script/>` tag again,
-          since we found the regular `<script>` tag to not execute when rendering a not-found page.
-         */}
         <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
         <script
           type="application/ld+json"
