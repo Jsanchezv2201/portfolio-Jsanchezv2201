@@ -1,12 +1,10 @@
 import type { NextConfig } from "next";
 import path from "path";
 
-const nextConfig: NextConfig = {
-  // 👇 ESTA ES LA PARTE QUE SOLUCIONA EL ERROR DE VERCEL
+const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // 👆 FIN DE LA PARTE NUEVA
 
   reactStrictMode: true,
   transpilePackages: ["next-mdx-remote"],
@@ -37,8 +35,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // Las cabeceras comentadas las dejamos tal cual
-  // async headers() { ... }
 };
 
 export default nextConfig;
