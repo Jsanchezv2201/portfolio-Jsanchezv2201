@@ -19,19 +19,7 @@ export function ProfileHeader() {
             fetchPriority="high"
           />
         </div>
-
-        <SimpleTooltip content="I'm from Madrid, Spain">
-          {/* Flag of Spain */}
-          <svg
-            className="absolute top-0 -left-px h-8 sm:h-9"
-            viewBox="0 0 30 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="30" height="20" fill="#AD1519" /> {/* Fondo Rojo */}
-            <rect y="5" width="30" height="10" fill="#FABD00" />{" "}
-            {/* Franja Amarilla */}
-          </svg>
-        </SimpleTooltip>
+        {/* ❌ HE QUITADO LA BANDERA DE AQUÍ (ENCIMA DE LA FOTO) */}
       </div>
 
       <div className="flex flex-1 flex-col">
@@ -55,6 +43,19 @@ export function ProfileHeader() {
             &nbsp;
             <SimpleTooltip content="Verified">
               <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
+            </SimpleTooltip>
+            {/* ✅ AHORA LA BANDERA ESTÁ AQUÍ (A LA DERECHA DEL NOMBRE) */}
+            <SimpleTooltip content="I'm from Madrid, Spain">
+              <svg
+                // ml-3: Margen a la izquierda para separarla
+                // h-6: Altura ajustada al texto (antes era h-8, muy grande)
+                className="ml-3 h-6 w-auto rounded-sm shadow-sm"
+                viewBox="0 0 30 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="30" height="20" fill="#AD1519" />
+                <rect y="5" width="30" height="10" fill="#FABD00" />
+              </svg>
             </SimpleTooltip>
             {USER.namePronunciationUrl && (
               <>
