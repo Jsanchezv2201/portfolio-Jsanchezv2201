@@ -1,6 +1,7 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
+import { Icons } from "@/components/icons";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +24,8 @@ export function TeckStack() {
       >
         <ul className="flex flex-wrap gap-4 select-none">
           {TECH_STACK.map((tech) => {
+            const icon = Icons[tech.key as keyof typeof Icons];
+
             return (
               <li key={tech.key} className="flex">
                 <SimpleTooltip content={tech.title}>
@@ -31,26 +34,10 @@ export function TeckStack() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={tech.title}
+                    className="flex items-center justify-center w-8 h-8"
                   >
-                    {tech.theme ? (
-                      <>
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
-                          alt={`${tech.title} light icon`}
-                          width={32}
-                          height={32}
-                          className="hidden [html.light_&]:block"
-                          unoptimized
-                        />
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
-                          alt={`${tech.title} dark icon`}
-                          width={32}
-                          height={32}
-                          className="hidden [html.dark_&]:block"
-                          unoptimized
-                        />
-                      </>
+                    {typeof icon === "function" ? (
+                      icon({ className: "w-full h-full" })
                     ) : (
                       <Image
                         src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}

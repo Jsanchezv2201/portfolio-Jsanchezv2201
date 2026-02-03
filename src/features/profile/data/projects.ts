@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
 - Implementación de algoritmos de **SLAM** (Simultaneous Localization and Mapping) para mapeo en tiempo real.
 - Simulación de entornos físicos complejos utilizando **Gazebo**.
 - Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
-    logo: "/icons/ros2.svg", // Asegúrate de tener este icono o borra la línea
+    logo: "", // Asegúrate de tener este icono o borra la línea
     isExpanded: true,
   },
 
