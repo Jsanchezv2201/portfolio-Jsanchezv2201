@@ -1,6 +1,93 @@
 import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
+  // --- TUS PROYECTOS (Ingeniería Telemática & Desarrollo) ---
+
+  {
+    id: "ros2-nav-bot",
+    title: "Autonomous Navigation Robot",
+    period: {
+      start: "2023",
+      end: "Present",
+    },
+    // Pon aquí el enlace a tu repo si lo tienes, si no, pon tu perfil
+    link: "https://github.com/Jsanchezv2201",
+    skills: ["Robotics", "ROS 2", "Gazebo", "Python", "C++", "SLAM", "Nav2"],
+    description: `Desarrollo de un sistema de navegación autónoma para robots móviles utilizando el framework **ROS 2**.
+- Implementación de algoritmos de **SLAM** (Simultaneous Localization and Mapping) para mapeo en tiempo real.
+- Simulación de entornos físicos complejos utilizando **Gazebo**.
+- Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
+    logo: "/icons/ros2.svg", // Asegúrate de tener este icono o borra la línea
+    isExpanded: true,
+  },
+
+  {
+    id: "rust-sniffer",
+    title: "High-Performance Network Sniffer",
+    period: {
+      start: "2024",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "Rust",
+      "Networking",
+      "TCP/IP",
+      "Packet Analysis",
+      "Systems Programming",
+      "Linux",
+    ],
+    description: `Herramienta de análisis de tráfico de red construida desde cero en **Rust** para maximizar el rendimiento y la seguridad de memoria.
+- Captura y disección de paquetes en tiempo real (similar a Wireshark pero en terminal).
+- Análisis de protocolos **TCP/IP, UDP e ICMP**.
+- Implementación de filtros de paquetes personalizados y estadísticas de tráfico.`,
+  },
+
+  {
+    id: "ai-traffic-sign",
+    title: "Traffic Sign Recognition System",
+    period: {
+      start: "2023",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "AI",
+      "Computer Vision",
+      "Python",
+      "TensorFlow",
+      "OpenCV",
+      "Deep Learning",
+    ],
+    description: `Sistema de visión por computador capaz de detectar y clasificar señales de tráfico en tiempo real.
+- Entrenamiento de redes neuronales convolucionales (**CNNs**) con TensorFlow/Keras.
+- Preprocesamiento de imágenes y detección de bordes con **OpenCV**.
+- Optimización del modelo para inferencia rápida en dispositivos con recursos limitados.`,
+  },
+
+  {
+    id: "network-topology-sim",
+    title: "Network Topology Simulator",
+    period: {
+      start: "2022",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "Networking",
+      "Cisco Packet Tracer",
+      "GNS3",
+      "OSPF",
+      "BGP",
+      "VLAN",
+    ],
+    description: `Diseño y simulación de redes empresariales complejas a gran escala.
+- Configuración de protocolos de enrutamiento dinámico (**OSPF, BGP**).
+- Implementación de seguridad de red, **VLANs** y listas de control de acceso (ACLs).
+- Análisis de fallos y redundancia en infraestructuras críticas.`,
+  },
+
+  // =========================================================================
+  // PROYECTOS ORIGINALES (COMENTADOS)
+  // =========================================================================
+  /*
   {
     id: "react-wheel-picker",
     title: "React Wheel Picker",
@@ -261,4 +348,5 @@ export const PROJECTS: Project[] = [
 - 1st Prize — Can Tho City Youth and Children's Creativity Contest 2016
 - Consolation Prize — Can Tho City Young Informatics Contest 2016`,
   },
+  */
 ];

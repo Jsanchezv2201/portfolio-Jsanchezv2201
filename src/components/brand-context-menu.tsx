@@ -1,5 +1,18 @@
 "use client";
 
+"use client";
+
+import React from "react";
+
+// Hemos simplificado este componente.
+// Antes servía para descargar los assets, pero como ahora usas tu propio logo,
+// lo dejamos como un contenedor simple para evitar errores.
+
+export function BrandContextMenu({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
+
+/*
 import { DownloadIcon, TriangleDashedIcon, TypeIcon } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -65,3 +78,5 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
     </ContextMenu>
   );
 }
+
+*/

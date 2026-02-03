@@ -4,15 +4,16 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "https://assets.chanhdai.com/images/link-icons/linkedin.webp?t=1759581475",
     title: "LinkedIn",
-    description: "ncdai",
-    href: "https://linkedin.com/in/ncdai",
+    description: "Juan Sánchez Vinuesa",
+    href: "https://www.linkedin.com/in/juan-sánchez-vinuesa-b4833936a/",
   },
   {
     icon: "https://assets.chanhdai.com/images/link-icons/github.webp?t=1759581475",
     title: "GitHub",
-    description: "ncdai",
-    href: "https://github.com/ncdai",
+    description: "Jsanchezv2201",
+    href: "https://github.com/Jsanchezv2201",
   },
+  /*
   {
     icon: "https://assets.chanhdai.com/images/link-icons/x.webp?t=1759581475",
     title: "X (Formerly Twitter)",
@@ -37,4 +38,5 @@ export const SOCIAL_LINKS: SocialLink[] = [
     description: "@ncdai",
     href: "https://www.youtube.com/@ncdai",
   },
+  */
 ];

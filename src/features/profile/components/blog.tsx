@@ -9,6 +9,9 @@ import { getAllPosts } from "@/features/blog/data/posts";
 import { Panel, PanelHeader, PanelTitle } from "./panel";
 
 export function Blog() {
+  return null;
+
+  /*
   const allPosts = getAllPosts();
 
   return (
@@ -40,4 +43,5 @@ export function Blog() {
       </div>
     </Panel>
   );
+  */
 }

@@ -1,6 +1,7 @@
 import type { Certification } from "../types/certifications";
 
 export const CERTIFICATIONS: Certification[] = [
+  /*
   {
     title: "Certificate of Trademark Registration No. 565092",
     issuer: "Intellectual Property Office of Viet Nam",
@@ -152,4 +153,5 @@ export const CERTIFICATIONS: Certification[] = [
     credentialURL:
       "https://drive.google.com/file/d/1-NHhjKlQbhlcO7bpRue1XzDgDaudOf2N/view?usp=sharing",
   },
+  */
 ];
