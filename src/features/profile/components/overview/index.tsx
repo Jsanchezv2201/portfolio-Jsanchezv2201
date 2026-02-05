@@ -37,11 +37,6 @@ export function Overview() {
           content={urlToName(USER.website)}
           href={USER.website}
         />
-
-        <IntroItem
-          icon={USER.gender === "male" ? MarsIcon : VenusIcon}
-          content={USER.pronouns}
-        />
       </PanelContent>
     </Panel>
   );

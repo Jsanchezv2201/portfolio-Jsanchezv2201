@@ -1,80 +1,77 @@
-# [chanhdai.com](https://chanhdai.com)
+# Portfolio - Juan Sánchez
 
-A minimal dev portfolio, component registry, and blog to showcase my work as a Design Engineer.
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 
-Check out the live site: [chanhdai.com](https://chanhdai.com)
+> **Ingeniero Telemático | Systems Programming (Rust/C++) | AI & Computer Vision**
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://assets.chanhdai.com/images/screenshot-desktop-dark.webp?t=1759581475">
-  <source media="(prefers-color-scheme: light)" srcset="https://assets.chanhdai.com/images/screenshot-desktop-light.webp?t=1759581475">
-  <img src="https://assets.chanhdai.com/images/screenshot-desktop-light.webp?t=1759581475" alt="Screenshot">
-</picture>
+Este repositorio contiene el código fuente de mi portafolio personal, diseñado para ser minimalista, rápido y accesible. Aquí muestro mi trayectoria en ingeniería de redes, desarrollo de bajo nivel y robótica.
 
-## GitAds Sponsored
+🌐 **Ver sitio en vivo:** [jsanchezv2201.com](https://portfolio-jsanchezv2201.vercel.app/) 
 
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=ncdai/chanhdai.com@github)](https://gitads.dev/v1/ad-track?source=ncdai/chanhdai.com@github)
+---
 
-## Overview
+## 📸 Vista Previa
 
-### Stack
+<div align="center">
+  <img src="vista-previa.png" alt="Vista previa del portafolio" width="800" />
+  </div>
 
-- Next.js 15
-- Tailwind CSS v4
-- shadcn/ui
+## 🚀 Sobre Mí
 
-### Featured
+Soy un ingeniero apasionado por bajar al nivel de los bits y subir a la nube. Mi enfoque combina la robustez de la programación de sistemas con la inteligencia de los algoritmos modernos.
 
-- Clean & modern design
-- Light/Dark themes
-- vCard integration
-- SEO optimized ([JSON-LD schema](https://json-ld.org), sitemap, robots)
-- AI-ready with [/llms.txt](https://llmstxt.org)
-- Spam-protected email
-- Installable as PWA
+### 🛠 Tech Stack Principal
+* **Lenguajes:** Rust, C++, Python, TypeScript, Bash.
+* **Sistemas:** Linux, ROS 2, Docker, TCP/IP Networking.
+* **IA & Datos:** TensorFlow, OpenCV, Keras.
+* **Web:** Next.js, React, Shadcn/ui.
 
-### Blog
+## ⚡ Características del Portafolio
 
-- Supports MDX & Markdown
-- Raw `.mdx` endpoints for AI readability
-- Syntax highlighting for clear code presentation
-- Dynamic OG images for rich link previews
-- RSS feed for easy content distribution
+Esta web ha sido construida prestando atención al detalle técnico y al rendimiento:
 
-### Registry
+* **Arquitectura Moderna:** Basado en Next.js 15 (App Router) y React Server Components.
+* **Diseño Responsivo:** UI construida con Tailwind CSS v4 y componentes accesibles de Shadcn/ui.
+* **SEO Optimizado:** Integración completa de Metadata, Sitemap y JSON-LD Schema.
+* **Modo Oscuro/Claro:** Detección automática de preferencias del sistema.
+* **Blog Integrado:** Soporte para MDX con resaltado de sintaxis para compartir conocimiento técnico.
 
-Easily build and distribute reusable components, hooks, and pages using a custom registry powered by the [shadcn CLI](https://ui.shadcn.com/docs/cli).
+---
 
-Each entry is well-documented and includes:
+## 💻 Instalación y Desarrollo Local
 
-- Live preview & code snippets
-- Beautiful, readable code blocks
-- One-click command blocks (pnpm, npm, yarn, bun)
+Si quieres explorar el código de este portafolio:
 
-## Development
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/Jsanchezv2201/portfolio.git](https://github.com/Jsanchezv2201/portfolio.git)
+    cd portfolio
+    ```
 
-Please refer to the [Development Guide](./DEVELOPMENT.md) for more details.
+2.  **Instalar dependencias:**
+    ```bash
+    pnpm install
+    # o si usas npm:
+    # npm install
+    ```
 
-## License
+3.  **Ejecutar servidor de desarrollo:**
+    ```bash
+    pnpm dev
+    ```
+    Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-Licensed under the [MIT license](./LICENSE).
+---
 
-You're free to use my code! Just make sure to <ins>remove all my personal information</ins> before publishing your website. It's awesome to see my code being useful to someone!
+## 📄 Licencia
 
-## Star History
+Este proyecto está bajo la licencia [MIT](./LICENSE).
 
-[![Star History](https://starchart.cc/ncdai/chanhdai.com.svg?variant=adaptive)](https://starchart.cc/ncdai/chanhdai.com)
+## 🙏 Créditos
 
-## Acknowledgments
+Personalización a raíz del portfolio de [chanhdai.com](https://github.com/ncdai/chanhdai.com).
 
-- [React](https://react.dev)
-- [Next.js](https://nextjs.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Radix UI](https://www.radix-ui.com)
-- [Motion](https://motion.dev)
-- [shadcn/ui](https://ui.shadcn.com)
-- [Aceternity UI](https://ui.aceternity.com)
-- [Lucide](https://lucide.dev)
-- [Fumadocs](https://fumadocs.dev)
-- And many other open-source libraries used in `package.json`
-
-<!-- GitAds-Verify: QICCAB4PFWV9MHUGPGPN5B2I8SAXLAOK -->
+---

@@ -5,10 +5,6 @@ export type User = {
   displayName: string;
   /** Handle/username used in links or mentions */
   username: string;
-  /** e.g. "male", "female", "non-binary" */
-  gender: string;
-  /** e.g. "he/him", "she/her", "they/them" */
-  pronouns: string;
   bio: string;
   /** Short phrases rotated in UI (e.g., homepage flip effect) */
   flipSentences: string[];

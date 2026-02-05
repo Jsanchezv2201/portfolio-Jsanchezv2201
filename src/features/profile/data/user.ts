@@ -5,83 +5,78 @@ export const USER: User = {
   lastName: "Sánchez",
   displayName: "Juan Sánchez Vinuesa",
   username: "Jsanchezv2201",
-  gender: "male",
-  pronouns: "he/him",
+  // Pronouns removed as requested
 
-  // Tu frase corta de presentación
-  bio: "Telematic Engineering Student & Full-Stack Developer. Passionate about Networks, Security, and AI.",
+  // Short bio for metadata and header
+  bio: "Telematic Engineer & Systems Developer. Focused on High-Performance Networking, Rust, and AI.",
 
-  // Frases que rotan (efecto máquina de escribir)
+  // Dynamic typewriter effect sentences
   flipSentences: [
-    "Telematic Engineering Student",
-    "Network & Security Enthusiast",
-    "Rust & Python Developer",
-    "AI & Robotics Hobbyist",
+    "Architecting Scalable Networks",
+    "Systems Programming (Rust/C++)",
+    "AI & Computer Vision Research",
+    "Open Source Contributor",
   ],
 
   address: "Madrid, Spain",
 
-  // ⚠️ IMPORTANTE: Ejecuta en tu terminal: echo -n "+34TU_NUMERO" | base64
+  // ⚠️ IMPORTANT: Run in terminal: echo -n "+34YOUR_NUMBER" | base64
   phoneNumber: "KzM0NjUxNTM1NTg5",
 
-  // ⚠️ IMPORTANTE: Pega aquí el código que te salga al hacer: echo -n "sanchezvinuesajuan@gmail.com" | base64
+  // ⚠️ IMPORTANT: Run in terminal: echo -n "your_email@gmail.com" | base64
   email: "c2FuY2hlenZpbnVlc2FqdWFuQGdtYWlsLmNvbQ==",
 
-  website: "https://github.com/Jsanchezv2201", // He puesto tu GitHub por ahora
+  website: "https://github.com/Jsanchezv2201",
   jobTitle: "Telematic Engineer",
 
-  // He adaptado esto a tu perfil de estudiante/investigador
+  // Timeline / Experience
   jobs: [
     {
-      title: "Telematic Engineering Student",
+      title: "Telematic Engineering Undergraduate",
       company: "Universidad Rey Juan Carlos",
       website: "https://www.urjc.es",
     },
     {
-      title: "Open Source Contributor",
+      title: "Open Source Developer",
       company: "GitHub",
       website: "https://github.com/Jsanchezv2201",
     },
   ],
 
-  // He redactado esto basándome en tus badges de GitHub
+  // Expanded "About Me" section (Markdown supported)
   about: `
-Hello, World! I am Juan Sánchez — a **Telematic Engineering Student** at Universidad Rey Juan Carlos (Madrid) with a deep passion for low-level programming, network security, and intelligent systems.
+I am a **Telematic Engineering Student** based in Madrid, driven by the intersection of **Hardware, Networking, and Software**. My goal is to build systems that are not only intelligent but also secure and highly efficient.
 
-My journey involves mastering the full spectrum of computing, from **Network Protocols** (TCP/IP, OSPF, BGP) to **Modern Software Development**. I thrive in environments where hardware meets software.
+Unlike typical web developers, I enjoy diving deep into the **low-level details**: from analyzing TCP/IP packets to optimizing memory safety in Rust.
 
-### 🛠 Technical Arsenal
-I have experience working with a diverse set of languages and tools:
-* **Systems & Core:** Rust, C, C++, Go, Python, Pascal, Assembly (RISC-V).
-* **Scripting & Web:** Python, Bash, HTML5, Markdown.
-* **AI & Data:** Computer Vision, Deep Learning (CNNs), SVM, Jupyter.
-* **Robotics:** ROS 2, TurtleBot, Gazebo.
-* **Networking:** Wireshark, Quagga, Cisco (VLAN, STP), and Linux Administration.
+### Core Competencies
 
-Currently, I am expanding my knowledge in **Cybersecurity** and **Distributed Systems**, always looking for the next challenge to solve with code.
+* **Systems Programming:** Expert in memory management and concurrency with **Rust** and **C++**.
+* **Networking:** Deep understanding of protocols (BGP, OSPF, TCP/IP) and network simulation (Cisco Packet Tracer, GNS3).
+* **Artificial Intelligence:** Implementing CNNs and Computer Vision algorithms using **TensorFlow** and **Python**.
+* **Robotics:** Navigating autonomous systems with **ROS 2** and **Gazebo**.
 
-Let's connect and build something secure and scalable!
+I am currently looking for opportunities to apply my skills in **Cybersecurity**, **Backend Engineering**, or **Embedded Systems**.
   `,
 
-  // ⚠️ Asegúrate de poner una foto tuya llamada 'avatar.jpg' en la carpeta 'public'
+  // ⚠️ Ensure you have 'avatar.jpg' in your 'public' folder
   avatar: "/avatar.jpg",
 
-  // Usamos la misma imagen para cuando compartas tu web en redes sociales
+  // Image used when sharing your site on social media
   ogImage: "/avatar.jpg",
 
-  namePronunciationUrl: "", // Puedes dejarlo vacío
+  namePronunciationUrl: "", // Optional
 
-  // Palabras clave para que te encuentren en Google
+  // SEO Keywords
   keywords: [
     "Juan Sánchez Vinuesa",
     "Jsanchezv2201",
     "Telematic Engineer",
-    "Network Security",
+    "Systems Engineer",
     "Rust Developer",
-    "Python Developer",
-    "URJC",
-    "Full Stack",
-    "Robotics",
+    "Network Engineer",
+    "Computer Vision",
+    "Madrid",
   ],
 
   dateCreated: "2024-02-02",

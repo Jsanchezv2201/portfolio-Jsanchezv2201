@@ -24,10 +24,10 @@ export const PROJECTS: Project[] = [
 - Diseño de interfaz responsivo y accesible implementando **Tailwind CSS** y componentes de **Shadcn UI**.
 - Integración de sistema de gestión de contenidos (MDX) para blog y renderizado dinámico de proyectos.`,
     // Logo de Next.js (Icono "N" limpio)
-    logo: "https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_light_background.png", 
+    logo: "https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png&color=000000",
   },
 
-{
+  {
     id: "rust-tcp-chat",
     title: "Concurrent TCP Group Chat",
     period: {
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
 - [ Ver Explicación del Código](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
 - [ Ver Demo de Ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
     // Logo oficial de Rust (Wikimedia)
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+    logo: "https://img.icons8.com/?size=100&id=t7vIvDXazOGO&format=png&color=000000",
   },
 
   {
@@ -123,7 +123,8 @@ export const PROJECTS: Project[] = [
 - Interfaz reactiva construida con **HTML/CSS/JS** que incluye buscador en tiempo real y visualización dinámica de snippets de código.
 - Referencia técnica rápida para gestión de registros, llamadas al sistema (Syscalls) y manejo de la pila (Stack).`,
     // Logo de RISC-V
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/RISC-V_icon.svg/120px-RISC-V_icon.svg.png?20241207195945",  },
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/RISC-V_icon.svg/120px-RISC-V_icon.svg.png?20241207195945",
+  },
 
   {
     id: "ros2-nav-bot",
@@ -188,7 +189,6 @@ export const PROJECTS: Project[] = [
     // Logo de OpenCV
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg",
   },
-
 
   // =========================================================================
   // PROYECTOS ORIGINALES (COMENTADOS)
