@@ -7,27 +7,19 @@
 
 > **Ingeniero Telemático | Systems Programming (Rust/C++) | AI & Computer Vision**
 
-Este repositorio contiene el código fuente de mi portafolio personal, diseñado para ser minimalista, rápido y accesible. Aquí muestro mi trayectoria en ingeniería de redes, desarrollo de bajo nivel y robótica.
+Este repositorio contiene el código fuente de mi portfolio personal, diseñado para ser minimalista, rápido y accesible. Aquí muestro mi trayectoria en ingeniería de redes, desarrollo de bajo nivel y robótica.
 
-🌐 **Ver sitio en vivo:** [jsanchezv2201.com](https://portfolio-jsanchezv2201.vercel.app/) 
+🌐 [jsanchezv2201.com](https://portfolio-jsanchezv2201.vercel.app/) 
 
 ---
 
 ## 📸 Vista Previa
 
 <div align="center">
-  <img src="vista-previa.png" alt="Vista previa del portafolio" width="800" />
+  <img src="vista-previa.png" alt="Vista previa del portfolio" width="800" />
   </div>
 
-## 🚀 Sobre Mí
-
-Soy un ingeniero apasionado por bajar al nivel de los bits y subir a la nube. Mi enfoque combina la robustez de la programación de sistemas con la inteligencia de los algoritmos modernos.
-
-### 🛠 Tech Stack Principal
-* **Lenguajes:** Rust, C++, Python, TypeScript, Bash.
-* **Sistemas:** Linux, ROS 2, Docker, TCP/IP Networking.
-* **IA & Datos:** TensorFlow, OpenCV, Keras.
-* **Web:** Next.js, React, Shadcn/ui.
+---
 
 ## ⚡ Características del Portafolio
 
@@ -43,7 +35,7 @@ Esta web ha sido construida prestando atención al detalle técnico y al rendimi
 
 ## 💻 Instalación y Desarrollo Local
 
-Si quieres explorar el código de este portafolio:
+Si quieres explorar el código de este portfolio:
 
 1.  **Clonar el repositorio:**
     ```bash

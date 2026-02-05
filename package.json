@@ -116,5 +116,15 @@
     "node": "22.x",
     "pnpm": ">=9"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "@vercel/speed-insights",
+      "esbuild",
+      "msw",
+      "sharp"
+    ]
+  },
   "packageManager": "pnpm@10.10.0"
+  
 }
