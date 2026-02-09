@@ -7,6 +7,7 @@ import {
   CircleUserIcon,
   CornerDownLeftIcon,
   DownloadIcon,
+  GraduationCapIcon,
   LetterTextIcon,
   MoonStarIcon,
   RssIcon,
@@ -80,6 +81,11 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
     title: "Tech Stack",
     href: "/#stack",
     icon: Icons.ts,
+  },
+  {
+    title: "Education",
+    href: "/#education",
+    icon: GraduationCapIcon,
   },
   {
     title: "Experience",

@@ -1,39 +1,34 @@
 import type { Experience } from "../types/experiences";
+import type { Experience } from "../types/experiences";
 
 export const EXPERIENCES: Experience[] = [
-  // --- YOUR EDUCATION (CURRENT PRIORITY) ---
+  // =========================================================================
+  // YOUR WORK EXPERIENCE (Add entries when you have professional experience)
+  // =========================================================================
+  // Example: Open Source Contributor, Internships, Part-time jobs, etc.
+  /*
   {
-    id: "education",
-    companyName: "Education",
-    companyLogo: "/icons/urjc.svg",
+    id: "open-source",
+    companyName: "Open Source Contributor",
     positions: [
       {
-        id: "urjc-student",
-        title: "Bachelor's in Telematic Engineering",
+        id: "oss-contributor",
+        title: "Independent Developer",
         employmentPeriod: {
-          start: "09.2021",
-          end: "2027",
+          start: "2023",
+          end: "Present",
         },
-        employmentType: "Student",
-        icon: "education",
-        description: `- Currently pursuing a degree with a focus on Communication Networks, Cybersecurity, and Distributed Systems.
-- Solid foundation in engineering fundamentals: Mathematics, Physics, and Electronics.
-- Developing strong skills in low-level programming and computer architecture.`,
-        skills: [
-          "C",
-          "C++",
-          "Python",
-          "Network Security",
-          "Telecommunications",
-          "Electronics",
-          "Matlab",
-        ],
-        isExpanded: true,
+        employmentType: "Volunteer",
+        icon: "code",
+        description: `- Contributing to open source projects on GitHub.
+- Developing personal projects and learning new technologies.
+- Collaborating with the developer community.`,
+        skills: ["Git", "GitHub", "Collaboration", "Problem Solving"],
       },
     ],
     isCurrentEmployer: true,
   },
-
+  */
   // =========================================================================
   // ORIGINAL DATA (COMMENTED OUT FOR FUTURE REFERENCE)
   // =========================================================================
