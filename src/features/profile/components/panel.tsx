@@ -18,7 +18,8 @@ function Panel({ className, ...props }: React.ComponentProps<"section">) {
         "screen-line-before screen-line-after border-x border-edge",
         className
       )}
-      {...props}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      {...(props as any)}
     />
   );
 }
@@ -32,7 +33,8 @@ function PanelHeader({ className, ...props }: React.ComponentProps<"div">) {
       transition={{ duration: 0.5, delay: 0.1 }}
       data-slot="panel-header"
       className={cn("screen-line-after px-4", className)}
-      {...props}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      {...(props as any)}
     />
   );
 }
@@ -62,7 +64,8 @@ function PanelContent({ className, ...props }: React.ComponentProps<"div">) {
       transition={{ duration: 0.6, delay: 0.2 }}
       data-slot="panel-body"
       className={cn("p-4", className)}
-      {...props}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      {...(props as any)}
     />
   );
 }
