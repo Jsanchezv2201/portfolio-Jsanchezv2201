@@ -1,8 +1,9 @@
 "use client";
 
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { CopyIcon } from "lucide-react";
 import { useRef, useState } from "react";
-import { toast } from "sonner"; // Assuming you use Sonner for notifications
+import { toast } from "sonner";
 
 import { BrandContextMenu } from "@/components/brand-context-menu";
 import { ChanhDaiMark } from "@/components/chanhdai-mark";
@@ -19,28 +20,45 @@ export function ProfileCover() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 150 };
+  const rotateX = useSpring(
+    useTransform(mouseY, [-0.5, 0.5], [5, -5]),
+    springConfig
+  );
+  const rotateY = useSpring(
+    useTransform(mouseX, [-0.5, 0.5], [-5, 5]),
+    springConfig
+  );
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!divRef.current) return;
     const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setPosition({ x, y });
+
+    const xPct = (x / rect.width - 0.5) * 2;
+    const yPct = (y / rect.height - 0.5) * 2;
+    mouseX.set(xPct);
+    mouseY.set(yPct);
   };
 
   const handleMouseEnter = () => setOpacity(1);
-  const handleMouseLeave = () => setOpacity(0);
+  const handleMouseLeave = () => {
+    setOpacity(0);
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
-  // --- FUNCTION TO COPY SVG ---
   const handleCopyLogo = async () => {
     try {
-      // Find the SVG element by the ID we passed to it
       const svgElement = document.getElementById("js-cover-mark");
-
       if (svgElement) {
-        // Get the full HTML code of the SVG
         const svgCode = svgElement.outerHTML;
-
-        // Write it to the clipboard
         await navigator.clipboard.writeText(svgCode);
-
         toast.success("SVG Logo copied to clipboard");
       } else {
         toast.error("Logo element not found");
@@ -53,8 +71,11 @@ export function ProfileCover() {
 
   return (
     <BrandContextMenu>
-      <div
+      <motion.div
         ref={divRef}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -63,20 +84,56 @@ export function ProfileCover() {
           "flex items-center justify-center text-black dark:text-white",
           "screen-line-before screen-line-after before:-top-px after:-bottom-px",
           "bg-black/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5",
-          "group relative"
+          "group relative overflow-hidden"
         )}
+        style={{ perspective: 1000 }}
       >
-        {/* --- LOGO WITH SPECIFIC CONTEXT MENU --- */}
-        <div className="relative z-10 transition-transform duration-500 hover:scale-105">
+        <motion.div
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
+          style={{
+            opacity,
+            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
+          }}
+        />
+
+        <motion.div
+          style={{
+            rotateX,
+            rotateY,
+            transformStyle: "preserve-3d",
+          }}
+          className="relative z-10"
+        >
           <ContextMenu>
             <ContextMenuTrigger>
-              <ChanhDaiMark
-                id="js-cover-mark"
-                className="h-32 w-32 cursor-context-menu drop-shadow-lg sm:h-32 sm:w-32"
-              />
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, type: "spring" }}
+              >
+                <motion.div
+                  animate={{
+                    boxShadow: [
+                      "0 0 20px rgba(59, 130, 246, 0)",
+                      "0 0 40px rgba(59, 130, 246, 0.3)",
+                      "0 0 20px rgba(59, 130, 246, 0)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="rounded-full"
+                >
+                  <ChanhDaiMark
+                    id="js-cover-mark"
+                    className="h-32 w-32 cursor-context-menu drop-shadow-2xl sm:h-32 sm:w-32"
+                    style={{ transform: "translateZ(50px)" }}
+                  />
+                </motion.div>
+              </motion.div>
             </ContextMenuTrigger>
 
-            {/* Menu that appears ONLY when right-clicking the logo */}
             <ContextMenuContent className="w-48">
               <ContextMenuItem
                 onClick={handleCopyLogo}
@@ -87,8 +144,8 @@ export function ProfileCover() {
               </ContextMenuItem>
             </ContextMenuContent>
           </ContextMenu>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </BrandContextMenu>
   );
 }

@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import React from "react";
 
 import { Icons } from "@/components/icons";
 import { SimpleTooltip } from "@/components/ui/tooltip";
@@ -22,22 +25,65 @@ export function TeckStack() {
           "bg-zinc-950/0.75 dark:bg-white/0.75"
         )}
       >
-        <ul className="flex flex-wrap gap-4 select-none">
-          {TECH_STACK.map((tech) => {
+        <motion.ul
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
+          }}
+          className="flex flex-wrap gap-4 select-none"
+        >
+          {TECH_STACK.map((tech, index) => {
             const icon = Icons[tech.key as keyof typeof Icons];
 
             return (
-              <li key={tech.key} className="flex">
+              <motion.li
+                key={tech.key}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                    },
+                  },
+                }}
+                className="flex"
+              >
                 <SimpleTooltip content={tech.title}>
-                  <a
+                  <motion.a
                     href={tech.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={tech.title}
-                    className="flex items-center justify-center w-8 h-8"
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: [0, -10, 10, 0],
+                      transition: { duration: 0.3 },
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    className="relative flex h-8 w-8 items-center justify-center"
                   >
+                    <motion.div
+                      className="absolute inset-0 rounded-lg"
+                      initial={{ opacity: 0 }}
+                      whileHover={{
+                        opacity: 1,
+                        boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+                      }}
+                      transition={{ duration: 0.2 }}
+                    />
                     {typeof icon === "function" ? (
-                      icon({ className: "w-full h-full" })
+                      icon({ className: "w-full h-full relative z-10" })
                     ) : (
                       <Image
                         src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
@@ -45,15 +91,16 @@ export function TeckStack() {
                         width={32}
                         height={32}
                         unoptimized
+                        className="relative z-10"
                       />
                     )}
                     <span className="sr-only">{tech.title}</span>
-                  </a>
+                  </motion.a>
                 </SimpleTooltip>
-              </li>
+              </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
       </PanelContent>
     </Panel>
   );

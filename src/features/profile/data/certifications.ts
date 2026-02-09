@@ -3,20 +3,22 @@ import type { Certification } from "../types/certifications";
 export const CERTIFICATIONS: Certification[] = [
   {
     // AÑADIDO: Ponemos el Score y Nivel en el título para que se vea claro en la web
-    title: "TOEIC Listening and Reading (Score: 920 - B2)", 
-    
+    title: "TOEIC Listening and Reading (Score: 920/990  ->  B2)",
+
     issuer: "Capman Testing Solutions",
-    
+
     // Tu logo de Capman
-    issuerLogoURL: "https://media.licdn.com/dms/image/v2/D4D0BAQGSvQTQMSoJVg/company-logo_200_200/B4DZmaRZfrGkAI-/0/1759229877601/capman_testing_solutions_logo?e=2147483647&v=beta&t=02M693S9nLQSYB9RW1bV1qPaxW6WWJy_TUPpQpEyLDo",
-    
-    issueDate: "2023-02-11", 
-    
-    credentialID: "PON_AQUI_EL_ID_DEL_DIPLOMA", 
-    
+    issuerLogoURL:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQGSvQTQMSoJVg/company-logo_200_200/B4DZmaRZfrGkAI-/0/1759229877601/capman_testing_solutions_logo?e=2147483647&v=beta&t=02M693S9nLQSYB9RW1bV1qPaxW6WWJy_TUPpQpEyLDo",
+
+    issueDate: "2023-02-11",
+
+    credentialID: "PON_AQUI_EL_ID_DEL_DIPLOMA",
+
     // AÑADIDO: Aquí es donde pegas el enlace a tu foto del título.
     // Puede ser un link de Google Drive (público), LinkedIn o una foto en tu carpeta /public
-    credentialURL: "https://drive.google.com/file/d/1mvwZeoQMerTc7y1KUX4lX50yIFX-BVZk/view?usp=sharing",
+    credentialURL:
+      "https://drive.google.com/file/d/1mvwZeoQMerTc7y1KUX4lX50yIFX-BVZk/view?usp=sharing",
   },
 
   /*

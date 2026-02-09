@@ -1,0 +1,85 @@
+<svg width="1024" height="128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con gradiente -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1024" height="128" fill="url(#grad)"/>
+  
+  <!-- Overlay oscuro en los bordes -->
+  <rect width="1024" height="128" fill="url(#grad)" opacity="0.1"/>
+  
+  <!-- Borde principal -->
+  <rect x="2" y="2" width="1020" height="124" fill="none" stroke="white" stroke-width="4"/>
+  
+  <!-- Líneas decorativas -->
+  <line x1="20" y1="30" x2="1004" y2="30" stroke="white" stroke-width="2"/>
+  <line x1="20" y1="98" x2="1004" y2="98" stroke="white" stroke-width="2"/>
+  
+  <!-- Puntos decorativos superiores -->
+  <circle cx="25.6" cy="15" r="2" fill="white"/>
+  <circle cx="76.80000000000001" cy="15" r="2" fill="white"/>
+  <circle cx="128" cy="15" r="2" fill="white"/>
+  <circle cx="179.2" cy="15" r="2" fill="white"/>
+  <circle cx="230.4" cy="15" r="2" fill="white"/>
+  <circle cx="281.6" cy="15" r="2" fill="white"/>
+  <circle cx="332.8" cy="15" r="2" fill="white"/>
+  <circle cx="384" cy="15" r="2" fill="white"/>
+  <circle cx="435.20000000000005" cy="15" r="2" fill="white"/>
+  <circle cx="486.40000000000003" cy="15" r="2" fill="white"/>
+  <circle cx="537.6" cy="15" r="2" fill="white"/>
+  <circle cx="588.8000000000001" cy="15" r="2" fill="white"/>
+  <circle cx="640" cy="15" r="2" fill="white"/>
+  <circle cx="691.2" cy="15" r="2" fill="white"/>
+  <circle cx="742.4" cy="15" r="2" fill="white"/>
+  <circle cx="793.6" cy="15" r="2" fill="white"/>
+  <circle cx="844.8000000000001" cy="15" r="2" fill="white"/>
+  <circle cx="896" cy="15" r="2" fill="white"/>
+  <circle cx="947.2" cy="15" r="2" fill="white"/>
+  <circle cx="998.4" cy="15" r="2" fill="white"/>
+  
+  <!-- Puntos decorativos inferiores -->
+  <circle cx="25.6" cy="113" r="2" fill="white"/>
+  <circle cx="76.80000000000001" cy="113" r="2" fill="white"/>
+  <circle cx="128" cy="113" r="2" fill="white"/>
+  <circle cx="179.2" cy="113" r="2" fill="white"/>
+  <circle cx="230.4" cy="113" r="2" fill="white"/>
+  <circle cx="281.6" cy="113" r="2" fill="white"/>
+  <circle cx="332.8" cy="113" r="2" fill="white"/>
+  <circle cx="384" cy="113" r="2" fill="white"/>
+  <circle cx="435.20000000000005" cy="113" r="2" fill="white"/>
+  <circle cx="486.40000000000003" cy="113" r="2" fill="white"/>
+  <circle cx="537.6" cy="113" r="2" fill="white"/>
+  <circle cx="588.8000000000001" cy="113" r="2" fill="white"/>
+  <circle cx="640" cy="113" r="2" fill="white"/>
+  <circle cx="691.2" cy="113" r="2" fill="white"/>
+  <circle cx="742.4" cy="113" r="2" fill="white"/>
+  <circle cx="793.6" cy="113" r="2" fill="white"/>
+  <circle cx="844.8000000000001" cy="113" r="2" fill="white"/>
+  <circle cx="896" cy="113" r="2" fill="white"/>
+  <circle cx="947.2" cy="113" r="2" fill="white"/>
+  <circle cx="998.4" cy="113" r="2" fill="white"/>
+  
+  <!-- Texto principal -->
+  <text x="512" y="54" 
+        font-family="Arial, sans-serif" 
+        font-size="48" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle" 
+        dominant-baseline="middle">JUAN SÁNCHEZ VINUESA</text>
+  
+  <!-- Subtexto -->
+  <text x="512" y="94" 
+        font-family="Arial, sans-serif" 
+        font-size="20" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle" 
+        dominant-baseline="middle">⚡ INGENIERO TELEMÁTICO ⚡</text>
+</svg>

@@ -49,6 +49,8 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
+    "@radix-ui/react-slot": "^1.1.0",
+    "framer-motion": "^11.0.0",
     "fumadocs-core": "^15.8.5",
     "jotai": "^2.12.5",
     "libphonenumber-js": "^1.12.4",
@@ -126,5 +128,4 @@
     ]
   },
   "packageManager": "pnpm@10.10.0"
-  
 }
