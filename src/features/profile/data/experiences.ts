@@ -5,8 +5,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "education",
     companyName: "Education",
-    // You can add the URJC logo here if you have it in public/images/urjc.png
-    companyLogo: "/urjc.png",
+    companyLogo: "/icons/urjc.svg",
     positions: [
       {
         id: "urjc-student",

@@ -1,5 +1,4 @@
 import { InfinityIcon, LinkIcon } from "lucide-react";
-import Image from "next/image";
 import React from "react";
 
 import { Icons } from "@/components/icons";
@@ -28,21 +27,27 @@ export function ProjectItem({
   const { start, end } = project.period;
   const isOngoing = !end;
 
+  console.log("Project logo:", project.title, project.logo);
+
+  // Logos que son negros/oscuros y necesitan invertirse en modo oscuro
+  const blackLogos = ["/icons/tech/nextjs2.svg", "/icons/tech/ros2.svg"];
+  const needsInvert = project.logo && blackLogos.includes(project.logo);
+
   return (
     <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
       <div className={className}>
         <div className="flex items-center hover:bg-accent2">
           {project.logo ? (
-            <Image
-              src={project.logo}
-              alt={project.title}
-              width={32}
-              height={32}
-              quality={100}
-              className="mx-4 flex size-6 shrink-0 select-none"
-              unoptimized
-              aria-hidden="true"
-            />
+            <div className="mx-4 flex size-6 shrink-0 items-center justify-center select-none">
+              <img
+                src={project.logo}
+                alt={project.title}
+                width="24"
+                height="24"
+                className={`h-full w-full object-contain ${needsInvert ? "dark:brightness-0 dark:contrast-200 dark:invert" : ""}`}
+                aria-hidden
+              />
+            </div>
           ) : (
             <div
               className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none"

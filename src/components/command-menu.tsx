@@ -58,11 +58,11 @@ const MENU_LINKS: CommandLinkItem[] = [
     href: "/",
     icon: ChanhDaiMark,
   },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: RssIcon,
-  },
+  // {
+  //   title: "Blog",
+  //   href: "/blog",
+  //   icon: RssIcon,
+  // },
   {
     title: "Components",
     href: "/components",
@@ -253,14 +253,14 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
 
           <CommandSeparator />
 
-          <CommandLinkGroup
+          {/* <CommandLinkGroup
             heading="Blog"
             links={blogLinks}
             fallbackIcon={TextIcon}
             onLinkSelect={handleOpenLink}
           />
 
-          <CommandSeparator />
+          <CommandSeparator /> */}
 
           <CommandLinkGroup
             heading="Components"
@@ -304,12 +304,12 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
               Copy Logotype as SVG
             </CommandItem>
 
-            <CommandItem
+            {/* <CommandItem
               onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
             >
               <TriangleDashedIcon />
               Brand Guidelines
-            </CommandItem>
+            </CommandItem> */}
 
             <CommandItem asChild>
               <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>

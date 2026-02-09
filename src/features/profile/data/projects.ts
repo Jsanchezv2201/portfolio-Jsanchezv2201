@@ -23,8 +23,7 @@ export const PROJECTS: Project[] = [
 - Arquitectura basada en **Next.js 14 (App Router)** para renderizado híbrido (SSR/SSG) y optimización SEO.
 - Diseño de interfaz responsivo y accesible implementando **Tailwind CSS** y componentes de **Shadcn UI**.
 - Integración de sistema de gestión de contenidos (MDX) para blog y renderizado dinámico de proyectos.`,
-    // Logo de Next.js (Icono "N" limpio)
-    logo: "https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png&color=000000",
+    logo: "/icons/tech/nextjs2.svg",
   },
 
   {
@@ -51,8 +50,7 @@ export const PROJECTS: Project[] = [
 🔗 **Demos del Proyecto:**
 - [ Ver Explicación del Código](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
 - [ Ver Demo de Ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
-    // Logo oficial de Rust (Wikimedia)
-    logo: "https://img.icons8.com/?size=100&id=t7vIvDXazOGO&format=png&color=000000",
+    logo: "/icons/tech/rust.svg",
   },
 
   {
@@ -75,8 +73,7 @@ export const PROJECTS: Project[] = [
 - Implementación de **Redes Neuronales Convolucionales (CNNs)** como bancos de filtros adaptativos para la extracción de características.
 - **Preprocesamiento de señal**: Normalización, diezmado y Data Augmentation para robustez frente a ruido y variaciones.
 - Evaluación de arquitecturas de **Transfer Learning** (Xception, NASNet) optimizando el compromiso precisión-coste computacional.`,
-    // Logo oficial de TensorFlow
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg",
+    logo: "/icons/tech/tensorflow.svg",
   },
 
   {
@@ -99,8 +96,7 @@ export const PROJECTS: Project[] = [
 - Normalización automática de nombres de archivo y extensiones mediante manipulación de streams con **sed** y **tr**.
 - Generación de informes de metadatos y cálculo de estadísticas de almacenamiento con **awk**.
 - Gestión robusta de errores, detección de colisiones y limpieza automática de entornos temporales.`,
-    // Logo de GNU Bash
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
+    logo: "/icons/tech/bash.svg",
   },
 
   {
@@ -122,8 +118,7 @@ export const PROJECTS: Project[] = [
 - Recopilación estructurada de patrones de diseño en bajo nivel: manipulación de **Strings**, operaciones con **Matrices** y aritmética de **Punto Flotante** (IEEE 754).
 - Interfaz reactiva construida con **HTML/CSS/JS** que incluye buscador en tiempo real y visualización dinámica de snippets de código.
 - Referencia técnica rápida para gestión de registros, llamadas al sistema (Syscalls) y manejo de la pila (Stack).`,
-    // Logo de RISC-V
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/RISC-V_icon.svg/120px-RISC-V_icon.svg.png?20241207195945",
+    logo: "/icons/tech/riscv.svg",
   },
 
   {
@@ -139,9 +134,7 @@ export const PROJECTS: Project[] = [
 - Implementación de algoritmos de **SLAM** (Simultaneous Localization and Mapping) para mapeo en tiempo real.
 - Simulación de entornos físicos complejos utilizando **Gazebo**.
 - Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
-    // Logo de ROS
-    logo: "https://www.vectorlogo.zone/logos/ros/ros-icon.svg",
-    isExpanded: true,
+    logo: "/icons/tech/ros2.svg",
   },
 
   {
@@ -163,8 +156,7 @@ export const PROJECTS: Project[] = [
 - Captura y disección de paquetes en tiempo real (similar a Wireshark pero en terminal).
 - Análisis de protocolos **TCP/IP, UDP e ICMP**.
 - Implementación de filtros de paquetes personalizados y estadísticas de tráfico.`,
-    // Repetimos el de Rust
-    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+    logo: "/icons/tech/rust.svg",
   },
 
   {
@@ -186,8 +178,7 @@ export const PROJECTS: Project[] = [
 - Entrenamiento de redes neuronales convolucionales (**CNNs**) con TensorFlow/Keras.
 - Preprocesamiento de imágenes y detección de bordes con **OpenCV**.
 - Optimización del modelo para inferencia rápida en dispositivos con recursos limitados.`,
-    // Logo de OpenCV
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg",
+    logo: "/icons/tech/opencv.svg",
   },
 
   // =========================================================================

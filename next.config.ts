@@ -20,6 +20,11 @@ const nextConfig = {
         hostname: "assets.chanhdai.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+        port: "",
+      },
     ],
     qualities: [75, 100],
   },

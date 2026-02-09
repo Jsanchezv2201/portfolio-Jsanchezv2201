@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Iconos Sociales</title>
+</head>
+
+<body>
+    <h2>Generador de Iconos Sociales</h2>
+    <canvas id="linkedin" width="200" height="200" style="display:none;"></canvas>
+    <canvas id="github" width="200" height="200" style="display:none;"></canvas>
+    <div>
+        <h3>LinkedIn</h3>
+        <img id="linkedin-preview" style="width:100px; border-radius:12px;">
+        <button onclick="downloadIcon('linkedin')">Descargar linkedin.png</button>
+    </div>
+    <div>
+        <h3>GitHub</h3>
+        <img id="github-preview" style="width:100px; border-radius:12px;">
+        <button onclick="downloadIcon('github')">Descargar github.png</button>
+    </div>
+
+    <script>
+        // LinkedIn Icon
+        const linkedinCanvas = document.getElementById('linkedin');
+        const linkedinCtx = linkedinCanvas.getContext('2d');
+
+        // Fondo azul LinkedIn con esquinas redondeadas
+        linkedinCtx.fillStyle = '#0A66C2';
+        roundRect(linkedinCtx, 0, 0, 200, 200, 30);
+        linkedinCtx.fill();
+
+        // Logo LinkedIn en blanco
+        linkedinCtx.fillStyle = '#FFFFFF';
+        linkedinCtx.font = 'bold 140px Arial';
+        linkedinCtx.textAlign = 'center';
+        linkedinCtx.textBaseline = 'middle';
+        linkedinCtx.fillText('in', 100, 110);
+
+        document.getElementById('linkedin-preview').src = linkedinCanvas.toDataURL();
+
+        // GitHub Icon
+        const githubCanvas = document.getElementById('github');
+        const githubCtx = githubCanvas.getContext('2d');
+
+        // Fondo negro/gris oscuro con esquinas redondeadas
+        githubCtx.fillStyle = '#24292E';
+        roundRect(githubCtx, 0, 0, 200, 200, 30);
+        githubCtx.fill();
+
+        // Logo GitHub (Octocat simplificado)
+        githubCtx.fillStyle = '#FFFFFF';
+        githubCtx.beginPath();
+        githubCtx.arc(100, 90, 50, 0, Math.PI * 2);
+        githubCtx.fill();
+
+        // Orejas
+        githubCtx.beginPath();
+        githubCtx.arc(75, 70, 15, 0, Math.PI * 2);
+        githubCtx.fill();
+        githubCtx.beginPath();
+        githubCtx.arc(125, 70, 15, 0, Math.PI * 2);
+        githubCtx.fill();
+
+        // Cuerpo
+        githubCtx.beginPath();
+        githubCtx.ellipse(100, 145, 40, 35, 0, 0, Math.PI * 2);
+        githubCtx.fill();
+
+        document.getElementById('github-preview').src = githubCanvas.toDataURL();
+
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        function downloadIcon(name) {
+            const canvas = document.getElementById(name);
+            const link = document.createElement('a');
+            link.download = name + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+
+</html>

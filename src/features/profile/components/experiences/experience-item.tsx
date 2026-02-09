@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 import type { Experience } from "../../types/experiences";
@@ -10,16 +9,24 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
       <div className="flex items-center gap-3">
         <div className="flex size-6 shrink-0 items-center justify-center select-none">
           {experience.companyLogo ? (
-            <Image
-              src={experience.companyLogo}
-              alt={experience.companyName}
-              width={24}
-              height={24}
-              quality={100}
-              className="rounded-full"
-              unoptimized
-              aria-hidden
-            />
+            <>
+              <img
+                src={experience.companyLogo.replace(".svg", "-light.svg")}
+                alt={experience.companyName}
+                width={24}
+                height={24}
+                className="h-6 w-6 rounded-full dark:hidden"
+                aria-hidden
+              />
+              <img
+                src={experience.companyLogo.replace(".svg", "-dark.svg")}
+                alt={experience.companyName}
+                width={24}
+                height={24}
+                className="hidden h-6 w-6 rounded-full dark:block"
+                aria-hidden
+              />
+            </>
           ) : (
             <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
           )}
