@@ -15,8 +15,8 @@ Ensure you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ncdai/chanhdai.com.git minimal-dev-portfolio
-cd minimal-dev-portfolio
+git clone https://github.com/Jsanchezv2201/portfolio-Jsanchezv2201.git portfolio
+cd portfolio
 ```
 
 ### 2. Install dependencies

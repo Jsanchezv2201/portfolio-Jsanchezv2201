@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 function Panel({ className, ...props }: React.ComponentProps<"section">) {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       data-slot="panel"
       className={cn(
         "screen-line-before screen-line-after border-x border-edge",
@@ -30,7 +30,7 @@ function PanelHeader({ className, ...props }: React.ComponentProps<"div">) {
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.1 }}
+      transition={{ duration: 0.4, delay: 0.1 }}
       data-slot="panel-header"
       className={cn("screen-line-after px-4", className)}
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -61,7 +61,7 @@ function PanelContent({ className, ...props }: React.ComponentProps<"div">) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.2 }}
+      transition={{ duration: 0.4, delay: 0.15 }}
       data-slot="panel-body"
       className={cn("p-4", className)}
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

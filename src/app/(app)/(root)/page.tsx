@@ -42,10 +42,10 @@ export default function Page() {
         <About />
         <Separator />
 
-        <GitHubContributions />
+        <TeckStack />
         <Separator />
 
-        <TeckStack />
+        <GitHubContributions />
         <Separator />
 
         {/* <Blog />

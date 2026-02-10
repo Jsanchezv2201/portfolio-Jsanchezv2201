@@ -1,24 +1,17 @@
 {
-  "name": "chanhdai.com",
+  "name": "juan-portfolio",
   "version": "0.1.0",
   "description": "A minimal dev portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "homepage": "https://juan-sanchez-portfolio.vercel.app",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Juan Sánchez Vinuesa",
+    "email": "sanchezvinuesajuan@gmail.com",
+    "url": "https://github.com/Jsanchezv2201"
   },
-  "contributors": [
-    {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/Jsanchezv2201/portfolio-Jsanchezv2201.git"
   },
   "scripts": {
     "dev": "next dev -p 1408 --turbopack",

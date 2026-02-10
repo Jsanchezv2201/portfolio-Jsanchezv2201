@@ -28,11 +28,11 @@ export function TeckStack() {
         <motion.ul
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={{
             visible: {
               transition: {
-                staggerChildren: 0.05,
+                staggerChildren: 0.03,
               },
             },
           }}
@@ -52,41 +52,26 @@ export function TeckStack() {
                     y: 0,
                     transition: {
                       type: "spring",
-                      stiffness: 100,
-                      damping: 10,
+                      stiffness: 200,
+                      damping: 15,
                     },
                   },
                 }}
                 className="flex"
               >
                 <SimpleTooltip content={tech.title}>
-                  <motion.a
+                  <a
                     href={tech.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={tech.title}
-                    whileHover={{
-                      scale: 1.2,
-                      rotate: [0, -10, 10, 0],
-                      transition: { duration: 0.3 },
-                    }}
-                    whileTap={{ scale: 0.9 }}
-                    className="relative flex h-8 w-8 items-center justify-center"
+                    className="relative flex h-8 w-8 items-center justify-center transition-transform hover:scale-125 active:scale-90"
                   >
-                    <motion.div
-                      className="absolute inset-0 rounded-lg"
-                      initial={{ opacity: 0 }}
-                      whileHover={{
-                        opacity: 1,
-                        boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
-                      }}
-                      transition={{ duration: 0.2 }}
-                    />
                     {typeof icon === "function" ? (
                       icon({ className: "w-full h-full relative z-10" })
                     ) : (
                       <Image
-                        src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
+                        src={`/icons/tech/${tech.key}.svg`}
                         alt={`${tech.title} icon`}
                         width={32}
                         height={32}
@@ -95,7 +80,7 @@ export function TeckStack() {
                       />
                     )}
                     <span className="sr-only">{tech.title}</span>
-                  </motion.a>
+                  </a>
                 </SimpleTooltip>
               </motion.li>
             );

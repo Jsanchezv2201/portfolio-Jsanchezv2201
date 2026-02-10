@@ -125,26 +125,8 @@ export function ProfileHeader() {
         </motion.div>
 
         <div className="border-t border-edge">
-          <motion.h1
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-wrap items-center gap-y-2 py-1 pl-4 text-3xl font-semibold"
-          >
-            {USER.displayName.split("").map((char, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 0.4 + i * 0.05,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
+          <h1 className="flex flex-wrap items-center gap-y-2 py-1 pl-4 text-3xl font-semibold">
+            {USER.displayName}
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
@@ -207,7 +189,7 @@ export function ProfileHeader() {
                 </motion.div>
               </>
             )}
-          </motion.h1>
+          </h1>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}

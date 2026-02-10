@@ -8,18 +8,13 @@ const nextConfig = {
 
   reactStrictMode: true,
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["chanhdai-macbook.local"],
+  allowedDevOrigins: ["localhost"],
   turbopack: {
     root: path.join(__dirname, "."),
   },
   devIndicators: false,
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "assets.chanhdai.com",
-        port: "",
-      },
       {
         protocol: "https",
         hostname: "cdn.simpleicons.org",

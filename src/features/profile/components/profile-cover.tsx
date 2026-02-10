@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 import { BrandContextMenu } from "@/components/brand-context-menu";
-import { ChanhDaiMark } from "@/components/chanhdai-mark";
+import { LogoMark } from "@/components/logo-mark";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -73,9 +73,9 @@ export function ProfileCover() {
     <BrandContextMenu>
       <motion.div
         ref={divRef}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -88,7 +88,7 @@ export function ProfileCover() {
         )}
         style={{ perspective: 1000 }}
       >
-        <motion.div
+        <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
           style={{
             opacity,
@@ -107,8 +107,10 @@ export function ProfileCover() {
           <ContextMenu>
             <ContextMenuTrigger>
               <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
                 whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, type: "spring" }}
               >
                 <motion.div
                   animate={{
@@ -122,10 +124,11 @@ export function ProfileCover() {
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
+                    delay: 2.5,
                   }}
                   className="rounded-full"
                 >
-                  <ChanhDaiMark
+                  <LogoMark
                     id="js-cover-mark"
                     className="h-32 w-32 cursor-context-menu drop-shadow-2xl sm:h-32 sm:w-32"
                     style={{ transform: "translateZ(50px)" }}

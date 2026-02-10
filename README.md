@@ -62,8 +62,4 @@ Si quieres explorar el código de este portfolio:
 
 Este proyecto está bajo la licencia [MIT](./LICENSE).
 
-## 🙏 Créditos
-
-Personalización a raíz del portfolio de [chanhdai.com](https://github.com/ncdai/chanhdai.com).
-
 ---

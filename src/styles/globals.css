@@ -303,6 +303,8 @@
     @apply bg-background font-sans text-foreground antialiased;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
+    /* Optimización para scroll suave */
+    overscroll-behavior-y: none;
   }
 
   /* Custom scrollbar styling. Thanks @shadcn-ui */
