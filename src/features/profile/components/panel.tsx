@@ -11,7 +11,7 @@ function Panel({ className, ...props }: React.ComponentProps<"section">) {
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.15, margin: "0px 0px -80px 0px" }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       data-slot="panel"
       className={cn(
@@ -29,7 +29,7 @@ function PanelHeader({ className, ...props }: React.ComponentProps<"div">) {
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.5, margin: "0px 0px -60px 0px" }}
       transition={{ duration: 0.4, delay: 0.1 }}
       data-slot="panel-header"
       className={cn("screen-line-after px-4", className)}
@@ -60,7 +60,7 @@ function PanelContent({ className, ...props }: React.ComponentProps<"div">) {
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.2, margin: "0px 0px -60px 0px" }}
       transition={{ duration: 0.4, delay: 0.15 }}
       data-slot="panel-body"
       className={cn("p-4", className)}

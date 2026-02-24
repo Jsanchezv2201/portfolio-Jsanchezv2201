@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { USER } from "@/features/profile/data/user";
@@ -10,71 +9,6 @@ import { FlipSentences } from "@/registry/flip-sentences";
 
 import { PronounceMyName } from "./pronounce-my-name";
 import { VerifiedIcon } from "./verified-icon";
-
-function TelemetryRight() {
-  const [time, setTime] = useState<string>("");
-  const [ping, setPing] = useState<number>(24);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const updateTime = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString("es-ES", {
-          timeZone: "Europe/Madrid",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        })
-      );
-    };
-
-    const updatePing = () => {
-      setPing(Math.floor(Math.random() * (45 - 18 + 1) + 18));
-    };
-
-    updateTime();
-    const timerInterval = setInterval(updateTime, 1000);
-    const pingInterval = setInterval(updatePing, 3000);
-
-    return () => {
-      clearInterval(timerInterval);
-      clearInterval(pingInterval);
-    };
-  }, []);
-
-  if (!mounted) return <span className="opacity-0">...</span>;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 0.8, x: 0 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      className="flex items-center gap-3 font-mono text-[10px] tracking-wider text-muted-foreground uppercase select-none"
-    >
-      <div className="flex items-center gap-2">
-        <motion.span
-          className="flex items-center gap-1.5"
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="hidden sm:inline">PING:</span>
-          <span className="text--600 font-bold dark:text-green-400">
-            {ping}ms
-          </span>
-        </motion.span>
-      </div>
-
-      <motion.span
-        className="min-w-[55px] rounded border border-border/50 bg-muted/50 px-1.5 py-0.5 text-center font-semibold text-foreground"
-        whileHover={{ scale: 1.05, borderColor: "rgba(59, 130, 246, 0.5)" }}
-      >
-        {time}
-      </motion.span>
-    </motion.div>
-  );
-}
 
 export function ProfileHeader() {
   return (
@@ -117,10 +51,6 @@ export function ProfileHeader() {
             <span className="inline dark:hidden">text-zinc-950</span>
             <span className="hidden dark:inline">text-zinc-50</span>
             {" font-medium"}
-          </div>
-
-          <div className="mb-0.5">
-            <TelemetryRight />
           </div>
         </motion.div>
 

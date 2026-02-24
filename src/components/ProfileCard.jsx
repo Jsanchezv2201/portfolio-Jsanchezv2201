@@ -19,6 +19,34 @@ const round = (v, precision = 3) => parseFloat(v.toFixed(precision));
 const adjust = (v, fMin, fMax, tMin, tMax) =>
   round(tMin + ((tMax - tMin) * (v - fMin)) / (fMax - fMin));
 
+/**
+ * @param {{
+ *   avatarUrl?: string,
+ *   iconUrl?: string,
+ *   grainUrl?: string,
+ *   innerGradient?: any,
+ *   behindGlowEnabled?: boolean,
+ *   behindGlowColor?: any,
+ *   behindGlowSize?: any,
+ *   cardAspectRatio?: number,
+ *   cardMaxWidth?: string,
+ *   cardMaxHeight?: string,
+ *   cardWidth?: string,
+ *   className?: string,
+ *   enableTilt?: boolean,
+ *   enableMobileTilt?: boolean,
+ *   mobileTiltSensitivity?: number,
+ *   miniAvatarUrl?: string,
+ *   name?: string,
+ *   title?: string,
+ *   handle?: string,
+ *   status?: string,
+ *   contactText?: string,
+ *   showUserInfo?: boolean,
+ *   showDetails?: boolean,
+ *   onContactClick?: any,
+ * }} props
+ */
 const ProfileCardComponent = ({
   avatarUrl = "<Placeholder for avatar URL>",
   iconUrl = "<Placeholder for icon URL>",
@@ -27,6 +55,10 @@ const ProfileCardComponent = ({
   behindGlowEnabled = true,
   behindGlowColor,
   behindGlowSize,
+  cardAspectRatio = undefined,
+  cardMaxWidth = undefined,
+  cardMaxHeight = undefined,
+  cardWidth = undefined,
   className = "",
   enableTilt = true,
   enableMobileTilt = false,
@@ -38,6 +70,7 @@ const ProfileCardComponent = ({
   status = "Online",
   contactText = "Contact",
   showUserInfo = true,
+  showDetails = true,
   onContactClick,
 }) => {
   const wrapRef = useRef(null);
@@ -312,8 +345,33 @@ const ProfileCardComponent = ({
       "--inner-gradient": innerGradient ?? DEFAULT_INNER_GRADIENT,
       "--behind-glow-color": behindGlowColor ?? "rgba(125, 190, 255, 0.67)",
       "--behind-glow-size": behindGlowSize ?? "50%",
+      ...(cardAspectRatio
+        ? { "--card-aspect-ratio": String(cardAspectRatio) }
+        : {}),
+      ...(cardWidth
+        ? {
+            "--card-width": cardWidth,
+            "--card-height": "auto",
+            "--card-max-height": "none",
+          }
+        : {}),
+      ...(cardMaxWidth ? { "--card-max-width": cardMaxWidth } : {}),
+      ...(cardMaxHeight ? { "--card-max-height": cardMaxHeight } : {}),
+      ...(cardWidth && !cardMaxHeight
+        ? { "--card-height": "auto", "--card-max-height": "none" }
+        : {}),
     }),
-    [iconUrl, grainUrl, innerGradient, behindGlowColor, behindGlowSize]
+    [
+      iconUrl,
+      grainUrl,
+      innerGradient,
+      behindGlowColor,
+      behindGlowSize,
+      cardAspectRatio,
+      cardMaxWidth,
+      cardMaxHeight,
+      cardWidth,
+    ]
   );
 
   const handleContactClick = useCallback(() => {
@@ -375,12 +433,14 @@ const ProfileCardComponent = ({
                 </div>
               )}
             </div>
-            <div className="pc-content">
-              <div className="pc-details">
-                <h3>{name}</h3>
-                <p>{title}</p>
+            {showDetails && (
+              <div className="pc-content">
+                <div className="pc-details">
+                  <h3>{name}</h3>
+                  <p>{title}</p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
       </div>

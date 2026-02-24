@@ -16,6 +16,10 @@ import { UTM_PARAMS } from "@/config/site";
 import { addQueryParams } from "@/utils/url";
 
 import type { Project } from "../../types/projects";
+import {
+  ProjectItemAnimated,
+  ProjectRowAnimated,
+} from "./project-item-animated";
 
 export function ProjectItem({
   className,
@@ -27,16 +31,14 @@ export function ProjectItem({
   const { start, end } = project.period;
   const isOngoing = !end;
 
-  console.log("Project logo:", project.title, project.logo);
-
   // Logos que son negros/oscuros y necesitan invertirse en modo oscuro
   const blackLogos = ["/icons/tech/nextjs2.svg", "/icons/tech/ros2.svg"];
   const needsInvert = project.logo && blackLogos.includes(project.logo);
 
   return (
-    <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
-      <div className={className}>
-        <div className="flex items-center hover:bg-accent2">
+    <ProjectItemAnimated className={className}>
+      <CollapsibleWithContext defaultOpen={project.isExpanded}>
+        <ProjectRowAnimated>
           {project.logo ? (
             <div className="mx-4 flex size-6 shrink-0 items-center justify-center select-none">
               <img
@@ -104,7 +106,7 @@ export function ProjectItem({
               </div>
             </CollapsibleTrigger>
           </div>
-        </div>
+        </ProjectRowAnimated>
 
         <CollapsibleContent className="group overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
           <div className="border-t border-dashed border-edge">
@@ -127,7 +129,7 @@ export function ProjectItem({
             </div>
           </div>
         </CollapsibleContent>
-      </div>
-    </CollapsibleWithContext>
+      </CollapsibleWithContext>
+    </ProjectItemAnimated>
   );
 }

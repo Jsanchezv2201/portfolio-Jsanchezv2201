@@ -1,13 +1,17 @@
 import React from "react";
 
 import type { Experience } from "../../types/experiences";
+import {
+  ExperienceItemAnimated,
+  ExperienceLogoAnimated,
+} from "./experience-item-animated";
 import { ExperiencePositionItem } from "./experience-position-item";
 
 export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
-    <div className="screen-line-after space-y-4 py-4">
+    <ExperienceItemAnimated>
       <div className="flex items-center gap-3">
-        <div className="flex size-6 shrink-0 items-center justify-center select-none">
+        <ExperienceLogoAnimated>
           {experience.companyLogo ? (
             <>
               <img
@@ -30,7 +34,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
           ) : (
             <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
           )}
-        </div>
+        </ExperienceLogoAnimated>
 
         <h3 className="text-lg leading-snug font-medium">
           {experience.companyName}
@@ -50,6 +54,6 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
           <ExperiencePositionItem key={position.id} position={position} />
         ))}
       </div>
-    </div>
+    </ExperienceItemAnimated>
   );
 }

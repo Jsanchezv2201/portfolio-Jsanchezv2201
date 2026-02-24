@@ -58,10 +58,12 @@
 }
 
 .pc-card {
-  height: 80svh;
-  max-height: 540px;
+  width: var(--card-width, auto);
+  height: var(--card-height, 80svh);
+  max-height: var(--card-max-height, 540px);
+  max-width: var(--card-max-width, none);
   display: grid;
-  aspect-ratio: 0.718;
+  aspect-ratio: var(--card-aspect-ratio, 0.718);
   border-radius: var(--card-radius);
   position: relative;
   background-blend-mode: color-dodge, normal, normal, normal;
@@ -429,8 +431,8 @@
 
 @media (max-width: 768px) {
   .pc-card {
-    height: 70svh;
-    max-height: 450px;
+    height: var(--card-height, 70svh);
+    max-height: var(--card-max-height, 450px);
   }
 
   .pc-details {
@@ -475,8 +477,8 @@
 
 @media (max-width: 480px) {
   .pc-card {
-    height: 60svh;
-    max-height: 380px;
+    height: var(--card-height, 60svh);
+    max-height: var(--card-max-height, 380px);
   }
 
   .pc-details {
@@ -523,8 +525,8 @@
 
 @media (max-width: 320px) {
   .pc-card {
-    height: 55svh;
-    max-height: 320px;
+    height: var(--card-height, 55svh);
+    max-height: var(--card-max-height, 320px);
   }
 
   .pc-details h3 {
@@ -561,4 +563,61 @@
     font-size: 9px;
     border-radius: 50px;
   }
+}
+
+/* ── Fill avatar (no details) ── */
+.pc-fill-avatar .pc-avatar-content .avatar {
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  bottom: 0;
+}
+
+/* ── Panoramic card overrides ── */
+.pc-panoramic .pc-details {
+  top: 1em;
+}
+
+.pc-panoramic .pc-user-info {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 340px;
+}
+
+/* ── Portrait close card overrides ── */
+.pc-portrait-close .pc-card {
+  overflow: visible;
+}
+
+.pc-portrait-close .pc-inside {
+  overflow: hidden;
+  border-radius: var(--card-radius);
+}
+
+.pc-portrait-close .pc-content:not(.pc-avatar-content) {
+  top: -5.5em;
+  mix-blend-mode: normal;
+}
+
+.pc-portrait-close .pc-details {
+  top: 0;
+  position: relative;
+}
+
+.pc-portrait-close .pc-details h3 {
+  background-image: linear-gradient(to bottom, #fff, #6f6fbe);
+}
+
+.pc-portrait-close .pc-details p {
+  background-image: linear-gradient(to bottom, #fff, #4a4ac0);
+}
+
+.pc-portrait-close .pc-user-info {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 340px;
+  background: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

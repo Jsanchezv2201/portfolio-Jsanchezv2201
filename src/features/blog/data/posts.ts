@@ -38,12 +38,18 @@ function getMDXData(dir: string) {
   });
 }
 
+let _cachedPosts: Post[] | null = null;
+
 export function getAllPosts() {
-  return getMDXData(path.join(process.cwd(), "src/features/blog/content")).sort(
+  if (_cachedPosts) return _cachedPosts;
+  _cachedPosts = getMDXData(
+    path.join(process.cwd(), "src/features/blog/content")
+  ).sort(
     (a, b) =>
       new Date(b.metadata.createdAt).getTime() -
       new Date(a.metadata.createdAt).getTime()
   );
+  return _cachedPosts;
 }
 
 export function getPostBySlug(slug: string) {

@@ -28,7 +28,7 @@ export function TeckStack() {
         <motion.ul
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3, margin: "0px 0px -80px 0px" }}
           variants={{
             visible: {
               transition: {
