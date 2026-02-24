@@ -1,0 +1,52 @@
+---
+title: Profile Card
+description: Tarjeta de perfil con efecto 3D (tilt) y holográfico, con barra de estado/contacto.
+category: components
+createdAt: 2026-02-24
+updatedAt: 2026-02-24
+---
+
+<ComponentPreview name="profile-card-demo" codeCollapsible />
+
+## Instalación
+
+```bash
+pnpm dlx shadcn@latest add @react-bits/ProfileCard-JS-CSS
+```
+
+## Uso
+
+```tsx
+import ProfileCard from "@/components/ProfileCard";
+```
+
+```tsx
+<ProfileCard
+  name="Juan Sánchez Vinuesa"
+  title="Telematic Engineer"
+  handle="Jsanchezv2201"
+  status="Online"
+  contactText="Contact Me"
+  avatarUrl="/avatar.jpg"
+  showUserInfo
+  enableTilt={true}
+  enableMobileTilt={false}
+  behindGlowColor="rgba(125, 190, 255, 0.67)"
+  behindGlowEnabled
+  innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+/>
+```
+
+## Código
+
+<ComponentSource
+  src="src/components/ProfileCard.jsx"
+  title="components/ProfileCard.jsx"
+  showLineNumbers
+/>
+
+<ComponentSource
+  src="src/components/ProfileCard.css"
+  title="components/ProfileCard.css"
+  showLineNumbers
+/>
