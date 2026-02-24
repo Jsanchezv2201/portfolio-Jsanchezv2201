@@ -154,6 +154,16 @@ export const Index: Record<string, any> = {
       type: "registry:component",
     }],
   },
+  "profile-card-demo": {
+    name: "profile-card-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/profile-card-demo.tsx",
+      type: "registry:example",
+    }],
+    component: React.lazy(() => import("@/registry/examples/profile-card-demo.tsx")),
+  },
   "apple-hello-effect-vi-demo": {
     name: "apple-hello-effect-vi-demo",
     description: "",
