@@ -10,6 +10,7 @@ import { Education } from "@/features/profile/components/education";
 import { Experiences } from "@/features/profile/components/experiences";
 import { GitHubContributions } from "@/features/profile/components/github-contributions";
 import { Overview } from "@/features/profile/components/overview";
+import { ProfileCardSection } from "@/features/profile/components/profile-card-section";
 import { ProfileCover } from "@/features/profile/components/profile-cover";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
@@ -31,6 +32,7 @@ export default function Page() {
       <div className="mx-auto md:max-w-3xl">
         <ProfileCover />
         <ProfileHeader />
+        <ProfileCardSection />
         <Separator />
 
         <Overview />
