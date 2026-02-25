@@ -41,7 +41,8 @@ function getMDXData(dir: string) {
 let _cachedPosts: Post[] | null = null;
 
 export function getAllPosts() {
-  if (_cachedPosts) return _cachedPosts;
+  if (process.env.NODE_ENV === "production" && _cachedPosts)
+    return _cachedPosts;
   _cachedPosts = getMDXData(
     path.join(process.cwd(), "src/features/blog/content")
   ).sort(

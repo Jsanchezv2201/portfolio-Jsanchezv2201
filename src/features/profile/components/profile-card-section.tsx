@@ -16,36 +16,9 @@ const portraitCloseProps: any = {
   className: "pc-portrait-close",
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const squareCardProps: any = {
-  cardAspectRatio: 1,
-  cardWidth: "min(80vw, 400px)",
-};
-
 export function ProfileCardSection() {
   return (
-    <div className="screen-line-before screen-line-after my-8 flex min-h-[600px] flex-col items-center gap-16 border-x border-edge py-8">
-      <ProfileCard
-        name={USER.displayName}
-        title={USER.jobTitle}
-        handle={USER.username}
-        status="Online"
-        contactText="Contact Me"
-        avatarUrl={USER.avatar}
-        showUserInfo
-        showDetails={false}
-        miniAvatarUrl={USER.avatar}
-        enableTilt={true}
-        enableMobileTilt={false}
-        behindGlowColor="rgba(125, 190, 255, 0.67)"
-        behindGlowEnabled
-        behindGlowSize="50%"
-        innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
-        {...squareCardProps}
-        onContactClick={() => {
-          window.location.href = `mailto:${decodeEmail(USER.email)}`;
-        }}
-      />
+    <div className="screen-line-before screen-line-after my-8 flex min-h-[400px] flex-col items-center gap-16 border-x border-edge py-8">
       <ProfileCard
         name={USER.displayName}
         title={USER.jobTitle}

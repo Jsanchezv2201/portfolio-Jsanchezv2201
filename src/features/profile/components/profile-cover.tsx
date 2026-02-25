@@ -92,7 +92,7 @@ export function ProfileCover() {
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
           style={{
             opacity,
-            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
+            background: `radial-gradient(250px circle at ${position.x}px ${position.y}px, rgba(139, 92, 246, 0.22), rgba(99, 102, 241, 0.12) 50%, transparent 80%)`,
           }}
         />
 
@@ -112,28 +112,11 @@ export function ProfileCover() {
                 transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
                 whileHover={{ scale: 1.1 }}
               >
-                <motion.div
-                  animate={{
-                    boxShadow: [
-                      "0 0 20px rgba(59, 130, 246, 0)",
-                      "0 0 40px rgba(59, 130, 246, 0.3)",
-                      "0 0 20px rgba(59, 130, 246, 0)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 2.5,
-                  }}
-                  className="rounded-full"
-                >
-                  <LogoMark
-                    id="js-cover-mark"
-                    className="h-32 w-32 cursor-context-menu drop-shadow-2xl sm:h-32 sm:w-32"
-                    style={{ transform: "translateZ(50px)" }}
-                  />
-                </motion.div>
+                <LogoMark
+                  id="js-cover-mark"
+                  className="h-32 w-32 cursor-context-menu drop-shadow-2xl sm:h-32 sm:w-32"
+                  style={{ transform: "translateZ(50px)" }}
+                />
               </motion.div>
             </ContextMenuTrigger>
 

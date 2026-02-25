@@ -89,19 +89,12 @@ export function ProfileHeader() {
               transition={{ duration: 0.6, delay: 1 }}
               className="ml-3 flex items-center"
             >
-              <span className="relative inline-flex overflow-hidden rounded-full p-[1px]">
-                <motion.span
-                  className="absolute inset-[-1000%] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                />
-                <div className="inline-flex h-full w-full cursor-default items-center justify-center rounded-full bg-background/95 px-3 py-1 text-xs font-bold text-green-500 shadow-sm backdrop-blur-3xl">
-                  <span className="relative mr-2 flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                  </span>
-                  #OPENTOWORK
-                </div>
+              <span className="inline-flex cursor-default items-center justify-center rounded-full border border-green-500/30 bg-background/95 px-3 py-1 text-xs font-bold text-green-500 shadow-sm">
+                <span className="relative mr-2 flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                </span>
+                #OPENTOWORK
               </span>
             </motion.div>
             {USER.namePronunciationUrl && (

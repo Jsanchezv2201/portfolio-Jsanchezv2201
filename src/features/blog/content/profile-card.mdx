@@ -1,20 +1,26 @@
 ---
 title: Profile Card
-description: Tarjeta de perfil con efecto 3D (tilt) y holográfico, con barra de estado/contacto.
+description: Profile card with 3D tilt and holographic effect, with a status/contact bar. Supports multiple image formats and aspect ratios.
 category: components
 createdAt: 2026-02-24
-updatedAt: 2026-02-24
+updatedAt: 2026-02-25
 ---
 
-<ComponentPreview name="profile-card-demo" codeCollapsible />
+## Square (1:1)
 
-## Instalación
+<ComponentPreview name="profile-card-demo-square" codeCollapsible />
+
+## Portrait (16:9)
+
+<ComponentPreview name="profile-card-demo-portrait" codeCollapsible />
+
+## Installation
 
 ```bash
 pnpm dlx shadcn@latest add @react-bits/ProfileCard-JS-CSS
 ```
 
-## Uso
+## Usage
 
 ```tsx
 import ProfileCard from "@/components/ProfileCard";
@@ -34,10 +40,23 @@ import ProfileCard from "@/components/ProfileCard";
   behindGlowColor="rgba(125, 190, 255, 0.67)"
   behindGlowEnabled
   innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+  // Optional dimension props
+  cardAspectRatio={1} // 1 = square, 16/9 = landscape, etc.
+  cardWidth="min(80vw, 400px)" // responsive max width
 />
 ```
 
-## Código
+## Dimension Props
+
+| Prop              | Type      | Description                                              |
+| ----------------- | --------- | -------------------------------------------------------- |
+| `cardAspectRatio` | `number`  | Aspect ratio (width/height). Default: `0.718` (portrait) |
+| `cardWidth`       | `string`  | CSS width. Enables landscape mode when set               |
+| `cardMaxWidth`    | `string`  | Additional `max-width` CSS value                         |
+| `cardMaxHeight`   | `string`  | Additional `max-height` CSS value                        |
+| `showDetails`     | `boolean` | Show/hide name and title overlay. Default: `true`        |
+
+## Code
 
 <ComponentSource
   src="src/components/ProfileCard.jsx"

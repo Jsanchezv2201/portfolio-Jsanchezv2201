@@ -385,11 +385,22 @@ const ProfileCardComponent = ({
       style={cardStyle}
     >
       {behindGlowEnabled && <div className="pc-behind" />}
+      <div className="pc-reflection" />
       <div ref={shellRef} className="pc-card-shell">
         <section className="pc-card">
           <div className="pc-inside">
             <div className="pc-shine" />
             <div className="pc-glare" />
+            <div className="pc-particles">
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+              <span className="pc-particle" />
+            </div>
             <div className="pc-content pc-avatar-content">
               <img
                 className="avatar"

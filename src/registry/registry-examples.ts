@@ -12,6 +12,36 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "profile-card-demo-square",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/profile-card-demo-square.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "profile-card-demo-panoramic",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/profile-card-demo-panoramic.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "profile-card-demo-portrait",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/profile-card-demo-portrait.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "apple-hello-effect-vi-demo",
     type: "registry:example",
     registryDependencies: ["@ncdai/apple-hello-effect"],

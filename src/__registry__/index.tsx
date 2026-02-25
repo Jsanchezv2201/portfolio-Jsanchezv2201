@@ -23,7 +23,7 @@ export const Index: Record<string, any> = {
     files: [{
       path: "src/registry/src/hooks/use-layout-effect.tsx",
       type: "registry:hook",
-    },{
+    }, {
       path: "src/registry/src/hooks/use-controllable-state.ts",
       type: "registry:hook",
     }],
@@ -163,6 +163,36 @@ export const Index: Record<string, any> = {
       type: "registry:example",
     }],
     component: React.lazy(() => import("@/registry/examples/profile-card-demo.tsx")),
+  },
+  "profile-card-demo-square": {
+    name: "profile-card-demo-square",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/profile-card-demo-square.tsx",
+      type: "registry:example",
+    }],
+    component: React.lazy(() => import("@/registry/examples/profile-card-demo-square.tsx")),
+  },
+  "profile-card-demo-panoramic": {
+    name: "profile-card-demo-panoramic",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/profile-card-demo-panoramic.tsx",
+      type: "registry:example",
+    }],
+    component: React.lazy(() => import("@/registry/examples/profile-card-demo-panoramic.tsx")),
+  },
+  "profile-card-demo-portrait": {
+    name: "profile-card-demo-portrait",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/profile-card-demo-portrait.tsx",
+      type: "registry:example",
+    }],
+    component: React.lazy(() => import("@/registry/examples/profile-card-demo-portrait.tsx")),
   },
   "apple-hello-effect-vi-demo": {
     name: "apple-hello-effect-vi-demo",
