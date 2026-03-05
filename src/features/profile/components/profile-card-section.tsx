@@ -7,6 +7,12 @@ import { decodeEmail } from "@/utils/string";
 
 const ProfileCard = dynamic(() => import("@/components/ProfileCard"), {
   ssr: false,
+  loading: () => (
+    <div
+      style={{ width: "min(95vw, 700px)", aspectRatio: "16/9" }}
+      className="animate-pulse rounded-3xl bg-muted"
+    />
+  ),
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

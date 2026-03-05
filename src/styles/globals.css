@@ -152,8 +152,8 @@
   /* zinc-200 */
   --border: oklch(0.92 0.004 286.32);
 
-  /* color-mix */
-  --edge: color-mix(in oklab, var(--border) 90%, var(--background));
+  /* edge: slightly darker than border for better visibility in light mode */
+  --edge: color-mix(in oklab, var(--foreground) 15%, var(--background));
 
   /* zinc-200 */
   --input: oklch(0.92 0.004 286.32);
@@ -247,7 +247,7 @@
   /* --edge: color-mix(in oklab, var(--border) 64%, var(--background)); */
 
   /* increased visibility in dark mode */
-  --edge: color-mix(in oklab, var(--foreground) 22%, var(--background));
+  --edge: color-mix(in oklab, var(--foreground) 30%, var(--background));
 
   /* zinc-800 */
   --input: oklch(0.274 0.006 286.033);

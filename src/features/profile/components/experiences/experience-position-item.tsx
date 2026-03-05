@@ -18,8 +18,10 @@ import { ExperienceIcon } from "./experience-position-icon";
 
 export function ExperiencePositionItem({
   position,
+  extraContent,
 }: {
   position: ExperiencePosition;
+  extraContent?: React.ReactNode;
 }) {
   const { start, end } = position.employmentPeriod;
   const isOngoing = !end;
@@ -109,6 +111,8 @@ export function ExperiencePositionItem({
               ))}
             </ul>
           )}
+
+          {extraContent && <div className="pt-2 pl-9">{extraContent}</div>}
         </CollapsibleContent>
       </div>
     </CollapsibleWithContext>

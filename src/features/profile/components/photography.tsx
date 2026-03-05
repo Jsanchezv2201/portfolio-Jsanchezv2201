@@ -1,11 +1,11 @@
-import { Panel, PanelContent, PanelHeader } from "./panel";
+import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 import { PhotographyGallery } from "./photography-gallery";
 
 // Replace these with your own photos. Each item needs { image: string, text: string }.
 const PHOTOS = [
   {
     image: "/assets/photography/photo_2026-02-25_13-10-53.jpg",
-    text: "Cabo Girão· Madeira",
+    text: "Cabo Girão · Madeira",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-10-54.jpg",
@@ -73,7 +73,9 @@ const PHOTOS = [
 export function Photography() {
   return (
     <Panel>
-      <PanelHeader>PHOTOGRAPHY</PanelHeader>
+      <PanelHeader>
+        <PanelTitle>Photography</PanelTitle>
+      </PanelHeader>
       <PanelContent>
         <p className="mb-4 text-sm text-muted-foreground">
           Beyond the code — a selection of moments I have captured while

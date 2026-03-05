@@ -92,7 +92,7 @@ export function ProfileCover() {
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
           style={{
             opacity,
-            background: `radial-gradient(250px circle at ${position.x}px ${position.y}px, rgba(139, 92, 246, 0.22), rgba(99, 102, 241, 0.12) 50%, transparent 80%)`,
+            background: `radial-gradient(160px circle at ${position.x}px ${position.y}px, rgba(139, 92, 246, 0.12), rgba(99, 102, 241, 0.06) 50%, transparent 80%)`,
           }}
         />
 

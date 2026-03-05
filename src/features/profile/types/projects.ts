@@ -20,6 +20,10 @@ export type Project = {
   description?: string;
   /** Logo image URL (absolute or path under /public). */
   logo?: string;
+  /** Preview/banner image URL shown inside the expanded card. */
+  image?: string;
+  /** CSS object-position for the preview image crop. Defaults to 'center'. */
+  imagePosition?: string;
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
 };

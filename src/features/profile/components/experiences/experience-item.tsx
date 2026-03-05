@@ -7,7 +7,13 @@ import {
 } from "./experience-item-animated";
 import { ExperiencePositionItem } from "./experience-position-item";
 
-export function ExperienceItem({ experience }: { experience: Experience }) {
+export function ExperienceItem({
+  experience,
+  positionExtraContent,
+}: {
+  experience: Experience;
+  positionExtraContent?: Record<string, React.ReactNode>;
+}) {
   return (
     <ExperienceItemAnimated>
       <div className="flex items-center gap-3">
@@ -51,7 +57,11 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 
       <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
         {experience.positions.map((position) => (
-          <ExperiencePositionItem key={position.id} position={position} />
+          <ExperiencePositionItem
+            key={position.id}
+            position={position}
+            extraContent={positionExtraContent?.[position.id]}
+          />
         ))}
       </div>
     </ExperienceItemAnimated>

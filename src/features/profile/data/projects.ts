@@ -51,6 +51,7 @@ export const PROJECTS: Project[] = [
 - [ Ver Explicación del Código](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
 - [ Ver Demo de Ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
     logo: "/icons/tech/rust.svg",
+    image: "/assets/projects/tcp-chat.jpg",
   },
 
   {
@@ -74,6 +75,25 @@ export const PROJECTS: Project[] = [
 - **Preprocesamiento de señal**: Normalización, diezmado y Data Augmentation para robustez frente a ruido y variaciones.
 - Evaluación de arquitecturas de **Transfer Learning** (Xception, NASNet) optimizando el compromiso precisión-coste computacional.`,
     logo: "/icons/tech/tensorflow.svg",
+    image: "/assets/projects/dog-breed.jpg",
+    imagePosition: "center 30%",
+  },
+
+  {
+    id: "ros2-nav-bot",
+    title: "Autonomous Navigation Robot",
+    period: {
+      start: "2023",
+      end: "Present",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: ["Robotics", "ROS 2", "Gazebo", "Python", "C++", "SLAM", "Nav2"],
+    description: `Desarrollo de un sistema de navegación autónoma para robots móviles utilizando el framework **ROS 2**.
+- Implementación de algoritmos de **SLAM** (Simultaneous Localization and Mapping) para mapeo en tiempo real.
+- Simulación de entornos físicos complejos utilizando **Gazebo**.
+- Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
+    logo: "/icons/tech/ros2.svg",
+    image: "/assets/projects/ros2-robot.jpg",
   },
 
   {
@@ -119,22 +139,6 @@ export const PROJECTS: Project[] = [
 - Interfaz reactiva construida con **HTML/CSS/JS** que incluye buscador en tiempo real y visualización dinámica de snippets de código.
 - Referencia técnica rápida para gestión de registros, llamadas al sistema (Syscalls) y manejo de la pila (Stack).`,
     logo: "/icons/tech/riscv.svg",
-  },
-
-  {
-    id: "ros2-nav-bot",
-    title: "Autonomous Navigation Robot",
-    period: {
-      start: "2023",
-      end: "Present",
-    },
-    link: "https://github.com/Jsanchezv2201",
-    skills: ["Robotics", "ROS 2", "Gazebo", "Python", "C++", "SLAM", "Nav2"],
-    description: `Desarrollo de un sistema de navegación autónoma para robots móviles utilizando el framework **ROS 2**.
-- Implementación de algoritmos de **SLAM** (Simultaneous Localization and Mapping) para mapeo en tiempo real.
-- Simulación de entornos físicos complejos utilizando **Gazebo**.
-- Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
-    logo: "/icons/tech/ros2.svg",
   },
 
   {
