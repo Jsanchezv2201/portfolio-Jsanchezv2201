@@ -24,7 +24,7 @@ const portraitCloseProps: any = {
 
 export function ProfileCardSection() {
   return (
-    <div className="screen-line-before screen-line-after my-8 flex min-h-[400px] flex-col items-center gap-16 border-x border-edge py-8">
+    <div className="screen-line-before screen-line-after flex min-h-[400px] flex-col items-center gap-16 border-x border-edge py-8">
       <ProfileCard
         name={USER.displayName}
         title={USER.jobTitle}
