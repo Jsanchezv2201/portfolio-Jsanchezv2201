@@ -34,7 +34,6 @@ export default function Page() {
       <div className="mx-auto md:max-w-3xl">
         <ProfileCover />
         <ProfileHeader />
-        <ProfileCardSection />
         <Separator />
 
         <Overview />
@@ -44,6 +43,9 @@ export default function Page() {
         <Separator />
 
         <About />
+        <Separator />
+
+        <ProfileCardSection />
         <Separator />
 
         <TeckStack />
