@@ -9,22 +9,21 @@ const ProfileCard = dynamic(() => import("@/components/ProfileCard"), {
   ssr: false,
   loading: () => (
     <div
-      style={{ width: "min(95vw, 700px)", aspectRatio: "16/9" }}
+      style={{ width: "min(80vw, 400px)", aspectRatio: "1" }}
       className="animate-pulse rounded-3xl bg-muted"
     />
   ),
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const portraitCloseProps: any = {
-  cardAspectRatio: 16 / 9,
-  cardWidth: "min(95vw, 700px)",
-  className: "pc-portrait-close",
+const smallCardProps: any = {
+  cardAspectRatio: 1,
+  cardWidth: "min(80vw, 400px)",
 };
 
 export function ProfileCardSection() {
   return (
-    <div className="screen-line-before screen-line-after my-8 flex min-h-[400px] flex-col items-center gap-16 border-x border-edge py-8">
+    <div className="screen-line-before screen-line-after my-8 flex min-h-[200px] flex-col items-center gap-16 border-x border-edge py-8">
       <ProfileCard
         name={USER.displayName}
         title={USER.jobTitle}
@@ -40,7 +39,7 @@ export function ProfileCardSection() {
         behindGlowEnabled
         behindGlowSize="50%"
         innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
-        {...portraitCloseProps}
+        {...smallCardProps}
         onContactClick={() => {
           window.location.href = `mailto:${decodeEmail(USER.email)}`;
         }}
