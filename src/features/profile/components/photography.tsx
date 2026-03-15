@@ -81,9 +81,7 @@ export function Photography() {
           Beyond the code — a selection of moments I have captured while
           traveling and exploring the world of engineering and design.
         </p>
-        <div style={{ height: "500px", position: "relative" }}>
-          <PhotographyGallery items={PHOTOS} />
-        </div>
+        <PhotographyGallery items={PHOTOS} />
       </PanelContent>
     </Panel>
   );
