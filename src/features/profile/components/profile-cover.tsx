@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { CopyIcon } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
 import { BrandContextMenu } from "@/components/brand-context-menu";
@@ -19,22 +19,36 @@ export function ProfileCover() {
   const divRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const springConfig = { damping: 25, stiffness: 150 };
   const rotateX = useSpring(
-    useTransform(mouseY, [-0.5, 0.5], [5, -5]),
+    useTransform(mouseY, [-0.5, 0.5], isMobile ? [0, 0] : [5, -5]),
     springConfig
   );
   const rotateY = useSpring(
-    useTransform(mouseX, [-0.5, 0.5], [-5, 5]),
+    useTransform(mouseX, [-0.5, 0.5], isMobile ? [0, 0] : [-5, 5]),
     springConfig
   );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!divRef.current) return;
+    // Disable expensive mouse tracking on mobile
+    if (isMobile || !divRef.current) return;
     const rect = divRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -46,7 +60,10 @@ export function ProfileCover() {
     mouseY.set(yPct);
   };
 
-  const handleMouseEnter = () => setOpacity(1);
+  const handleMouseEnter = () => {
+    if (!isMobile) setOpacity(1);
+  };
+
   const handleMouseLeave = () => {
     setOpacity(0);
     mouseX.set(0);
@@ -71,11 +88,8 @@ export function ProfileCover() {
 
   return (
     <BrandContextMenu>
-      <motion.div
+      <div
         ref={divRef}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -86,38 +100,33 @@ export function ProfileCover() {
           "bg-black/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5",
           "group relative overflow-hidden"
         )}
-        style={{ perspective: 1000 }}
+        style={{ perspective: isMobile ? 'none' : 1000 }}
       >
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
           style={{
-            opacity,
+            opacity: isMobile ? 0 : opacity,
             background: `radial-gradient(160px circle at ${position.x}px ${position.y}px, rgba(139, 92, 246, 0.12), rgba(99, 102, 241, 0.06) 50%, transparent 80%)`,
           }}
         />
 
         <motion.div
           style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
+            rotateX: isMobile ? 0 : rotateX,
+            rotateY: isMobile ? 0 : rotateY,
+            transformStyle: isMobile ? 'flat' : "preserve-3d",
           }}
           className="relative z-10"
         >
           <ContextMenu>
             <ContextMenuTrigger>
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-                whileHover={{ scale: 1.1 }}
-              >
+              <div>
                 <LogoMark
                   id="js-cover-mark"
                   className="h-32 w-32 cursor-context-menu drop-shadow-2xl sm:h-32 sm:w-32"
-                  style={{ transform: "translateZ(50px)" }}
+                  style={{ transform: isMobile ? 'none' : "translateZ(50px)" }}
                 />
-              </motion.div>
+              </div>
             </ContextMenuTrigger>
 
             <ContextMenuContent className="w-48">
@@ -131,7 +140,7 @@ export function ProfileCover() {
             </ContextMenuContent>
           </ContextMenu>
         </motion.div>
-      </motion.div>
+      </div>
     </BrandContextMenu>
   );
 }

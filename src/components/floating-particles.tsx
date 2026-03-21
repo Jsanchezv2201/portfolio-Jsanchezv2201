@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface Particle {
   id: number;
@@ -13,6 +13,10 @@ interface Particle {
 }
 
 export function FloatingParticles({ count = 15 }: { count?: number }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const particles = useMemo<Particle[]>(() => {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
@@ -24,9 +28,33 @@ export function FloatingParticles({ count = 15 }: { count?: number }) {
     }));
   }, [count]);
 
+  // Check if mobile
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+  }, []);
+
+  // Only animate when in viewport
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Don't render particles on mobile or when prefers-reduced-motion
+  if (isMobile) return null;
+
   return (
-    <div className="pointer-events-none fixed inset-0 overflow-hidden opacity-60">
-      {particles.map((particle) => (
+    <div ref={containerRef} className="pointer-events-none fixed inset-0 overflow-hidden opacity-60">
+      {isVisible && particles.map((particle) => (
         <motion.div
           key={particle.id}
           className="absolute rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-sm"
