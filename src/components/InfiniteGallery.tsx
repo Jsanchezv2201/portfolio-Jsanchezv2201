@@ -31,6 +31,10 @@ export default function InfiniteGallery({
   const x = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isGrabbing, setIsGrabbing] = useState(false);
+  const isDragging = useRef(false);
+  const dragStartX = useRef(0);
+  const dragStartScroll = useRef(0);
 
   const totalWidth = (width + gap) * items.length;
 
@@ -44,14 +48,53 @@ export default function InfiniteGallery({
     x.set(current);
   });
 
+  const captureRef = useRef<{ element: HTMLElement; pointerId: number } | null>(
+    null
+  );
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    isDragging.current = true;
+    dragStartX.current = e.clientX;
+    dragStartScroll.current = x.get();
+    setIsPaused(true);
+    setIsGrabbing(true);
+    const el = e.currentTarget as HTMLElement;
+    el.setPointerCapture(e.pointerId);
+    captureRef.current = { element: el, pointerId: e.pointerId };
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging.current) return;
+    const delta = e.clientX - dragStartX.current;
+    let newX = dragStartScroll.current + delta;
+    if (newX <= -totalWidth) newX += totalWidth;
+    if (newX > 0) newX -= totalWidth;
+    x.set(newX);
+  };
+
+  const handlePointerUp = () => {
+    isDragging.current = false;
+    setIsPaused(false);
+    setIsGrabbing(false);
+    if (captureRef.current) {
+      const { element, pointerId } = captureRef.current;
+      if (element.hasPointerCapture(pointerId)) {
+        element.releasePointerCapture(pointerId);
+      }
+      captureRef.current = null;
+    }
+  };
+
   const doubled = [...items, ...items];
 
   return (
     <div
       className="w-full overflow-hidden"
-      style={{ height: `${height + 48}px` }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      style={{ height: `${height + 48}px`, cursor: isGrabbing ? "grabbing" : "grab" }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerUp}
     >
       <motion.div
         ref={containerRef}
