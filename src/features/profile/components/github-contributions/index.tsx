@@ -4,8 +4,8 @@ import { getGitHubContributions } from "../../data/github-contributions";
 import { Panel } from "../panel";
 import { GitHubContributionFallback, GitHubContributionGraph } from "./graph";
 
-export function GitHubContributions() {
-  const contributions = getGitHubContributions();
+export async function GitHubContributions() {
+  const contributions = await getGitHubContributions();
 
   return (
     <Panel>

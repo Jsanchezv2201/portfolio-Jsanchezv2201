@@ -88,11 +88,8 @@ export function ProfileCover() {
 
   return (
     <BrandContextMenu>
-      <motion.div
+      <div
         ref={divRef}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -123,18 +120,13 @@ export function ProfileCover() {
         >
           <ContextMenu>
             <ContextMenuTrigger>
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-                whileHover={isMobile ? {} : { scale: 1.1 }}
-              >
+              <div>
                 <LogoMark
                   id="js-cover-mark"
                   className="h-32 w-32 cursor-context-menu drop-shadow-2xl sm:h-32 sm:w-32"
                   style={{ transform: isMobile ? 'none' : "translateZ(50px)" }}
                 />
-              </motion.div>
+              </div>
             </ContextMenuTrigger>
 
             <ContextMenuContent className="w-48">
@@ -148,7 +140,7 @@ export function ProfileCover() {
             </ContextMenuContent>
           </ContextMenu>
         </motion.div>
-      </motion.div>
+      </div>
     </BrandContextMenu>
   );
 }
