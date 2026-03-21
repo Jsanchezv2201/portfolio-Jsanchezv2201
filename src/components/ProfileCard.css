@@ -429,10 +429,77 @@
   }
 }
 
+/* Respect user's motion preferences - disable all animations if they prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pc-card {
+    animation: none !important;
+  }
+
+  .pc-shine {
+    animation: none !important;
+  }
+
+  .pc-particles {
+    display: none !important;
+  }
+
+  .pc-details h3,
+  .pc-details p {
+    animation: none !important;
+  }
+
+  .pc-particle {
+    animation: none !important;
+  }
+
+  .pc-reflection {
+    transition: none !important;
+  }
+
+  .pc-card,
+  .pc-avatar-content .avatar {
+    transition-duration: 0.1s !important;
+  }
+}
+
 @media (max-width: 768px) {
   .pc-card {
     height: var(--card-height, 70svh);
     max-height: var(--card-max-height, 450px);
+    /* Disable expensive animations on mobile */
+    animation: none;
+  }
+
+  /* Disable expensive backdrop blur on mobile */
+  .pc-user-info {
+    backdrop-filter: none;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  /* Simplify shine effects on mobile */
+  .pc-shine {
+    animation: none;
+    filter: brightness(0.7) contrast(1.2) saturate(0.4);
+  }
+
+  .pc-shine::before {
+    filter: brightness(1) contrast(1) saturate(1);
+  }
+
+  /* Disable glare effects on mobile */
+  .pc-glare {
+    display: none;
+  }
+
+  /* Disable particle animations on mobile */
+  .pc-particles {
+    display: none;
+  }
+
+  /* Disable behind glow effect on mobile */
+  .pc-behind {
+    filter: blur(20px) saturate(1);
+    opacity: 0.4;
   }
 
   .pc-details {
@@ -479,6 +546,13 @@
   .pc-card {
     height: var(--card-height, 60svh);
     max-height: var(--card-max-height, 380px);
+    /* Keep animations disabled on small mobile */
+    animation: none;
+  }
+
+  /* Keep backdrop blur disabled on small mobile */
+  .pc-user-info {
+    backdrop-filter: none;
   }
 
   .pc-details {

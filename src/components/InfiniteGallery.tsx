@@ -2,7 +2,7 @@
 
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface GalleryItem {
   image: string;
@@ -32,16 +32,51 @@ export default function InfiniteGallery({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [isGrabbing, setIsGrabbing] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const isDragging = useRef(false);
   const dragStartX = useRef(0);
   const dragStartScroll = useRef(0);
 
+  // Detect mobile devices and prefers-reduced-motion
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Use IntersectionObserver to pause animation when not visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const totalWidth = (width + gap) * items.length;
 
   useAnimationFrame((_, delta) => {
-    if (isPaused) return;
+    // Pause if not visible, user is pausing, or on mobile with reduced motion
+    if (isPaused || !isVisible) return;
+
+    // Reduce speed on mobile to save battery
+    const effectiveSpeed = isMobile ? speed * 0.7 : speed;
+
     let current = x.get();
-    current -= (speed * delta) / 1000;
+    current -= (effectiveSpeed * delta) / 1000;
     if (current <= -totalWidth) {
       current += totalWidth;
     }
@@ -115,9 +150,11 @@ export default function InfiniteGallery({
                 src={item.image}
                 alt={item.text}
                 fill
-                sizes={`${width}px`}
+                sizes={isMobile ? "200px" : `${width}px`}
+                quality={isMobile ? 70 : 85}
                 className="object-cover"
                 draggable={false}
+                loading="lazy"
               />
             </div>
             <p className="mt-2 truncate px-1 text-center text-xs text-muted-foreground">
