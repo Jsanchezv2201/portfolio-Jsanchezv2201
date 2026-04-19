@@ -45,9 +45,6 @@ export default function Page() {
         <About />
         <Separator />
 
-        <ProfileCardSection />
-        <Separator />
-
         <TeckStack />
         <Separator />
 
@@ -75,8 +72,10 @@ export default function Page() {
         <Photography />
         <Separator />
 
-        <Brand />
+        <ProfileCardSection />
         <Separator />
+
+        <Brand />
       </div>
     </>
   );

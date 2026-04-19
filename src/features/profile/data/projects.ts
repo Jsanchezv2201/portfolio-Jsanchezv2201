@@ -83,8 +83,8 @@ export const PROJECTS: Project[] = [
     id: "ros2-nav-bot",
     title: "Autonomous Navigation Robot",
     period: {
-      start: "2023",
-      end: "Present",
+      start: "03.2024",
+      end: "05.2024",
     },
     link: "https://github.com/Jsanchezv2201",
     skills: ["Robotics", "ROS 2", "Gazebo", "Python", "C++", "SLAM", "Nav2"],
@@ -123,7 +123,8 @@ export const PROJECTS: Project[] = [
     id: "riscv-interactive-docs",
     title: "Interactive RISC-V Assembly Guide",
     period: {
-      start: "2025",
+      start: "12.2025",
+      end: "01.2026",
     },
     link: "https://github.com/Jsanchezv2201",
     skills: [
@@ -162,7 +163,7 @@ export const PROJECTS: Project[] = [
 - Implementación de filtros de paquetes personalizados y estadísticas de tráfico.`,
     logo: "/icons/tech/rust.svg",
   },
-
+  /*
   {
     id: "ai-traffic-sign",
     title: "Traffic Sign Recognition System",
@@ -185,10 +186,11 @@ export const PROJECTS: Project[] = [
     logo: "/icons/tech/opencv.svg",
   },
 
+
   // =========================================================================
   // PROYECTOS ORIGINALES (COMENTADOS)
   // =========================================================================
-  /*
+
   {
     id: "react-wheel-picker",
     title: "React Wheel Picker",

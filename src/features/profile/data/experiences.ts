@@ -1,6 +1,28 @@
 import type { Experience } from "../types/experiences";
 
 export const EXPERIENCES: Experience[] = [
+  {
+    id: "internship-search",
+    companyName: "Open to Internship",
+    positions: [
+      {
+        id: "looking-for-internship",
+        title: "Seeking Telematics Internship",
+        employmentPeriod: {
+          start: "2026",
+          end: "2027",
+        },
+        employmentType: "Internship",
+        icon: "idea",
+        description:
+          "Seeking a university internship in telematics and telecom engineering.",
+        skills: ["Telematics", "Networking", "Telecom"],
+        isExpanded: true,
+      },
+    ],
+    isCurrentEmployer: true,
+  },
+
   // =========================================================================
   // YOUR WORK EXPERIENCE (Add entries when you have professional experience)
   // =========================================================================

@@ -8,30 +8,33 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { cn } from "@/lib/utils";
 
 const Slot = SlotPrimitive.Slot;
 
 export function CollapsibleList<T>({
   items,
   max = 3,
+  itemClassName,
 
   keyExtractor,
   renderItem,
 }: {
   items: T[];
   max?: number;
+  itemClassName?: string;
 
   keyExtractor?: (item: T) => string;
-  renderItem: (item: T) => React.ReactNode;
+  renderItem: (item: T, index: number) => React.ReactNode;
 }) {
   return (
     <Collapsible>
       {items.slice(0, max).map((award, index) => (
         <Slot
           key={typeof keyExtractor === "function" ? keyExtractor(award) : index}
-          className="border-b border-edge"
+          className={cn("border-b border-edge", itemClassName)}
         >
-          {renderItem(award)}
+          {renderItem(award, index)}
         </Slot>
       ))}
 
@@ -43,9 +46,9 @@ export function CollapsibleList<T>({
                 ? keyExtractor(award)
                 : max + index
             }
-            className="border-b border-edge"
+            className={cn("border-b border-edge", itemClassName)}
           >
-            {renderItem(award)}
+            {renderItem(award, max + index)}
           </Slot>
         ))}
       </CollapsibleContent>

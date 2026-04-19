@@ -3,14 +3,21 @@
 import { motion } from "framer-motion";
 import React from "react";
 
+import { cn } from "@/lib/utils";
+
 export function ExperienceItemAnimated({
   children,
+  noBottomLine = false,
 }: {
   children: React.ReactNode;
+  noBottomLine?: boolean;
 }) {
   return (
     <motion.div
-      className="screen-line-after space-y-4 py-4"
+      className={cn(
+        "screen-line-after space-y-4 py-4",
+        noBottomLine && "after:hidden"
+      )}
       initial={{ opacity: 0, x: -24 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.2, margin: "0px 0px -60px 0px" }}

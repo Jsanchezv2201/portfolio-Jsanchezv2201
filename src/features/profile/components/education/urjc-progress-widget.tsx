@@ -83,7 +83,7 @@ function AccordionPanel({
   delay: number;
   children: React.ReactNode;
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <motion.div

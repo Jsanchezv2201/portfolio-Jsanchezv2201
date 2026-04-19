@@ -19,9 +19,11 @@ export function Education() {
       <PanelContent>
         <CollapsibleList
           items={EDUCATION}
-          renderItem={(education) => (
+          itemClassName="border-0"
+          renderItem={(education, index) => (
             <ExperienceItem
               experience={education}
+              noBottomLine={index === EDUCATION.length - 1}
               positionExtraContent={
                 education.id === "urjc" ? URJC_EXTRA : undefined
               }

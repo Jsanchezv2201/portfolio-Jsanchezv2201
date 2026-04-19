@@ -10,12 +10,14 @@ import { ExperiencePositionItem } from "./experience-position-item";
 export function ExperienceItem({
   experience,
   positionExtraContent,
+  noBottomLine,
 }: {
   experience: Experience;
   positionExtraContent?: Record<string, React.ReactNode>;
+  noBottomLine?: boolean;
 }) {
   return (
-    <ExperienceItemAnimated>
+    <ExperienceItemAnimated noBottomLine={noBottomLine}>
       <div className="flex items-center gap-3">
         <ExperienceLogoAnimated>
           {experience.companyLogo ? (

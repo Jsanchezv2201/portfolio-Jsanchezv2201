@@ -2,7 +2,7 @@
 
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface GalleryItem {
   image: string;
@@ -29,7 +29,7 @@ export default function InfiniteGallery({
   gap = 16,
 }: InfiniteGalleryProps) {
   const x = useMotionValue(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [isGrabbing, setIsGrabbing] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -38,6 +38,12 @@ export default function InfiniteGallery({
   const dragStartX = useRef(0);
   const dragStartScroll = useRef(0);
 
+  const normalizeX = (value: number) => {
+    if (totalWidth <= 0) return 0;
+    const loop = ((-value % totalWidth) + totalWidth) % totalWidth;
+    return -loop;
+  };
+
   // Detect mobile devices and prefers-reduced-motion
   useEffect(() => {
     const checkMobile = () => {
@@ -45,9 +51,9 @@ export default function InfiniteGallery({
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   // Use IntersectionObserver to pause animation when not visible
@@ -59,8 +65,8 @@ export default function InfiniteGallery({
       { threshold: 0.1 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    if (viewportRef.current) {
+      observer.observe(viewportRef.current);
     }
 
     return () => observer.disconnect();
@@ -70,24 +76,55 @@ export default function InfiniteGallery({
 
   useAnimationFrame((_, delta) => {
     // Pause if not visible, user is pausing, or on mobile with reduced motion
-    if (isPaused || !isVisible) return;
+    if (isPaused || !isVisible || totalWidth <= 0) return;
 
     // Reduce speed on mobile to save battery
     const effectiveSpeed = isMobile ? speed * 0.7 : speed;
 
-    let current = x.get();
-    current -= (effectiveSpeed * delta) / 1000;
-    if (current <= -totalWidth) {
-      current += totalWidth;
-    }
-    x.set(current);
+    const next = x.get() - (effectiveSpeed * delta) / 1000;
+    x.set(normalizeX(next));
   });
 
   const captureRef = useRef<{ element: HTMLElement; pointerId: number } | null>(
     null
   );
 
+  const handlePointerUp = useCallback(() => {
+    isDragging.current = false;
+    setIsPaused(false);
+    setIsGrabbing(false);
+    if (captureRef.current) {
+      const { element, pointerId } = captureRef.current;
+      if (element.hasPointerCapture(pointerId)) {
+        element.releasePointerCapture(pointerId);
+      }
+      captureRef.current = null;
+    }
+  }, []);
+
+  // Ensure dragging state is always released when the tab/window loses focus.
+  useEffect(() => {
+    const handleWindowBlur = () => {
+      handlePointerUp();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState !== "visible") {
+        handlePointerUp();
+      }
+    };
+
+    window.addEventListener("blur", handleWindowBlur);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      window.removeEventListener("blur", handleWindowBlur);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [handlePointerUp]);
+
   const handlePointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
     isDragging.current = true;
     dragStartX.current = e.clientX;
     dragStartScroll.current = x.get();
@@ -101,41 +138,28 @@ export default function InfiniteGallery({
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!isDragging.current) return;
     const delta = e.clientX - dragStartX.current;
-    let newX = dragStartScroll.current + delta;
-    if (newX <= -totalWidth) newX += totalWidth;
-    if (newX > 0) newX -= totalWidth;
-    x.set(newX);
-  };
-
-  const handlePointerUp = () => {
-    isDragging.current = false;
-    setIsPaused(false);
-    setIsGrabbing(false);
-    if (captureRef.current) {
-      const { element, pointerId } = captureRef.current;
-      if (element.hasPointerCapture(pointerId)) {
-        element.releasePointerCapture(pointerId);
-      }
-      captureRef.current = null;
-    }
+    const newX = dragStartScroll.current + delta;
+    x.set(normalizeX(newX));
   };
 
   const doubled = [...items, ...items];
 
   return (
     <div
+      ref={viewportRef}
       className="w-full overflow-hidden"
-      style={{ height: `${height + 48}px`, cursor: isGrabbing ? "grabbing" : "grab" }}
+      style={{
+        height: `${height + 48}px`,
+        cursor: isGrabbing ? "grabbing" : "grab",
+      }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
       onPointerLeave={handlePointerUp}
+      onLostPointerCapture={handlePointerUp}
     >
-      <motion.div
-        ref={containerRef}
-        style={{ x }}
-        className="flex will-change-transform"
-      >
+      <motion.div style={{ x }} className="flex will-change-transform">
         {doubled.map((item, i) => (
           <div
             key={`${i}-${item.image}`}
