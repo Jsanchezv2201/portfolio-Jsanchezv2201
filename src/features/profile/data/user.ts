@@ -20,10 +20,8 @@ export const USER: User = {
 
   address: "Madrid, Spain",
 
-  // ⚠️ IMPORTANT: Run in terminal: echo -n "+34YOUR_NUMBER" | base64
   phoneNumber: "KzM0NjUxNTM1NTg5",
 
-  // ⚠️ IMPORTANT: Run in terminal: echo -n "your_email@gmail.com" | base64
   email: "c2FuY2hlenZpbnVlc2FqdWFuQGdtYWlsLmNvbQ==",
 
   website: "https://github.com/Jsanchezv2201",
@@ -32,31 +30,29 @@ export const USER: User = {
   // Timeline / Experience
   jobs: [
     {
-      title: "Telematic Engineering Undergraduate",
+      title: "Telematic Engineering Student",
       company: "Universidad Rey Juan Carlos",
       website: "https://www.urjc.es",
     },
     {
-      title: "Open Source Developer",
-      company: "GitHub",
+      title: "Looking for Internship opportunities",
       website: "https://github.com/Jsanchezv2201",
+      company: "",
+      showAt: false,
     },
   ],
 
   // Expanded "About Me" section (Markdown supported)
   about: `
-I am a **Telematic Engineering Student** based in Madrid, driven by the intersection of **Hardware, Networking, and Software**. My goal is to build systems that are not only intelligent but also secure and highly efficient.
+I am a **Telematic Engineering Student** based in Madrid, focused on building reliable systems at the intersection of **networking, low-level software, and AI**.
 
-Unlike typical web developers, I enjoy diving deep into the **low-level details**: from analyzing TCP/IP packets to optimizing memory safety in Rust.
+### Focus Areas
 
-### Core Competencies
+* **Systems Programming:** Rust and C++ for performance and memory safety.
+* **Networking:** TCP/IP and network architecture fundamentals.
+* **AI & Robotics:** Computer vision with TensorFlow and ROS 2 projects.
 
-* **Systems Programming:** Expert in memory management and concurrency with **Rust** and **C++**.
-* **Networking:** Deep understanding of protocols (BGP, OSPF, TCP/IP) and network simulation (Cisco Packet Tracer, GNS3).
-* **Artificial Intelligence:** Implementing CNNs and Computer Vision algorithms using **TensorFlow** and **Python**.
-* **Robotics:** Navigating autonomous systems with **ROS 2** and **Gazebo**.
-
-I am currently looking for opportunities to apply my skills in **Cybersecurity**, **Backend Engineering**, or **Embedded Systems**.
+Currently **looking for internship opportunities** where I can contribute and keep growing as an engineer.
   `,
 
   // ⚠️ Ensure you have 'avatar.jpg' in your 'public' folder

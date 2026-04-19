@@ -45,6 +45,7 @@ export function Overview() {
                 title={job.title}
                 company={job.company}
                 website={job.website}
+                showAt={job.showAt}
               />
             </motion.div>
           ))}

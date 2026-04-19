@@ -25,19 +25,22 @@ export function JobItem({
   title,
   company,
   website,
+  showAt = true,
 }: {
   title: string;
   company: string;
   website: string;
+  showAt?: boolean;
 }) {
   return (
     <IntroItem
       icon={getJobIcon(title)}
       content={
         <>
-          {title} @
+          {title}
+          {showAt && " @"}
           <a
-            className="ml-0.5 font-medium underline-offset-4 hover:underline"
+            className="ml-1 font-medium underline-offset-4 hover:underline"
             href={addQueryParams(website, UTM_PARAMS)}
             target="_blank"
             rel="noopener"

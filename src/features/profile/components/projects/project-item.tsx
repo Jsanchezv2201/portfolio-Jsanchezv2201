@@ -144,6 +144,18 @@ export function ProjectItem({
           </div>
         </CollapsibleContent>
       </CollapsibleWithContext>
+
+      {/* Preload preview image while item is collapsed to avoid first-open flash. */}
+      {project.image && (
+        <img
+          src={project.image}
+          alt=""
+          className="hidden"
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+        />
+      )}
     </ProjectItemAnimated>
   );
 }

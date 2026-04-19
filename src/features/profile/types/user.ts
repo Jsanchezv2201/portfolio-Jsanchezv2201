@@ -23,6 +23,7 @@ export type User = {
     title: string;
     company: string;
     website: string;
+    showAt?: boolean;
   }[];
   /** Rich about section; supports Markdown */
   about: string;

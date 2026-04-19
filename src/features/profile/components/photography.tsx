@@ -17,7 +17,7 @@ const PHOTOS = [
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-10-55 (2).jpg",
-    text: "Exposition",
+    text: "Art Exhibition",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-10-56.jpg",
@@ -26,11 +26,11 @@ const PHOTOS = [
   { image: "/assets/photography/photo_2026-02-25_13-10-58.jpg", text: "Ski" },
   {
     image: "/assets/photography/photo_2026-02-25_13-10-59.jpg",
-    text: "Isla de Ons",
+    text: "Isla de Ons · Galicia",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-00.jpg",
-    text: "Sierra Nevada",
+    text: "Sierra Nevada · Granada",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-00 (2).jpg",
@@ -58,15 +58,19 @@ const PHOTOS = [
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-05.jpg",
-    text: "Film Friends",
+    text: "University Friends · URJC",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-39-45.jpg",
-    text: "Art Installation",
+    text: "Pico do Arieiro · Madeira",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-39-47.jpg",
     text: "Art Exhibition",
+  },
+  {
+    image: "/assets/photography/photo_2026-04-19_17-38-18.jpg",
+    text: "Pico Veleta · IRAM Radio Telescope",
   },
 ];
 
