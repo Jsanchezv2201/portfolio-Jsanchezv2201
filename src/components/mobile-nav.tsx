@@ -15,12 +15,14 @@ import type { NavItem } from "@/types/nav";
 export function MobileNav({
   items,
   className,
+  defaultOpen,
 }: {
   items: NavItem[];
   className?: string;
+  defaultOpen?: boolean;
 }) {
   return (
-    <DropdownMenu>
+    <DropdownMenu defaultOpen={defaultOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"

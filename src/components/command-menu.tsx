@@ -121,12 +121,18 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   openInNewTab: true,
 }));
 
-export function CommandMenu({ posts }: { posts: Post[] }) {
+export function CommandMenu({
+  posts,
+  initialOpen = false,
+}: {
+  posts: Post[];
+  initialOpen?: boolean;
+}) {
   const router = useRouter();
 
   const { setTheme, resolvedTheme } = useTheme();
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(initialOpen);
 
   const playClick = useSound("/audio/ui-sounds/click.wav");
 

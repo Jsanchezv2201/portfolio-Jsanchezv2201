@@ -2,6 +2,8 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import { DesktopNav } from "@/components/desktop-nav";
+import { LazyCommandMenu } from "@/components/lazy-command-menu";
+import { LazyMobileNav } from "@/components/lazy-mobile-nav";
 import { NavItemGitHub } from "@/components/nav-item-github";
 import { MAIN_NAV } from "@/config/site";
 import { getAllPosts } from "@/features/blog/data/posts";
@@ -13,14 +15,6 @@ import { ToggleTheme } from "./toggle-theme";
 
 const BrandContextMenu = dynamic(() =>
   import("@/components/brand-context-menu").then((mod) => mod.BrandContextMenu)
-);
-
-const CommandMenu = dynamic(() =>
-  import("@/components/command-menu").then((mod) => mod.CommandMenu)
-);
-
-const MobileNav = dynamic(() =>
-  import("@/components/mobile-nav").then((mod) => mod.MobileNav)
 );
 
 export function SiteHeader() {
@@ -50,10 +44,10 @@ export function SiteHeader() {
         <DesktopNav items={MAIN_NAV} />
 
         <div className="flex items-center gap-2">
-          <CommandMenu posts={posts} />
+          <LazyCommandMenu posts={posts} />
           <NavItemGitHub />
           <ToggleTheme />
-          <MobileNav className="sm:hidden" items={MAIN_NAV} />
+          <LazyMobileNav className="sm:hidden" items={MAIN_NAV} />
         </div>
       </div>
     </SiteHeaderWrapper>
