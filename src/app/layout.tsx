@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from "next";
 import type { WebSite, WithContext } from "schema-dts";
 
 import { Providers } from "@/components/providers";
-import { SITE_INFO } from "@/config/site";
+import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 import { USER } from "@/features/profile/data/user";
 import { fontMono, fontSans } from "@/lib/fonts";
 
@@ -63,7 +63,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: SITE_INFO.themeColor?.light ?? "#ffffff",
+  themeColor: META_THEME_COLORS.light,
 };
 
 export default function RootLayout({
