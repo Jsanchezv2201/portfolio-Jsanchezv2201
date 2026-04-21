@@ -1,11 +1,10 @@
 import "@/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import type { WebSite, WithContext } from "schema-dts";
 
 import { Providers } from "@/components/providers";
-import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
+import { SITE_INFO } from "@/config/site";
 import { USER } from "@/features/profile/data/user";
 import { fontMono, fontSans } from "@/lib/fonts";
 
@@ -18,20 +17,6 @@ function getWebSiteJsonLd(): WithContext<WebSite> {
     alternateName: [USER.username],
   };
 }
-
-const darkModeScript = String.raw`
-  try {
-    if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
-    }
-  } catch (_) {}
-
-  try {
-    if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
-      document.documentElement.classList.add('os-macos')
-    }
-  } catch (_) {}
-`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_INFO.url),
@@ -46,11 +31,11 @@ export const metadata: Metadata = {
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "Juan Sánchez", // <--- Pon tu nombre aquí
+      name: "Juan Sánchez",
       url: SITE_INFO.url,
     },
   ],
-  creator: "Juan Sánchez", // <--- Pon tu nombre aquí
+  creator: "Juan Sánchez",
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
@@ -69,29 +54,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@TuUsuario", // <--- Pon tu usuario o bórralo
+    creator: "@TuUsuario",
     images: [SITE_INFO.ogImage],
   },
-  // ❌ BORRA ESTO (El bloque icons entero):
-  /*
-  icons: {
-    icon: [
-      {
-        url: "https://assets.chanhdai.com/images/favicon.ico",
-        sizes: "any",
-      },
-      ...
-    ],
-    apple: { ... },
-  },
-  */
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: META_THEME_COLORS.light,
+  themeColor: SITE_INFO.themeColor?.light ?? "#ffffff",
 };
 
 export default function RootLayout({
@@ -106,11 +78,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{ __html: darkModeScript }}
-        />
-        <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

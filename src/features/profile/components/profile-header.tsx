@@ -19,9 +19,6 @@ export function ProfileHeader() {
     setIsMobile(window.innerWidth <= 768);
   }, []);
 
-  // Reduced animation delays for faster FCP/LCP
-  const shouldAnimate = !isMobile;
-
   return (
     <div className="group/header screen-line-before screen-line-after flex border-x border-edge">
       <div className="shrink-0 border-r border-edge">
@@ -98,7 +95,7 @@ export function ProfileHeader() {
           </h1>
 
           <div className="h-12 border-t border-edge py-1 pl-4 sm:h-auto">
-            <FlipSentences sentences={USER.flipSentences} />
+            <FlipSentences sentences={USER.flipSentences} startDelayMs={800} />
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@
     var(--behind-glow-color) 0%,
     transparent var(--behind-glow-size)
   );
-  filter: blur(50px) saturate(1.1);
+  filter: blur(24px) saturate(1.05);
   opacity: calc(0.8 * var(--card-opacity));
   transition: opacity 200ms ease;
 }
@@ -286,7 +286,7 @@
   align-items: center;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.38);
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   border-radius: calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)));
@@ -345,7 +345,7 @@
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   transition: all 0.2s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
 }
 
 .pc-contact-btn:hover {
@@ -498,7 +498,7 @@
 
   /* Disable behind glow effect on mobile */
   .pc-behind {
-    filter: blur(20px) saturate(1);
+    filter: blur(12px) saturate(1);
     opacity: 0.4;
   }
 
@@ -766,7 +766,7 @@
   height: 28px;
   border-radius: 50%;
   background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.35) 0%, rgba(99, 102, 241, 0.2) 40%, transparent 75%);
-  filter: blur(10px);
+  filter: blur(6px);
   pointer-events: none;
   z-index: -1;
   opacity: 0;

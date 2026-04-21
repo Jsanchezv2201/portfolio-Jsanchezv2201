@@ -8,22 +8,31 @@ import { cn } from "@/lib/utils";
 export function FlipSentences({
   className,
   sentences,
+  startDelayMs = 800,
 }: {
   className?: string;
   sentences: string[];
+  startDelayMs?: number;
 }) {
   const [currentSentence, setCurrentSentence] = useState(0);
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const startTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const startAnimation = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
     intervalRef.current = setInterval(() => {
       setCurrentSentence((prev) => (prev + 1) % sentences.length);
     }, 2500);
   };
 
   useEffect(() => {
-    startAnimation();
+    startTimeoutRef.current = setTimeout(() => {
+      startAnimation();
+    }, startDelayMs);
 
     const abortController = new AbortController();
     const { signal } = abortController;
@@ -31,9 +40,16 @@ export function FlipSentences({
     document.addEventListener(
       "visibilitychange",
       () => {
-        if (document.visibilityState !== "visible" && intervalRef.current) {
-          clearInterval(intervalRef.current); // Clear the interval when the tab is not visible
-          intervalRef.current = null;
+        if (document.visibilityState !== "visible") {
+          if (startTimeoutRef.current) {
+            clearTimeout(startTimeoutRef.current);
+            startTimeoutRef.current = null;
+          }
+
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current); // Clear the interval when the tab is not visible
+            intervalRef.current = null;
+          }
         } else if (document.visibilityState === "visible") {
           setCurrentSentence((prev) => (prev + 1) % sentences.length); // Show the next sentence immediately
           startAnimation(); // Restart the interval when the tab becomes visible
@@ -43,6 +59,10 @@ export function FlipSentences({
     );
 
     return () => {
+      if (startTimeoutRef.current) {
+        clearTimeout(startTimeoutRef.current);
+      }
+
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
