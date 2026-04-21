@@ -1,12 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-import type { GalleryItem } from "@/components/InfiniteGallery";
-
-const InfiniteGallery = dynamic(() => import("@/components/InfiniteGallery"), {
-  ssr: false,
-});
+import InfiniteGallery, {
+  type GalleryItem,
+} from "@/components/InfiniteGallery";
 
 export function PhotographyGallery({ items }: { items: GalleryItem[] }) {
   return (

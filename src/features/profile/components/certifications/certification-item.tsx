@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { ArrowUpRightIcon } from "lucide-react";
-import Image from "next/image";
 import React from "react";
 
 import { getIcon, Icons } from "@/components/icons";
@@ -24,14 +23,12 @@ export function CertificationItem({
       rel="noopener"
     >
       {certification.issuerLogoURL ? (
-        <Image
+        <img
           src={certification.issuerLogoURL}
           alt={certification.issuer}
-          width={32}
-          height={32}
-          quality={100}
-          className="mx-4 flex size-6 shrink-0 select-none"
-          unoptimized
+          width="24"
+          height="24"
+          className="mx-4 flex size-6 shrink-0 object-contain select-none"
           aria-hidden
         />
       ) : (

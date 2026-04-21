@@ -20,6 +20,15 @@ export const CERTIFICATIONS: Certification[] = [
     credentialURL:
       "https://drive.google.com/file/d/1mvwZeoQMerTc7y1KUX4lX50yIFX-BVZk/view?usp=sharing",
   },
+  {
+    title: "MATLAB Onramp",
+    issuer: "MathWorks",
+    issuerLogoURL: "/icons/tech/matlab.svg",
+    issueDate: "2026-04-21",
+    credentialID: "MATLAB-ONRAMP",
+    credentialURL:
+      "https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+  },
 
   /*
   {

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface GalleryItem {
@@ -170,15 +169,16 @@ export default function InfiniteGallery({
               className="relative overflow-hidden rounded-xl"
               style={{ width: `${width}px`, height: `${height}px` }}
             >
-              <Image
+              <img
                 src={item.image}
                 alt={item.text}
-                fill
-                sizes={isMobile ? "200px" : `${width}px`}
-                quality={isMobile ? 70 : 85}
-                className="object-cover"
+                width={width}
+                height={height}
+                className="h-full w-full object-cover"
                 draggable={false}
-                loading="lazy"
+                loading={i < 4 ? "eager" : "lazy"}
+                fetchPriority={i < 4 ? "high" : "auto"}
+                decoding="async"
               />
             </div>
             <p className="mt-2 truncate px-1 text-center text-xs text-muted-foreground">

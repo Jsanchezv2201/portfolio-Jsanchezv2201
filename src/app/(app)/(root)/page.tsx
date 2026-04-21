@@ -11,7 +11,6 @@ import { Experiences } from "@/features/profile/components/experiences";
 import { GitHubContributions } from "@/features/profile/components/github-contributions";
 import { Overview } from "@/features/profile/components/overview";
 import { Photography } from "@/features/profile/components/photography";
-import { ProfileCardSection } from "@/features/profile/components/profile-card-section";
 import { ProfileCover } from "@/features/profile/components/profile-cover";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
@@ -72,8 +71,10 @@ export default function Page() {
         <Photography />
         <Separator />
 
+        {/*
         <ProfileCardSection />
         <Separator />
+        */}
 
         <Brand />
       </div>
