@@ -4,8 +4,36 @@ export const PROJECTS: Project[] = [
   // --- TUS PROYECTOS (Ingeniería Telemática & Desarrollo) ---
 
   {
+    id: "chatia-django-practice",
+    title: "ChatIA Web",
+    period: {
+      start: "04.2026",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "Django",
+      "Python",
+      "HTMX",
+      "LLM API Integration",
+      "Session Authentication",
+      "SQLite",
+      "Linux (Ubuntu)",
+    ],
+    description: `Aplicación de chat académico desarrollada para la práctica de la asignatura, con autenticación por sesiones y conexión real a un LLM.
+  - Implementación de la parte obligatoria con **Django + HTMX** (actualización parcial de mensajes mediante "hx-post").
+  - Integración real con proveedor LLM por API, manteniendo credenciales fuera del repositorio (variables de entorno / .env).
+- Admin Site operativo y estructura de recursos HTTP documentada para la entrega.
+
+**Estado actual (23/04/2026):**
+- ✅ Núcleo funcional completado: autenticación, chat con HTMX, integración LLM y validación técnica base.
+- 🟡 En mejora: robustez UX en casos límite de red, validación final en Firefox laboratorio y cierre de documentación.
+- 🔴 Pendiente de entrega: URL pública de despliegue, vídeo demostración y credenciales finales en README estricto.`,
+    logo: "/icons/tech/django.svg",
+  },
+
+  {
     id: "personal-portfolio",
-    title: "Portfolio",
+    title: "Portfolio Web",
     period: {
       start: "01.2026",
       // Sin 'end' para que salga "Present"

@@ -1,4 +1,4 @@
-import { InfinityIcon, LinkIcon } from "lucide-react";
+import { LinkIcon } from "lucide-react";
 import React from "react";
 
 import { Icons } from "@/components/icons";
@@ -32,8 +32,14 @@ export function ProjectItem({
   const isOngoing = !end;
 
   // Logos que son negros/oscuros y necesitan invertirse en modo oscuro
-  const blackLogos = ["/icons/tech/nextjs2.svg", "/icons/tech/ros2.svg"];
+  const blackLogos = [
+    "/icons/tech/nextjs2.svg",
+    "/icons/tech/ros2.svg",
+    "/icons/tech/django.png",
+  ];
   const needsInvert = project.logo && blackLogos.includes(project.logo);
+  const logoScaleClass =
+    project.logo === "/icons/tech/django.svg" ? "scale-150" : "";
 
   return (
     <ProjectItemAnimated className={className}>
@@ -46,7 +52,7 @@ export function ProjectItem({
                 alt={project.title}
                 width="24"
                 height="24"
-                className={`h-full w-full object-contain ${needsInvert ? "dark:brightness-0 dark:contrast-200 dark:invert" : ""}`}
+                className={`h-full w-full object-contain ${logoScaleClass} ${needsInvert ? "dark:brightness-0 dark:contrast-200 dark:invert" : ""}`}
                 aria-hidden
               />
             </div>
@@ -71,17 +77,7 @@ export function ProjectItem({
                   <dd className="flex items-center gap-0.5">
                     <span>{start}</span>
                     <span className="font-mono">—</span>
-                    {isOngoing ? (
-                      <>
-                        <InfinityIcon
-                          className="size-4.5 translate-y-[0.5px]"
-                          aria-hidden
-                        />
-                        <span className="sr-only">Present</span>
-                      </>
-                    ) : (
-                      <span>{end}</span>
-                    )}
+                    {isOngoing ? <span>Present</span> : <span>{end}</span>}
                   </dd>
                 </dl>
               </div>
