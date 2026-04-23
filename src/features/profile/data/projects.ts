@@ -9,7 +9,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: "04.2026",
     },
-    link: "https://github.com/Jsanchezv2201",
+    link: "https://chat-ia-zeta.vercel.app/",
     skills: [
       "Django",
       "Python",
