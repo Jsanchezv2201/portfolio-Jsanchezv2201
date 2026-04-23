@@ -27,7 +27,7 @@ export const CERTIFICATIONS: Certification[] = [
     issueDate: "2026-04-21",
     credentialID: "MATLAB-ONRAMP",
     credentialURL:
-      "https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+      "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=d699036e-b8b6-4a63-8216-8b7d096e526c",
   },
 
   /*

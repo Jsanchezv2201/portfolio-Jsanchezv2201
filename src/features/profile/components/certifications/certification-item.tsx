@@ -75,10 +75,10 @@ export function CertificationItem({
       </div>
 
       {certification.credentialURL && (
-        <ArrowUpRightIcon
-          className="size-4 text-muted-foreground"
-          aria-hidden
-        />
+        <span className="mr-4 flex shrink-0 items-center gap-1 text-sm text-muted-foreground transition-colors group-hover/cert:text-foreground">
+          <span>Show certificate</span>
+          <ArrowUpRightIcon className="size-4" aria-hidden />
+        </span>
       )}
     </a>
   );
