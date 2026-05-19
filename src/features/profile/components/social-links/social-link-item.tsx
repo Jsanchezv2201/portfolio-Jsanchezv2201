@@ -13,6 +13,7 @@ export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const gradientBg = useMotionTemplate`radial-gradient(120px circle at ${mouseX}px ${mouseY}px, rgba(99,102,241,0.12), transparent 80%)`;
+  const showScreenLines = title !== "LinkedIn";
 
   function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement>) {
     const rect = ref.current?.getBoundingClientRect();
@@ -26,8 +27,9 @@ export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
       ref={ref}
       className={cn(
         "group/link relative flex cursor-pointer items-center gap-4 overflow-hidden rounded-2xl p-4 pr-2 select-none",
-        "max-sm:screen-line-before max-sm:screen-line-after",
-        "sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after"
+        showScreenLines && "max-sm:screen-line-before max-sm:screen-line-after",
+        showScreenLines &&
+          "sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after"
       )}
       href={href}
       target="_blank"

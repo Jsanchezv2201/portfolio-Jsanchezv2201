@@ -26,7 +26,7 @@ export function ProfileHeader() {
           <Image
             width={160}
             height={160}
-            className="size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background grayscale-[0.3] transition-all duration-500 ease-out select-none group-hover/header:ring-green-500/50 group-hover/header:grayscale-0 sm:size-40"
+            className="size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background brightness-105 contrast-102 grayscale-[0.2] transition-all duration-500 ease-out select-none group-hover/header:ring-green-500/50 group-hover/header:brightness-110 group-hover/header:grayscale-0 sm:size-40"
             alt={`${USER.displayName}'s avatar`}
             src={USER.avatar}
             priority

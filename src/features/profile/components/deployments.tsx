@@ -18,10 +18,7 @@ export function Deployments() {
 
       <div className="p-4">
         <div className="relative py-2">
-          <div className="pointer-events-none absolute inset-0 -z-1 grid grid-cols-1 gap-4 max-sm:hidden sm:grid-cols-2">
-            <div className="border-r border-edge"></div>
-            <div className="border-l border-edge"></div>
-          </div>
+          <div className="pointer-events-none absolute top-2 bottom-2 left-1/2 -z-1 hidden w-px -translate-x-1/2 bg-edge sm:block" />
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {DEPLOYMENTS.map((deployment) => (
