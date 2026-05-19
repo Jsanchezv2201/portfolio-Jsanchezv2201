@@ -48,6 +48,30 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Language", "Web"],
   },
   {
+    key: "css",
+    title: "CSS",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    categories: ["Language", "Web"],
+  },
+  {
+    key: "html5",
+    title: "HTML5",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    categories: ["Language", "Web"],
+  },
+  {
+    key: "markdown",
+    title: "Markdown",
+    href: "https://www.markdownguide.org/",
+    categories: ["Language", "Web", "Documentation"],
+  },
+  {
+    key: "bootstrap",
+    title: "Bootstrap",
+    href: "https://getbootstrap.com/",
+    categories: ["Framework", "Web"],
+  },
+  {
     key: "bash",
     title: "Bash Scripting",
     href: "https://www.gnu.org/software/bash/",
@@ -60,7 +84,7 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Language", "Math"],
   },
 
-    // ========================================================================
+  // ========================================================================
   // 3. DESARROLLO WEB FULLSTACK (Frontend & Backend)
   // ========================================================================
   {
@@ -169,28 +193,22 @@ export const TECH_STACK: TechStack[] = [
     categories: ["OS", "Linux"],
   },
   {
-    key: "android",
-    title: "Android",
-    href: "https://developer.android.com/",
-    categories: ["OS", "Mobile"],
-  },
-  {
-    key: "gnome",
-    title: "GNOME",
-    href: "https://www.gnome.org/",
-    categories: ["Desktop Environment", "Linux"],
-  },
-  {
-    key: "docker",
-    title: "Docker",
-    href: "https://www.docker.com/",
-    categories: ["Containerization"],
-  },
-  {
     key: "wireshark",
     title: "Wireshark",
     href: "https://www.wireshark.org/",
     categories: ["Tools", "Networking"],
+  },
+  {
+    key: "openvpn",
+    title: "OpenVPN",
+    href: "https://openvpn.net/",
+    categories: ["Tools", "Networking", "Security"],
+  },
+  {
+    key: "virtualbox",
+    title: "VirtualBox",
+    href: "https://www.virtualbox.org/",
+    categories: ["Tools", "Virtualization"],
   },
   {
     key: "mysql",
@@ -231,34 +249,15 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Platform", "Version Control"],
   },
   {
+    key: "gitlab",
+    title: "GitLab",
+    href: "https://gitlab.com/",
+    categories: ["Platform", "Version Control"],
+  },
+  {
     key: "vscode",
     title: "Visual Studio Code",
     href: "https://code.visualstudio.com/",
     categories: ["Tools", "IDE"],
   },
-  {
-    key: "pycharm",
-    title: "PyCharm",
-    href: "https://www.jetbrains.com/pycharm/",
-    categories: ["Tools", "IDE", "Python"],
-  },
-  {
-    key: "figma",
-    title: "Figma",
-    href: "https://www.figma.com/",
-    categories: ["Tools", "Design"],
-  },
-  {
-    key: "openai",
-    title: "OpenAI API",
-    href: "https://openai.com/",
-    categories: ["AI", "API"],
-  },
-  {
-    key: "claude",
-    title: "Claude",
-    href: "https://www.anthropic.com/",
-    categories: ["AI", "Tools"],
-  }
 ];
-

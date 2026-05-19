@@ -63,6 +63,10 @@ Currently **looking for internship opportunities** where I can contribute and ke
 
   namePronunciationUrl: "", // Optional
 
+  // GPG Public Key Information
+  gpgFingerprint: "0E06 F9BE EA82 84C0 3F51 5851 D976 0F73 5FE1 0666",
+  gpgPublicKeyUrl: "/jsanchezv.asc",
+
   // SEO Keywords
   keywords: [
     "Juan Sánchez Vinuesa",

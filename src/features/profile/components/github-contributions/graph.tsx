@@ -20,24 +20,26 @@ import {
 } from "@/components/ui/tooltip";
 import { GITHUB_USERNAME } from "@/config/site";
 
+import type { CombinedActivity } from "../../data/activity";
+
 export function GitHubContributionGraph({
-  contributions,
+  activity,
 }: {
-  contributions: Promise<Activity[]>;
+  activity: Promise<CombinedActivity>;
 }) {
-  const data = use(contributions);
+  const { activities } = use(activity);
 
   return (
     <ContributionGraph
       className="mx-auto py-2"
-      data={data}
+      data={activities}
       blockSize={11}
       blockMargin={3}
       blockRadius={0}
     >
       <ContributionGraphCalendar
         className="no-scrollbar px-2"
-        title="GitHub Contributions"
+        title="GitHub and GitLab Activity"
       >
         {({ activity, dayIndex, weekIndex }) => (
           <Tooltip>
@@ -65,7 +67,7 @@ export function GitHubContributionGraph({
         <ContributionGraphTotalCount>
           {({ totalCount, year }) => (
             <div className="text-muted-foreground">
-              {totalCount.toLocaleString("en")} contributions in {year} on{" "}
+              {totalCount.toLocaleString("en")} activity entries in {year} on{" "}
               <a
                 className="font-medium underline underline-offset-4"
                 href={`https://github.com/${GITHUB_USERNAME}`}
@@ -73,6 +75,15 @@ export function GitHubContributionGraph({
                 rel="noopener"
               >
                 GitHub
+              </a>{" "}
+              +{" "}
+              <a
+                className="font-medium underline underline-offset-4"
+                href="https://gitlab.eif.urjc.es/juansv1"
+                target="_blank"
+                rel="noopener"
+              >
+                GitLab
               </a>
               .
             </div>

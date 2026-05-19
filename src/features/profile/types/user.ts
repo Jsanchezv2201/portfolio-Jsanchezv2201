@@ -33,6 +33,10 @@ export type User = {
   ogImage: string;
   /** Audio URL for name pronunciation */
   namePronunciationUrl: string;
+  /** Fingerprint for the public GPG key */
+  gpgFingerprint?: string;
+  /** URL to the downloadable public GPG key */
+  gpgPublicKeyUrl?: string;
   /** SEO keywords list for metadata */
   keywords: string[];
   /** Profile/site start date in YYYY-MM-DD */

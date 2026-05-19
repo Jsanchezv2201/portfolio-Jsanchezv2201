@@ -1,20 +1,20 @@
 import { Suspense } from "react";
 
-import { getGitHubContributions } from "../../data/github-contributions";
+import { getCombinedActivity } from "../../data/activity";
 import { Panel } from "../panel";
 import { GitHubContributionFallback, GitHubContributionGraph } from "./graph";
 
 export function GitHubContributions() {
   // Pass the Promise directly to the child component
   // The child component will use React.use() to unwrap it
-  const contributionsPromise = getGitHubContributions();
+  const activityPromise = getCombinedActivity();
 
   return (
     <Panel>
-      <h2 className="sr-only">GitHub Contributions</h2>
+      <h2 className="sr-only">GitHub and GitLab Activity</h2>
 
       <Suspense fallback={<GitHubContributionFallback />}>
-        <GitHubContributionGraph contributions={contributionsPromise} />
+        <GitHubContributionGraph activity={activityPromise} />
       </Suspense>
     </Panel>
   );

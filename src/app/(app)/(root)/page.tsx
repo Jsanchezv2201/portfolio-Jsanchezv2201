@@ -3,9 +3,9 @@ import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
 // import { Awards } from "@/features/profile/components/awards";
-// import { Blog } from "@/features/profile/components/blog";
 import { Brand } from "@/features/profile/components/brand";
 import { Certifications } from "@/features/profile/components/certifications";
+import { Deployments } from "@/features/profile/components/deployments";
 import { Education } from "@/features/profile/components/education";
 import { Experiences } from "@/features/profile/components/experiences";
 import { GitHubContributions } from "@/features/profile/components/github-contributions";
@@ -50,13 +50,13 @@ export default function Page() {
         <GitHubContributions />
         <Separator />
 
-        {/* <Blog />
-        <Separator /> */}
-
         <Experiences />
         <Separator />
 
         <Education />
+        <Separator />
+
+        <Deployments />
         <Separator />
 
         <Projects />

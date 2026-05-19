@@ -6,7 +6,11 @@ import React from "react";
 
 import { cn } from "@/lib/utils";
 
-function Panel({ className, ...props }: React.ComponentProps<"section">) {
+function Panel({
+  className,
+  withOuterLines = true,
+  ...props
+}: React.ComponentProps<"section"> & { withOuterLines?: boolean }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -15,7 +19,8 @@ function Panel({ className, ...props }: React.ComponentProps<"section">) {
       transition={{ duration: 0.3, ease: "easeOut" }}
       data-slot="panel"
       className={cn(
-        "screen-line-before screen-line-after border-x border-edge",
+        withOuterLines && "screen-line-before screen-line-after",
+        "border-x border-edge",
         className
       )}
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

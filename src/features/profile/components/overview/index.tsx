@@ -8,6 +8,7 @@ import { urlToName } from "@/utils/url";
 
 import { Panel, PanelContent } from "../panel";
 import { EmailItem } from "./email-item";
+import { GpgItem } from "./gpg-item";
 import { IntroItem } from "./intro-item";
 import { JobItem } from "./job-item";
 import { PhoneItem } from "./phone-item";
@@ -69,6 +70,15 @@ export function Overview() {
               href={USER.website}
             />
           </motion.div>
+
+          {USER.gpgPublicKeyUrl && USER.gpgFingerprint && (
+            <motion.div variants={itemVariants}>
+              <GpgItem
+                fingerprint={USER.gpgFingerprint}
+                publicKeyUrl={USER.gpgPublicKeyUrl}
+              />
+            </motion.div>
+          )}
         </motion.div>
       </PanelContent>
     </Panel>

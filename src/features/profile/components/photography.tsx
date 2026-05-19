@@ -19,10 +19,6 @@ const PHOTOS = [
     image: "/assets/photography/photo_2026-02-25_13-10-55 (2).jpg",
     text: "Art Exhibition",
   },
-  {
-    image: "/assets/photography/photo_2026-02-25_13-10-56.jpg",
-    text: "Asturias · Spain",
-  },
   { image: "/assets/photography/photo_2026-02-25_13-10-58.jpg", text: "Ski" },
   {
     image: "/assets/photography/photo_2026-02-25_13-10-59.jpg",

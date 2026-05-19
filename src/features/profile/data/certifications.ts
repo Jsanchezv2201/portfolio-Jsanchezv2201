@@ -3,7 +3,7 @@ import type { Certification } from "../types/certifications";
 export const CERTIFICATIONS: Certification[] = [
   {
     // AÑADIDO: Ponemos el Score y Nivel en el título para que se vea claro en la web
-    title: "TOEIC Listening and Reading (Score: 920/990  ->  B2)",
+    title: "TOEIC B2 (Score: 920/990)",
 
     issuer: "Capman Testing Solutions",
 

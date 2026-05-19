@@ -450,6 +450,22 @@ const ProfileCardComponent = ({
                 <div className="pc-details">
                   <h3>{name}</h3>
                   <p>{title}</p>
+                  <div className="pc-contact-info" style={{ marginTop: "6px" }}>
+                    <a
+                      className="link"
+                      href="/jsanchezv.asc"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GPG key (jsanchezv.asc)
+                    </a>
+                    <span
+                      className="pc-fingerprint"
+                      style={{ marginLeft: "8px", fontFamily: "monospace" }}
+                    >
+                      0E06 F9BE EA82 84C0 3F51 5851 D976 0F73 5FE1 0666
+                    </span>
+                  </div>
                 </div>
               </div>
             )}
