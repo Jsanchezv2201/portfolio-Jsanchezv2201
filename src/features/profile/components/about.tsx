@@ -18,22 +18,20 @@ export function About() {
             <Markdown>{USER.about}</Markdown>
           </Prose>
 
-          <div>
-            <TiltedCard
-              imageSrc="/assets/photography/photo_2026-04-19_17-38-18.jpg"
-              altText="Juan skiing near a large satellite antenna"
-              captionText="Pico Veleta · IRAM Radio Telescope"
-              containerHeight="auto"
-              containerWidth="100%"
-              imageHeight="auto"
-              imageWidth="100%"
-              rotateAmplitude={10}
-              scaleOnHover={1}
-              showMobileWarning={false}
-              showTooltip={true}
-              displayOverlayContent={false}
-            />
-          </div>
+          <TiltedCard
+            imageSrc="/assets/photography/photo_2026-04-19_17-38-18.jpg"
+            altText="Juan skiing near a large satellite antenna"
+            captionText="Pico Veleta · IRAM Radio Telescope"
+            containerHeight="auto"
+            containerWidth="100%"
+            imageHeight="auto"
+            imageWidth="100%"
+            rotateAmplitude={10}
+            scaleOnHover={1}
+            showMobileWarning={false}
+            showTooltip={true}
+            displayOverlayContent={false}
+          />
         </div>
       </PanelContent>
     </Panel>

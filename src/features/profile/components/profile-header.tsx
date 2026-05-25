@@ -20,13 +20,13 @@ export function ProfileHeader() {
   }, []);
 
   return (
-    <div className="group/header screen-line-before screen-line-after flex border-x border-edge">
-      <div className="shrink-0 border-r border-edge">
+    <div className="screen-line-before screen-line-after flex border-x border-edge">
+      <div className="group/photo shrink-0 border-r border-edge">
         <div className="mx-[2px] my-[3px]">
           <Image
             width={160}
             height={160}
-            className="size-32 rounded-full ring-1 ring-border ring-offset-2 ring-offset-background brightness-105 contrast-102 grayscale-[0.2] transition-all duration-500 ease-out select-none group-hover/header:ring-green-500/50 group-hover/header:brightness-110 group-hover/header:grayscale-0 sm:size-40"
+            className="size-32 transform-gpu rounded-full object-cover object-[50%_28%] ring-2 ring-border/80 ring-offset-3 ring-offset-background grayscale-[0.2] saturate-125 transition-[transform,box-shadow,filter,ring-color] duration-500 ease-out select-none group-hover/photo:-translate-y-0.5 group-hover/photo:rotate-[-0.5deg] group-hover/photo:shadow-xl group-hover/photo:ring-green-500/50 sm:size-40"
             alt={`${USER.displayName}'s avatar`}
             src={USER.avatar}
             priority

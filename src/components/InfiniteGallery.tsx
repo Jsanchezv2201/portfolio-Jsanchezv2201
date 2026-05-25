@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 export interface GalleryItem {
   image: string;
   text: string;
+  imageClassName?: string;
 }
 
 interface InfiniteGalleryProps {
@@ -174,7 +175,9 @@ export default function InfiniteGallery({
                 alt={item.text}
                 width={width}
                 height={height}
-                className="h-full w-full object-cover"
+                className={["h-full w-full object-cover", item.imageClassName]
+                  .filter(Boolean)
+                  .join(" ")}
                 draggable={false}
                 loading={i < 4 ? "eager" : "lazy"}
                 fetchPriority={i < 4 ? "high" : "auto"}

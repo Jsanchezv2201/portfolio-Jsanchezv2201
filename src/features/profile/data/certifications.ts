@@ -22,10 +22,9 @@ export const CERTIFICATIONS: Certification[] = [
       "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=d699036e-b8b6-4a63-8216-8b7d096e526c",
   },
   {
-    title:
-      "Potenciando las Capacidades de los Estudiantes con Inteligencia Artificial Generativa de Texto",
+    title: "Generative AI for Students",
     issuer: "URJC",
-    issuerIconName: "/icons/urjc.svg",
+    issuerLogoURL: "/icons/urjc.svg",
     issueDate: "2026-05-24",
     credentialID: "Certificado URJCx",
     credentialURL:

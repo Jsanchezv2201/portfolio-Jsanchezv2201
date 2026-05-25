@@ -26,7 +26,8 @@ const PHOTOS = [
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-00.jpg",
-    text: "Sierra Nevada · Granada",
+    text: "La Pinilla · Segovia",
+    imageClassName: "brightness-110 saturate-110",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-00 (2).jpg",
@@ -38,7 +39,7 @@ const PHOTOS = [
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-02.jpg",
-    text: "Sunset · Cádiz",
+    text: "Friends · Cádiz",
   },
   {
     image: "/assets/photography/photo_2026-02-25_13-11-03.jpg",
@@ -66,7 +67,7 @@ const PHOTOS = [
   },
   {
     image: "/assets/photography/photo_2026-04-19_17-38-18.jpg",
-    text: "Pico Veleta · IRAM Radio Telescope",
+    text: "Sierra Nevada · Granada",
   },
 ];
 

@@ -13,11 +13,11 @@ import { useEffect, useRef, useState } from "react";
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const TOTAL_ECTS = 240;
-const DONE_ECTS = 162;
-const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 68
+const DONE_ECTS = 168;
+const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 70
 
 const STATS = [
-  { label: "Passed", value: 27, color: "text-emerald-500" },
+  { label: "Approved subjects", value: 28, color: "text-emerald-500" },
   { label: "Remaining", value: 6, color: "text-blue-400" },
 ] as const;
 
@@ -235,8 +235,9 @@ export function UrjcProgressWidget() {
             Open to internship opportunities
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            15 ECTS of mandatory internship ahead — available to join your team,
-            hit the ground running, and grow through real engineering
+            The 6 remaining items include the TFG and the external internship,
+            so the count is lower than the ECTS gap — available to join your
+            team, hit the ground running, and grow through real engineering
             challenges.
           </p>
         </div>

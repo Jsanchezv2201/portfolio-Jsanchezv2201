@@ -44,7 +44,9 @@ export const USER: User = {
 
   // Expanded "About Me" section (Markdown supported)
   about: `
-I am a **Telematic Engineering Student** based in Madrid, focused on building reliable systems at the intersection of **networking, low-level software, and AI**.
+I am a **Telematic Engineering Student** at **Universidad Rey Juan Carlos** in Madrid.
+
+I also want to carry forward a family tradition of engineering through work at the intersection of **networking, low-level software, and AI**.
 
 ### Focus Areas
 
@@ -55,11 +57,11 @@ I am a **Telematic Engineering Student** based in Madrid, focused on building re
 Currently **looking for internship opportunities** where I can contribute and keep growing as an engineer.
   `,
 
-  // ⚠️ Ensure you have 'avatar.jpg' in your 'public' folder
-  avatar: "/avatar.jpg",
+  // ⚠️ Ensure you have the chosen avatar image in your 'public' folder
+  avatar: "/avatar2.jpg",
 
   // Image used when sharing your site on social media
-  ogImage: "/avatar.jpg",
+  ogImage: "/avatar2.jpg",
 
   namePronunciationUrl: "", // Optional
 
