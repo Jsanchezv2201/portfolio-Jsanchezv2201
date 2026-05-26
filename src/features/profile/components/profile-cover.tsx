@@ -1,6 +1,7 @@
 "use client";
 
 import { CopyIcon } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 import { toast } from "sonner";
 
@@ -39,18 +40,31 @@ export function ProfileCover() {
         ref={divRef}
         className={cn(
           "aspect-3/1 border-x border-edge select-none sm:aspect-4/1",
-          "flex items-center justify-center text-black dark:text-white",
+          "flex items-center justify-center px-4 py-4 text-black sm:px-6 sm:py-6 dark:text-white",
           "screen-line-before screen-line-after before:-top-px after:-bottom-px",
           "bg-black/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5",
-          "group relative overflow-hidden transition-transform duration-300 ease-out hover:scale-[1.01]"
+          "group relative overflow-hidden transition-transform duration-300 ease-out"
         )}
       >
+        <div className="absolute inset-4 overflow-hidden rounded-3xl border border-zinc-300/80 bg-background/40 shadow-[0_18px_50px_rgba(0,0,0,0.14)] sm:inset-6 dark:border-zinc-700/80">
+          <Image
+            src="/banner2.jpg"
+            alt="Banner background"
+            fill
+            priority
+            className="absolute inset-0 z-0 scale-105 object-cover object-center"
+            sizes="100vw"
+          />
+
+          <div className="absolute inset-0 z-0 bg-black/10 dark:bg-black/20" />
+        </div>
+
         <ContextMenu>
           <ContextMenuTrigger>
-            <div className="relative z-10">
+            <div className="relative z-20 flex items-center justify-center">
               <LogoMark
                 id="js-cover-mark"
-                className="h-32 w-32 cursor-context-menu sm:h-32 sm:w-32"
+                className="h-32 w-32 cursor-context-menu text-white transition-transform duration-300 ease-out hover:scale-110 sm:h-32 sm:w-32"
               />
             </div>
           </ContextMenuTrigger>

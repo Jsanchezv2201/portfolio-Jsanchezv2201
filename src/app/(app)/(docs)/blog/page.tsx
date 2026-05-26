@@ -14,7 +14,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="screen-line-after px-4">
+      <div className="screen-line-before screen-line-after px-4">
         <h1 className="text-3xl font-semibold">Blog</h1>
       </div>
 

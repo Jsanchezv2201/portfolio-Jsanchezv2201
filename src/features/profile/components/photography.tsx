@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 import { PhotographyGallery } from "./photography-gallery";
 
@@ -83,6 +85,8 @@ export function Photography() {
           traveling and exploring the world of engineering and design.
         </p>
         <PhotographyGallery items={PHOTOS} />
+
+        {/* Banner removed per request */}
       </PanelContent>
     </Panel>
   );

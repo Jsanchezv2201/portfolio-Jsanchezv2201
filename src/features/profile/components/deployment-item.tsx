@@ -12,11 +12,7 @@ export function DeploymentItem({ deployment }: { deployment: Deployment }) {
       href={deployment.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(
-        "group/deployment flex flex-col gap-2 p-2",
-        "max-sm:screen-line-before max-sm:screen-line-after",
-        "sm:nth-[2n+1]:screen-line-before sm:nth-[2n+1]:screen-line-after"
-      )}
+      className={cn("group/deployment flex flex-col gap-2 p-2")}
     >
       <div className="relative overflow-hidden rounded-xl select-none">
         {deployment.image ? (
