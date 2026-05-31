@@ -12,6 +12,7 @@ export const USER: User = {
 
   // Dynamic typewriter effect sentences
   flipSentences: [
+    "Telematic Engineer",
     "Architecting Scalable Networks",
     "Systems Programming (Rust/C++)",
     "AI & Computer Vision Research",
@@ -58,10 +59,10 @@ Currently **looking for internship opportunities** where I can contribute and ke
   `,
 
   // ⚠️ Ensure you have the chosen avatar image in your 'public' folder
-  avatar: "/avatar2.jpg",
+  avatar: "/avatar3.jpg",
 
   // Image used when sharing your site on social media
-  ogImage: "/avatar2.jpg",
+  ogImage: "/avatar3.jpg",
 
   namePronunciationUrl: "", // Optional
 

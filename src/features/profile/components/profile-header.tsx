@@ -22,15 +22,17 @@ export function ProfileHeader() {
   return (
     <div className="screen-line-before screen-line-after flex border-x border-edge">
       <div className="group/photo shrink-0 border-r border-edge">
-        <div className="mx-[2px] my-[3px]">
-          <Image
-            width={160}
-            height={160}
-            className="size-32 transform-gpu rounded-full object-cover object-[50%_28%] ring-2 ring-border/80 ring-offset-3 ring-offset-background grayscale-[0.2] saturate-125 transition-[transform,box-shadow,filter,ring-color] duration-500 ease-out select-none group-hover/photo:-translate-y-0.5 group-hover/photo:rotate-[-0.5deg] group-hover/photo:shadow-xl group-hover/photo:ring-green-500/50 sm:size-40"
-            alt={`${USER.displayName}'s avatar`}
-            src={USER.avatar}
-            priority
-          />
+        <div className="mx-[2px] my-[3px] rounded-full bg-background p-[3px]">
+          <div className="rounded-full ring-3 ring-border/80 ring-offset-2">
+            <Image
+              width={160}
+              height={160}
+              className="size-32 transform-gpu rounded-full object-cover object-[50%_28%] grayscale-[0.2] saturate-125 transition-[transform,box-shadow,filter] duration-500 ease-out select-none group-hover/photo:-translate-y-0.5 group-hover/photo:rotate-[-0.5deg] group-hover/photo:shadow-xl sm:size-40"
+              alt={`${USER.displayName}'s avatar`}
+              src={USER.avatar}
+              priority
+            />
+          </div>
         </div>
       </div>
 

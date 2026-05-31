@@ -11,7 +11,7 @@ export function GitHubContributions() {
 
   return (
     <Panel>
-      <h2 className="sr-only">GitHub and GitLab Activity</h2>
+      <h2 className="sr-only">Activity</h2>
 
       <Suspense fallback={<GitHubContributionFallback />}>
         <GitHubContributionGraph activity={activityPromise} />

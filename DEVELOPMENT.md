@@ -35,6 +35,15 @@ cp .env.example .env.local
 
 Then, update the necessary environment variables inside `.env.local`.
 
+For the presence panel on the homepage, you can optionally configure these endpoints:
+
+- `PRESENCE_CODING_HOURS_ENDPOINT`
+- `PRESENCE_SPOTIFY_ENDPOINT`
+- `PRESENCE_DISCORD_ENDPOINT`
+- `PRESENCE_STEAM_ENDPOINT`
+
+Each endpoint should return JSON with `value` and `detail` fields.
+
 ### 4. Run the development server
 
 ```bash

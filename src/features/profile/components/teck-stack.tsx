@@ -65,20 +65,25 @@ export function TeckStack() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={tech.title}
-                    className="relative flex h-8 w-8 items-center justify-center transition-transform hover:scale-125 active:scale-90"
+                    className="relative flex w-12 flex-col items-center justify-center transition-transform hover:scale-125 active:scale-90"
                   >
-                    {typeof icon === "function" ? (
-                      icon({ className: "w-full h-full relative z-10" })
-                    ) : (
-                      <Image
-                        src={`/icons/tech/${tech.key}.svg`}
-                        alt={`${tech.title} icon`}
-                        width={32}
-                        height={32}
-                        unoptimized
-                        className="relative z-10"
-                      />
-                    )}
+                    <span className="flex h-8 w-8 items-center justify-center">
+                      {typeof icon === "function" ? (
+                        icon({ className: "w-full h-full relative z-10" })
+                      ) : (
+                        <Image
+                          src={`/icons/tech/${tech.key}.svg`}
+                          alt={`${tech.title} icon`}
+                          width={32}
+                          height={32}
+                          unoptimized
+                          className="relative z-10"
+                        />
+                      )}
+                    </span>
+                    <span className="mt-0.5 text-center text-[8px] leading-none text-muted-foreground">
+                      {tech.title}
+                    </span>
                     <span className="sr-only">{tech.title}</span>
                   </a>
                 </SimpleTooltip>

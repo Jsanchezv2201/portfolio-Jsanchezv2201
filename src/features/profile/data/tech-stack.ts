@@ -65,12 +65,14 @@ export const TECH_STACK: TechStack[] = [
     href: "https://www.markdownguide.org/",
     categories: ["Language", "Web", "Documentation"],
   },
+  /*
   {
     key: "bootstrap",
     title: "Bootstrap",
     href: "https://getbootstrap.com/",
     categories: ["Framework", "Web"],
   },
+  */
   {
     key: "bash",
     title: "Bash Scripting",
@@ -160,7 +162,7 @@ export const TECH_STACK: TechStack[] = [
   },
   {
     key: "nvidia",
-    title: "NVIDIA (CUDA)",
+    title: "NVIDIA BUILD",
     href: "https://developer.nvidia.com/cuda-zone",
     categories: ["Hardware", "AI"],
   },
@@ -170,12 +172,14 @@ export const TECH_STACK: TechStack[] = [
     href: "https://gazebosim.org/",
     categories: ["Tools", "Simulation"],
   },
+  /*
   {
     key: "robotframework",
     title: "Robot Framework",
     href: "https://robotframework.org/",
     categories: ["Testing", "Robotics"],
   },
+  */
   {
     key: "jupyter",
     title: "Jupyter",
@@ -205,17 +209,25 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Tools", "Networking", "Security"],
   },
   {
+    key: "netgui",
+    title: "NetGui",
+    href: "#",
+    categories: ["Tools", "Networking"],
+  },
+  {
     key: "virtualbox",
     title: "VirtualBox",
     href: "https://www.virtualbox.org/",
     categories: ["Tools", "Virtualization"],
   },
+  /*
   {
     key: "mysql",
     title: "MySQL",
     href: "https://www.mysql.com/",
     categories: ["Database"],
   },
+  */
 
   // ========================================================================
   // 5. HARDWARE Y ARQUITECTURA
@@ -226,12 +238,14 @@ export const TECH_STACK: TechStack[] = [
     href: "https://riscv.org/",
     categories: ["Architecture", "Hardware"],
   },
+  /*
   {
     key: "arduino",
     title: "Arduino",
     href: "https://www.arduino.cc/",
     categories: ["Hardware", "Embedded"],
   },
+  */
 
   // ========================================================================
   // 6. HERRAMIENTAS DE DESARROLLO Y DISEÑO

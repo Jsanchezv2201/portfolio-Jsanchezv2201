@@ -37,10 +37,7 @@ export function GitHubContributionGraph({
       blockMargin={3}
       blockRadius={0}
     >
-      <ContributionGraphCalendar
-        className="no-scrollbar px-2"
-        title="GitHub and GitLab Activity"
-      >
+      <ContributionGraphCalendar className="no-scrollbar px-2" title="Activity">
         {({ activity, dayIndex, weekIndex }) => (
           <Tooltip>
             <TooltipTrigger asChild>
@@ -65,9 +62,10 @@ export function GitHubContributionGraph({
 
       <ContributionGraphFooter className="px-2">
         <ContributionGraphTotalCount>
-          {({ totalCount, year }) => (
+          {({ totalCount }) => (
             <div className="text-muted-foreground">
-              {totalCount.toLocaleString("en")} activity entries in {year} on{" "}
+              {totalCount.toLocaleString("en")} activity entries in{" "}
+              {new Date().getFullYear()} on{" "}
               <a
                 className="font-medium underline underline-offset-4"
                 href={`https://github.com/${GITHUB_USERNAME}`}
