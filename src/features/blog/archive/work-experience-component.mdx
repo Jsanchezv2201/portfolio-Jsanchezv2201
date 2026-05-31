@@ -1,0 +1,74 @@
+---
+title: Work Experience
+description: Displays a list of work experiences with role details and durations.
+image: https://assets.chanhdai.com/images/blog/work-experience-component.webp?t=1750149861
+category: components
+icon: work-experience
+createdAt: 2025-06-16
+updatedAt: 2025-06-16
+---
+
+<ComponentPreview
+  name="work-experience-demo"
+  openInV0Url="https://chanhdai.com/r/work-experience-block-01.json"
+  notProse={false}
+  codeCollapsible
+/>
+
+## Installation
+
+<CodeTabs className="gap-0">
+
+<TabsListInstallType />
+
+<TabsContent value="cli" className="[&>figure]:mb-0">
+
+```bash
+npx shadcn add @ncdai/work-experience
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies</Step>
+
+```bash
+npm install clsx tailwind-merge react-markdown lucide-react
+npm install -D @tailwindcss/typography tw-animate-css
+```
+
+<Step>Add a cn helper</Step>
+
+<ComponentSource
+  src="src/lib/utils.ts"
+  title="lib/utils.ts"
+  showLineNumbers
+  collapsible={false}
+/>
+
+<Step>Add plugin for tailwindcss
+
+```css title="globals.css" showLineNumbers {2,3}
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+```
+
+<Step>Copy and paste the following code into your project
+
+<ComponentSource
+  name="work-experience"
+  title="components/work-experience.tsx"
+  showLineNumbers
+/>
+
+<Step>Update the import paths to match your project setup
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
