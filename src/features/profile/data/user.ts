@@ -59,10 +59,10 @@ Currently **looking for internship opportunities** where I can contribute and ke
   `,
 
   // ⚠️ Ensure you have the chosen avatar image in your 'public' folder
-  avatar: "/avatar3.jpg",
+  avatar: "/avatar.jpg",
 
   // Image used when sharing your site on social media
-  ogImage: "/avatar3.jpg",
+  ogImage: "/avatar.jpg",
 
   namePronunciationUrl: "", // Optional
 
