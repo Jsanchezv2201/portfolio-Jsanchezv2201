@@ -60,10 +60,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  // Force desktop layout width so mobile devices render the "laptop" view.
-  // WARNING: this causes the page to be rendered as if the viewport
-  // is `1024px` wide on small devices (it will scale/zoom accordingly).
-  width: 1024,
+  width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
   themeColor: META_THEME_COLORS.light,
