@@ -21,9 +21,9 @@ export function DeploymentItem({ deployment }: { deployment: Deployment }) {
             alt={deployment.title}
             width={1200}
             height={630}
-            quality={100}
+            quality={75}
             priority={deployment.title === "Portfolio Web"}
-            unoptimized
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="aspect-1200/630 object-cover"
           />
         ) : (

@@ -16,7 +16,7 @@ export const DEPLOYMENTS: Deployment[] = [
     period: "2026",
     summary:
       "My personal portfolio built with Next.js, MDX, interactive sections, and a clean aesthetic focused on showcasing my work.",
-    image: "/vista-previa.png",
+    image: "/vista-previa.webp",
     technologies: ["Next.js", "TypeScript", "Tailwind", "MDX"],
   },
   {
@@ -25,7 +25,7 @@ export const DEPLOYMENTS: Deployment[] = [
     period: "04.2026",
     summary:
       "Academic chat application built with Django, HTMX, and a real LLM connection.",
-    image: "/assets/chatia-web-top.png",
+    image: "/assets/chatia-web-top.webp",
     technologies: ["Django", "HTMX", "Python", "LLM API"],
   },
 ];

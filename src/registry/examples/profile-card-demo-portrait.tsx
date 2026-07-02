@@ -13,9 +13,9 @@ export default function ProfileCardDemoPortrait() {
         handle={USER.username}
         status="Online"
         contactText="Contact Me"
-        avatarUrl="/avatar3.jpg"
+        avatarUrl="/avatar.jpg"
         showUserInfo
-        miniAvatarUrl="/avatar3.jpg"
+        miniAvatarUrl="/avatar.jpg"
         enableTilt={true}
         enableMobileTilt={false}
         behindGlowColor="rgba(125, 190, 255, 0.67)"
