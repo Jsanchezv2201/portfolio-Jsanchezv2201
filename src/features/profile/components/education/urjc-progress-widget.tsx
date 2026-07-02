@@ -13,18 +13,19 @@ import { useEffect, useRef, useState } from "react";
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const TOTAL_ECTS = 240;
-const DONE_ECTS = 168;
-const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 70
+const DONE_ECTS = 186;
+const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 78
 
 const STATS = [
-  { label: "Approved subjects", value: 28, color: "text-emerald-500" },
-  { label: "Remaining", value: 6, color: "text-blue-400" },
+  { label: "Approved subjects", value: 32, color: "text-emerald-500" },
+  { label: "Remaining", value: 7, color: "text-blue-400" },
 ] as const;
 
 const PENDING_REQUIRED: { name: string; note?: string }[] = [
   { name: "Bachelor's Thesis (TFG)", note: "12 ECTS" },
   { name: "Internship", note: "15 ECTS" },
   { name: "Telematic Applications", note: "6 ECTS" },
+  { name: "Transmisión Digital", note: "6 ECTS" },
   { name: "Telecom Engineering Projects", note: "3 ECTS · conditional" },
 ];
 
@@ -235,7 +236,7 @@ export function UrjcProgressWidget() {
             Open to internship opportunities
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            The 6 remaining items include the TFG and the external internship,
+            The 7 remaining items include the TFG and the external internship,
             so the count is lower than the ECTS gap — available to join your
             team, hit the ground running, and grow through real engineering
             challenges.
@@ -247,7 +248,7 @@ export function UrjcProgressWidget() {
       <AccordionPanel
         id="urjc-pending"
         label="What’s left to graduate (2026–2027)"
-        count={6}
+        count={7}
         dotClass="bg-blue-400"
         delay={0.35}
       >
