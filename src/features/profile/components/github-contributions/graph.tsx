@@ -2,9 +2,8 @@
 
 import dayjs from "dayjs";
 import { LoaderIcon } from "lucide-react";
-import { use } from "react";
+import { use, useEffect, useState } from "react";
 
-import type { Activity } from "@/components/ui/contribution-graph";
 import {
   ContributionGraph,
   ContributionGraphBlock,
@@ -28,16 +27,35 @@ export function GitHubContributionGraph({
   activity: Promise<CombinedActivity>;
 }) {
   const { activities } = use(activity);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // En móvil mostrar solo los últimos 6 meses
+  const cutoff = isMobile
+    ? dayjs().subtract(7, "month").format("YYYY-MM-DD")
+    : null;
+  const visibleActivities = cutoff
+    ? activities.filter((a) => a.date >= cutoff)
+    : activities;
 
   return (
     <ContributionGraph
       className="mx-auto py-2"
-      data={activities}
+      data={visibleActivities}
       blockSize={11}
       blockMargin={3}
       blockRadius={0}
     >
-      <ContributionGraphCalendar className="no-scrollbar px-2" title="Activity">
+      <ContributionGraphCalendar
+        className="no-scrollbar overflow-x-auto px-2"
+        title="Activity"
+      >
         {({ activity, dayIndex, weekIndex }) => (
           <Tooltip>
             <TooltipTrigger asChild>

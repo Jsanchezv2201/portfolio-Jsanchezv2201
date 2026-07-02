@@ -52,17 +52,19 @@ export function ProfileHeader() {
         </div>
 
         <div className="border-t border-edge">
-          <h1 className="flex flex-wrap items-center gap-y-2 py-1 pl-4 text-3xl font-semibold">
-            {USER.displayName}
-            <div className="ml-2">
+          <h1 className="py-1 pl-4 text-2xl font-semibold sm:text-3xl">
+            {/* Nombre siempre en su propia línea */}
+            <span className="mr-2 whitespace-nowrap">{USER.displayName}</span>
+
+            {/* Tick + bandera + opentowork: misma línea entre ellos, pueden ir debajo del nombre en móvil */}
+            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 align-middle">
               <SimpleTooltip content="Verified Account">
                 <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
               </SimpleTooltip>
-            </div>
-            <div>
+
               <SimpleTooltip content="Based in Madrid, Spain">
                 <svg
-                  className="ml-3 h-6 w-auto rounded-sm opacity-90 shadow-sm transition-opacity hover:opacity-100"
+                  className="h-5 w-auto rounded-sm opacity-90 shadow-sm transition-opacity hover:opacity-100 sm:h-6"
                   viewBox="0 0 30 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -70,11 +72,9 @@ export function ProfileHeader() {
                   <rect y="5" width="30" height="10" fill="#FABD00" />
                 </svg>
               </SimpleTooltip>
-            </div>
-            <div className="ml-3 flex items-center">
-              <span className="inline-flex cursor-default items-center justify-center rounded-full border border-green-500/30 bg-background/95 px-3 py-1 text-xs font-bold text-green-500 shadow-sm">
-                <span className="relative mr-2 flex h-2 w-2">
-                  {/* Only animate ping on desktop to improve INP */}
+
+              <span className="inline-flex cursor-default items-center justify-center rounded-full border border-green-500/30 bg-background/95 px-2 py-0.5 text-[10px] font-bold text-green-500 shadow-sm sm:px-3 sm:py-1 sm:text-xs">
+                <span className="relative mr-1.5 flex h-2 w-2 sm:mr-2">
                   {!isMobile && (
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
                   )}
@@ -82,7 +82,7 @@ export function ProfileHeader() {
                 </span>
                 #OPENTOWORK
               </span>
-            </div>
+            </span>
             {USER.namePronunciationUrl && (
               <>
                 &nbsp;
