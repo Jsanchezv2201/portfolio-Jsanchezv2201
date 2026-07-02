@@ -52,8 +52,9 @@ export function ProfileCover() {
             alt="Banner background"
             fill
             priority
+            fetchPriority="high"
             className="absolute inset-0 z-0 scale-105 object-cover object-center"
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, 100vw"
           />
           <div className="absolute inset-0 z-0 bg-black/10 dark:bg-black/20" />
         </div>

@@ -176,8 +176,8 @@ export default function InfiniteGallery({
                 alt={item.text}
                 width={width}
                 height={height}
-                quality={75}
-                priority={i < 4}
+                quality={i < 4 ? 75 : 60}
+                priority={i < 3}
                 sizes={`${width}px`}
                 className={["h-full w-full object-cover", item.imageClassName]
                   .filter(Boolean)

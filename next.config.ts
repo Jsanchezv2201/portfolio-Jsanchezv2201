@@ -13,6 +13,9 @@ const nextConfig = {
     root: path.join(__dirname, "."),
   },
   devIndicators: false,
+  experimental: {
+    optimizeCss: true,
+  },
   images: {
     remotePatterns: [
       {
