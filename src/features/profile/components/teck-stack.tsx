@@ -36,7 +36,7 @@ export function TeckStack() {
               },
             },
           }}
-          className="flex flex-wrap gap-4 select-none"
+          className="center-stack select-none"
         >
           {TECH_STACK.map((tech, index) => {
             const icon = Icons[tech.key as keyof typeof Icons];

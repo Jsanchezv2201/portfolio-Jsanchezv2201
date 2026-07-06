@@ -52,9 +52,9 @@ export function ProfileHeader() {
         </div>
 
         <div className="border-t border-edge">
-          <h1 className="py-1 pl-4 text-2xl font-semibold sm:text-3xl">
+          <h1 className="py-1 pl-4 text-xl font-medium tracking-tight sm:text-3xl">
             {/* Nombre siempre en su propia línea */}
-            <span className="mr-2 whitespace-nowrap">{USER.displayName}</span>
+            <span className="mr-2">{USER.displayName}</span>
 
             {/* Tick + bandera + opentowork: misma línea entre ellos, pueden ir debajo del nombre en móvil */}
             <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 align-middle">

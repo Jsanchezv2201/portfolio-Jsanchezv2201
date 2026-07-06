@@ -426,6 +426,15 @@
   }
 }
 
+@layer utilities {
+  .center-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 3rem);
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
 /* ==== Profile Card (React Bits-style) ==== */
 :root {
   --pointer-x: 50%;

@@ -47,7 +47,7 @@ function AnimatedNumber({
   const ref = useRef<HTMLSpanElement>(null);
   const motionVal = useMotionValue(0);
   const spring = useSpring(motionVal, { duration: 1200, bounce: 0 });
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, margin: "0px 0px 200px 0px" });
 
   useEffect(() => {
     if (inView) {
@@ -140,7 +140,7 @@ export function UrjcProgressWidget() {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     once: true,
-    margin: "0px 0px -60px",
+    margin: "0px 0px 200px 0px",
   });
 
   return (
