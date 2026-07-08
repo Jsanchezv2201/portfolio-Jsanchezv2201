@@ -24,7 +24,7 @@ export function DeploymentItem({ deployment }: { deployment: Deployment }) {
             quality={75}
             priority={deployment.title === "Portfolio Web"}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="aspect-1200/630 object-cover"
+            className="aspect-1200/630 object-cover object-top"
           />
         ) : (
           <div className="flex aspect-1200/630 items-end bg-[linear-gradient(135deg,var(--color-muted),var(--color-background)_65%)] p-4">
