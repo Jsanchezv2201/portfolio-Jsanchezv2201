@@ -16,7 +16,7 @@ export const DEPLOYMENTS: Deployment[] = [
     period: "2026",
     summary:
       "My personal portfolio built with Next.js, MDX, interactive sections, and a clean aesthetic focused on showcasing my work.",
-    image: "/vista-previa.webp",
+    image: "/assets/portfolio.webp",
     technologies: ["Next.js", "TypeScript", "Tailwind", "MDX"],
   },
   {

@@ -9,7 +9,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: "04.2026",
     },
-    link: "https://juansv22.pythonanywhere.com/",
+    link: "https://chatia-228425879204.europe-west2.run.app/",
     skills: [
       "Django",
       "Python",
@@ -19,14 +19,7 @@ export const PROJECTS: Project[] = [
       "SQLite",
       "Linux (Ubuntu)",
     ],
-    description: `Academic chat application developed for a university assignment. Built with **Django + HTMX**, session-based authentication and real LLM integration.
-  - Secure LLM provider integration via API (credentials stored in environment variables / .env).
-  - Operational Admin Site with documented endpoints.
-
-**Status (05/2026):**
-- ✅ Project completed and tested.
-- ✅ Public deployment: https://juansv22.pythonanywhere.com/
-- ✅ Final documentation and deliverables included.
+    description: `Academic chat application powered by real LLMs. Originally built with Django & HTMX, successfully migrated to a modern React, Node.js, and TypeScript architecture.
 `,
     logo: "/icons/tech/django.svg",
   },
