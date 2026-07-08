@@ -55,7 +55,7 @@ type CommandLinkItem = {
 
 const MENU_LINKS: CommandLinkItem[] = [
   {
-    title: "Daifolio",
+    title: "Portfolio",
     href: "/",
     icon: LogoMark,
   },
@@ -97,21 +97,21 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
     href: "/#projects",
     icon: Icons.project,
   },
-  {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: Icons.award,
-  },
+  //{
+  //  title: "Honors & Awards",
+  //  href: "/#awards",
+  // icon: Icons.award,
+  //},
   {
     title: "Certifications",
     href: "/#certs",
     icon: Icons.certificate,
   },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    icon: CircleUserIcon,
-  },
+  //{
+  // title: "Download vCard",
+  // href: "/vcard",
+  // icon: CircleUserIcon,
+  //},
 ];
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
@@ -323,12 +323,12 @@ export function CommandMenu({
               Brand Guidelines
             </CommandItem> */}
 
-            <CommandItem asChild>
+            {/* <CommandItem asChild>
               <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
                 <DownloadIcon />
                 Download Brand Assets
               </a>
-            </CommandItem>
+            </CommandItem> */}
           </CommandGroup>
 
           <CommandSeparator />

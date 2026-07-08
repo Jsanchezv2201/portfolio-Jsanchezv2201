@@ -25,7 +25,7 @@ export const DEPLOYMENTS: Deployment[] = [
     period: "04.2026",
     summary:
       "Academic chat application built with Django, HTMX, and a real LLM connection.",
-    image: "/assets/chatia-web-top.webp",
+    image: "/assets/chatia.webp",
     technologies: ["Django", "HTMX", "Python", "LLM API"],
   },
 ];
