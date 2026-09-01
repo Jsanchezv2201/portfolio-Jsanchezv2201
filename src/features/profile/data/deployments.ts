@@ -15,25 +15,32 @@ export const DEPLOYMENTS: Deployment[] = [
     href: SITE_INFO.url,
     period: "2026",
     summary:
-      "My personal portfolio built with Next.js, MDX and interactive sections showcasing my work.",
-    image: "/assets/portfoliov2.webp",
+      "My personal portfolio built with Next.js, MDX, interactive sections, and a clean aesthetic focused on showcasing my work.",
+    image: "/vista-previa.webp",
     technologies: ["Next.js", "TypeScript", "Tailwind", "MDX"],
   },
   {
     title: "ChatIA Web",
-    href: "https://juansv22.pythonanywhere.com/",
+    href: "https://chatia-228425879204.europe-west2.run.app/",
     period: "04.2026",
     summary:
-      "Academic chat application built with Django, HTMX, and a real LLM connection.",
-    image: "/assets/chatia.webp",
-    technologies: ["Django", "HTMX", "Python", "LLM API"],
+      "Academic chat application built with Django, HTMX, and a real LLM connection, now also migrated to a modern TypeScript stack.",
+    image: "/assets/chatia-web-top.webp",
+    technologies: ["Django", "HTMX", "Python", "TypeScript", "LLM API"],
   },
   {
     title: "Photo Collection Manager",
-    href: "https://photocall-228425879204.europe-west2.run.app",
+    href: "https://github.com/Jsanchezv2201",
     period: "12.2025",
-    summary: "A web application for organizing and displaying photos.",
+    summary:
+      "Shell-based tool for bulk organization and normalization of photo libraries and media collections.",
     image: "/assets/photocall.webp",
-    technologies: ["Cloud Deployment", "Shell Scripting"],
+    technologies: [
+      "Shell",
+      "Linux",
+      "Automation",
+      "Bash",
+      "System Administration",
+    ],
   },
 ];

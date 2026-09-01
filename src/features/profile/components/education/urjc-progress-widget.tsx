@@ -13,27 +13,34 @@ import { useEffect, useRef, useState } from "react";
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const TOTAL_ECTS = 240;
-const DONE_ECTS = 186;
-const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 78
+const DONE_ECTS = 180;
+const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 75
 
 const STATS = [
   { label: "Approved subjects", value: 32, color: "text-emerald-500" },
-  { label: "Remaining", value: 7, color: "text-blue-400" },
+  { label: "Remaining", value: 8, color: "text-blue-400" },
 ] as const;
 
-const PENDING_REQUIRED: { name: string; note?: string }[] = [
-  { name: "Bachelor's Thesis (TFG)", note: "12 ECTS" },
-  { name: "Internship", note: "15 ECTS" },
-  { name: "Telematic Applications", note: "6 ECTS" },
-  { name: "Transmisión Digital", note: "6 ECTS" },
-  { name: "Telecom Engineering Projects", note: "3 ECTS · conditional" },
+const PENDING_REQUIRED: {
+  name: string;
+  note?: string;
+  kind?: "final" | "course";
+}[] = [
+  { name: "Bachelor's Thesis (TFG)", note: "12 ECTS", kind: "final" },
+  { name: "Internship", note: "15 ECTS", kind: "final" },
+  { name: "Telematic Applications", note: "6 ECTS", kind: "course" },
+  { name: "Digital Transmission", note: "6 ECTS", kind: "course" },
+  { name: "Telecom Engineering Projects", note: "3 ECTS", kind: "course" },
+  { name: "Advanced Signals and Systems", note: "6 ECTS", kind: "course" },
+  {
+    name: "Network and Systems Administration Lab",
+    note: "6 ECTS",
+    kind: "course",
+  },
+  { name: "Mobile and Ubiquitous Systems Lab", note: "6 ECTS", kind: "course" },
 ];
 
-const PENDING_LABS: { name: string }[] = [
-  { name: "Network & Systems Administration Lab" },
-  { name: "Mobile & Ubiquitous Systems Lab" },
-  { name: "Database Systems Lab" },
-];
+const PENDING_LABS: { name: string }[] = [];
 
 // ── Animated counter ──────────────────────────────────────────────────────────
 
@@ -47,7 +54,7 @@ function AnimatedNumber({
   const ref = useRef<HTMLSpanElement>(null);
   const motionVal = useMotionValue(0);
   const spring = useSpring(motionVal, { duration: 1200, bounce: 0 });
-  const inView = useInView(ref, { once: true, margin: "0px 0px 200px 0px" });
+  const inView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (inView) {
@@ -140,7 +147,7 @@ export function UrjcProgressWidget() {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, {
     once: true,
-    margin: "0px 0px 200px 0px",
+    margin: "0px 0px -60px",
   });
 
   return (
@@ -236,7 +243,7 @@ export function UrjcProgressWidget() {
             Open to internship opportunities
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            The 7 remaining items include the TFG and the external internship,
+            The 8 remaining items include the TFG and the external internship,
             so the count is lower than the ECTS gap — available to join your
             team, hit the ground running, and grow through real engineering
             challenges.
@@ -248,49 +255,50 @@ export function UrjcProgressWidget() {
       <AccordionPanel
         id="urjc-pending"
         label="What’s left to graduate (2026–2027)"
-        count={7}
+        count={8}
         dotClass="bg-blue-400"
         delay={0.35}
       >
-        {PENDING_REQUIRED.map(({ name, note }, i) => (
-          <motion.div
-            key={name}
-            initial={{ opacity: 0, x: -6 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.22, delay: i * 0.05 }}
-            className="flex items-center gap-2.5 rounded-md px-1 py-1 text-xs transition-colors hover:bg-accent/40"
-          >
-            <span className="size-1.5 shrink-0 rounded-full bg-blue-400" />
-            <span className="flex-1 text-muted-foreground">{name}</span>
-            {note && (
-              <span className="text-[10px] text-muted-foreground/50">
-                {note}
-              </span>
-            )}
-          </motion.div>
-        ))}
-
-        {/* Labs group */}
-        <div className="mt-1.5 border-t border-edge pt-1.5">
-          <p className="mb-1 px-1 text-[10px] font-medium tracking-wide text-muted-foreground/60 uppercase">
-            Elective labs · pick 2 of 3
-          </p>
-          {PENDING_LABS.map(({ name }, i) => (
+        {PENDING_REQUIRED.map(({ name, note, kind }, i) => {
+          const isFinal = kind === "final";
+          return (
             <motion.div
               key={name}
               initial={{ opacity: 0, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.22, delay: 0.2 + i * 0.05 }}
-              className="flex items-center gap-2.5 rounded-md px-1 py-1 text-xs transition-colors hover:bg-accent/40"
+              transition={{ duration: 0.22, delay: i * 0.05 }}
+              className={[
+                "flex items-center gap-2.5 rounded-md px-1 py-1 text-xs transition-colors hover:bg-accent/40",
+                isFinal ? "bg-amber-500/5" : "",
+              ].join(" ")}
             >
-              <span className="size-1.5 shrink-0 rounded-full border border-blue-400/60" />
-              <span className="flex-1 text-muted-foreground">{name}</span>
-              <span className="text-[10px] text-muted-foreground/50">
-                6 ECTS
+              <span
+                className={[
+                  "size-1.5 shrink-0 rounded-full",
+                  isFinal ? "bg-amber-400" : "bg-blue-400",
+                ].join(" ")}
+              />
+              <span
+                className={[
+                  "flex-1",
+                  isFinal ? "text-amber-200" : "text-muted-foreground",
+                ].join(" ")}
+              >
+                {name}
               </span>
+              {note && (
+                <span
+                  className={[
+                    "text-[10px]",
+                    isFinal ? "text-amber-300/80" : "text-muted-foreground/50",
+                  ].join(" ")}
+                >
+                  {note}
+                </span>
+              )}
             </motion.div>
-          ))}
-        </div>
+          );
+        })}
       </AccordionPanel>
     </motion.div>
   );

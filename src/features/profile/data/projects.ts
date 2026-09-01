@@ -19,7 +19,11 @@ export const PROJECTS: Project[] = [
       "SQLite",
       "Linux (Ubuntu)",
     ],
-    description: `Academic chat application powered by real LLMs. Originally built with Django & HTMX, successfully migrated to a modern React, Node.js, and TypeScript architecture.
+    description: `Academic chat application powered by real LLMs. Originally built with Django & HTMX, and later migrated to a modern React, Node.js, and TypeScript architecture.
+
+🔗 **Project links:**
+- [Django + Python version](https://juansv22.pythonanywhere.com/)
+- [TypeScript migration](https://chatia-228425879204.europe-west2.run.app/)
 `,
     logo: "/icons/tech/django.svg",
   },

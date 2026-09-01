@@ -8,7 +8,7 @@ export const USER: User = {
   // Pronouns removed as requested
 
   // Short bio for metadata and header
-  bio: "Telematic Engineer & Systems Developer. Focused on High-Performance Networking, Rust, and AI.",
+  bio: "Last-year Telematic Engineering student, finishing my degree this year and focused on networking, systems, and AI.",
 
   // Dynamic typewriter effect sentences
   flipSentences: [
@@ -31,7 +31,7 @@ export const USER: User = {
   // Timeline / Experience
   jobs: [
     {
-      title: "Telematic Engineering Student",
+      title: "Last-year Telematic Engineering Student",
       company: "Universidad Rey Juan Carlos",
       website: "https://www.urjc.es",
     },
@@ -45,7 +45,7 @@ export const USER: User = {
 
   // Expanded "About Me" section (Markdown supported)
   about: `
-I am a **Telematic Engineering Student** at **Universidad Rey Juan Carlos** in Madrid.
+I am a **last-year Telematic Engineering student** at **Universidad Rey Juan Carlos** in Madrid, and I will complete my degree this year.
 
 I also want to carry forward a family tradition of engineering through work at the intersection of **networking, low-level software, and AI**.
 
