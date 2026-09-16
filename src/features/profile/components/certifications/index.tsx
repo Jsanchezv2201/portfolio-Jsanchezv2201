@@ -1,4 +1,5 @@
 import { CollapsibleList } from "@/components/collapsible-list";
+import { LocalizedText } from "@/components/localized-text";
 
 import { CERTIFICATIONS } from "../../data/certifications";
 import { Panel, PanelHeader, PanelTitle } from "../panel";
@@ -9,7 +10,7 @@ export function Certifications() {
     <Panel id="certs">
       <PanelHeader>
         <PanelTitle>
-          Certifications
+          <LocalizedText en="Certifications" es="Certificaciones" />
           <sup className="ml-1 font-mono text-sm font-medium text-muted-foreground select-none">
             ({CERTIFICATIONS.length})
           </sup>

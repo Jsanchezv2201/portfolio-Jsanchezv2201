@@ -4,13 +4,17 @@ import { SITE_INFO, SOURCE_CODE_GITHUB_URL } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import { Icons } from "./icons";
+import { LocalizedText } from "./localized-text";
 
 export function SiteFooter() {
   return (
     <footer className="max-w-screen overflow-x-hidden px-2">
       <div className="screen-line-before mx-auto border-x border-edge pt-4 md:max-w-3xl">
         <p className="mb-4 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
-          The source code is available on{" "}
+          <LocalizedText
+            en="The source code is available on"
+            es="El código fuente está disponible en"
+          />{" "}
           <a
             className="link"
             href={SOURCE_CODE_GITHUB_URL}

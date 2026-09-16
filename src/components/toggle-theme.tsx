@@ -31,6 +31,7 @@ export function ToggleTheme() {
     <Button
       variant="outline"
       size="icon"
+      className="border-2"
       onClick={switchTheme}
       // onClick={() => {
       //   if (!document.startViewTransition) switchTheme();

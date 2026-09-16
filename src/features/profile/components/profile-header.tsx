@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { USER } from "@/features/profile/data/user";
+import { useLanguage } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { FlipSentences } from "@/registry/flip-sentences";
 
@@ -13,7 +13,19 @@ import { PronounceMyName } from "./pronounce-my-name";
 import { VerifiedIcon } from "./verified-icon";
 
 export function ProfileHeader() {
+  const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
+
+  const flipSentences =
+    language === "es"
+      ? [
+          "Ingeniero telemático",
+          "Diseñando redes escalables",
+          "Programación de sistemas (Rust/C++)",
+          "IA y visión por computador",
+          "Contribuidor de código abierto",
+        ]
+      : USER.flipSentences;
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
@@ -58,11 +70,21 @@ export function ProfileHeader() {
 
             {/* Tick + bandera + opentowork: misma línea entre ellos, pueden ir debajo del nombre en móvil */}
             <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 align-middle">
-              <SimpleTooltip content="Verified Account">
+              <SimpleTooltip
+                content={
+                  language === "es" ? "Cuenta verificada" : "Verified Account"
+                }
+              >
                 <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
               </SimpleTooltip>
 
-              <SimpleTooltip content="Based in Madrid, Spain">
+              <SimpleTooltip
+                content={
+                  language === "es"
+                    ? "Vive en Madrid, España"
+                    : "Based in Madrid, Spain"
+                }
+              >
                 <svg
                   className="h-5 w-auto rounded-sm opacity-90 shadow-sm transition-opacity hover:opacity-100 sm:h-6"
                   viewBox="0 0 30 20"
@@ -97,7 +119,7 @@ export function ProfileHeader() {
           </h1>
 
           <div className="h-12 border-t border-edge py-1 pl-4 sm:h-auto">
-            <FlipSentences sentences={USER.flipSentences} startDelayMs={800} />
+            <FlipSentences sentences={flipSentences} startDelayMs={800} />
           </div>
         </div>
       </div>

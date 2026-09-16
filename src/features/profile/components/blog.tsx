@@ -2,6 +2,7 @@ import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
+import { LocalizedText } from "@/components/localized-text";
 import { Button } from "@/components/ui/button";
 import { PostItem } from "@/features/blog/components/post-item";
 import { getAllPosts } from "@/features/blog/data/posts";
@@ -14,7 +15,9 @@ export function Blog() {
   return (
     <Panel id="blog">
       <PanelHeader>
-        <PanelTitle>Blog</PanelTitle>
+        <PanelTitle>
+          <LocalizedText en="Blog" es="Blog" />
+        </PanelTitle>
       </PanelHeader>
 
       <PanelContent>
@@ -33,7 +36,7 @@ export function Blog() {
       <div className="screen-line-before flex justify-center py-2">
         <Button variant="default" asChild>
           <Link href="/blog">
-            All Posts
+            <LocalizedText en="All Posts" es="Todos los artículos" />
             <ArrowRightIcon />
           </Link>
         </Button>

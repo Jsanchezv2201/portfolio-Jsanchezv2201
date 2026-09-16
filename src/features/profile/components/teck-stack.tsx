@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 
 import { Icons } from "@/components/icons";
+import { LocalizedText } from "@/components/localized-text";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
@@ -15,7 +16,9 @@ export function TeckStack() {
   return (
     <Panel id="stack">
       <PanelHeader>
-        <PanelTitle>Stack</PanelTitle>
+        <PanelTitle>
+          <LocalizedText en="Stack" es="Tecnologías" />
+        </PanelTitle>
       </PanelHeader>
 
       <PanelContent

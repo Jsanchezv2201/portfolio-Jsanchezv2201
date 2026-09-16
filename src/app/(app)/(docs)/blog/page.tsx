@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import type { Metadata } from "next";
 
+import { LocalizedText } from "@/components/localized-text";
 import { PostItem } from "@/features/blog/components/post-item";
 import { getAllPosts } from "@/features/blog/data/posts";
 
@@ -15,12 +16,17 @@ export default function Page() {
   return (
     <>
       <div className="screen-line-before screen-line-after px-4">
-        <h1 className="text-3xl font-semibold">Blog</h1>
+        <h1 className="text-3xl font-semibold">
+          <LocalizedText en="Blog" es="Blog" />
+        </h1>
       </div>
 
       <div className="screen-line-after p-4">
         <p className="font-mono text-sm text-balance text-muted-foreground">
-          {metadata.description}
+          <LocalizedText
+            en="A collection of articles on development, design, and ideas."
+            es="Una colección de artículos sobre desarrollo, diseño e ideas."
+          />
         </p>
       </div>
 

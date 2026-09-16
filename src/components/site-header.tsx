@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import { DesktopNav } from "@/components/desktop-nav";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { LazyCommandMenu } from "@/components/lazy-command-menu";
 import { LazyMobileNav } from "@/components/lazy-mobile-nav";
 import { NavItemGitHub } from "@/components/nav-item-github";
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 import { SiteHeaderMark } from "./site-header-mark";
 import { SiteHeaderWrapper } from "./site-header-wrapper";
+import { TerminalTrigger } from "./terminal-trigger";
 import { ToggleTheme } from "./toggle-theme";
 
 const BrandContextMenu = dynamic(() =>
@@ -44,8 +46,10 @@ export function SiteHeader() {
         <DesktopNav items={MAIN_NAV} />
 
         <div className="flex items-center gap-2">
+          <TerminalTrigger />
           <LazyCommandMenu posts={posts} />
           <NavItemGitHub />
+          <LanguageSwitcher />
           <ToggleTheme />
           <LazyMobileNav className="sm:hidden" items={MAIN_NAV} />
         </div>

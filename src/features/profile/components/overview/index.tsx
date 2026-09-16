@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { GlobeIcon, MapPinIcon } from "lucide-react";
 
+import { LocalizedText } from "@/components/localized-text";
 import { USER } from "@/features/profile/data/user";
+import { useLanguage } from "@/lib/i18n";
 import { urlToName } from "@/utils/url";
 
 import { Panel, PanelContent } from "../panel";
@@ -28,9 +30,24 @@ const itemVariants = {
 };
 
 export function Overview() {
+  const { language } = useLanguage();
+  const jobs = USER.jobs.map((job) =>
+    language === "es"
+      ? {
+          ...job,
+          title:
+            job.title === "Last-year Telematic Engineering Student"
+              ? "Estudiante de último año de Ingeniería Telemática"
+              : "Buscando oportunidades de prácticas",
+        }
+      : job
+  );
+
   return (
     <Panel>
-      <h2 className="sr-only">Overview</h2>
+      <h2 className="sr-only">
+        <LocalizedText en="Overview" es="Resumen" />
+      </h2>
 
       <PanelContent className="space-y-2">
         <motion.div
@@ -40,7 +57,7 @@ export function Overview() {
           viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           className="space-y-2"
         >
-          {USER.jobs.map((job, index) => (
+          {jobs.map((job, index) => (
             <motion.div key={index} variants={itemVariants}>
               <JobItem
                 title={job.title}

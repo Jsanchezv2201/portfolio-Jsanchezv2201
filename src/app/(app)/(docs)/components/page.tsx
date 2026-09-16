@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+
 import {
   BriefcaseBusinessIcon,
   LineSquiggleIcon,
@@ -5,8 +8,11 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { codeToHtml } from "shiki";
 
 import { Icons } from "@/components/icons";
+import { LocalizedText } from "@/components/localized-text";
+import { PortfolioComponentShowcase } from "@/components/portfolio-component-showcase";
 import { getPostsByCategory } from "@/features/blog/data/posts";
 
 export const metadata: Metadata = {
@@ -14,20 +20,76 @@ export const metadata: Metadata = {
   description: "A collection of reusable components.",
 };
 
-export default function Page() {
+const FEATURED_COMPONENTS = [
+  {
+    id: "assistant" as const,
+    title: "Ask Juan Assistant",
+    technologies: ["React", "TypeScript", "Framer Motion", "Gemini API"],
+    extension: ".tsx",
+    language: "tsx",
+    sourcePath: "src/components/ask-juan-assistant.tsx",
+  },
+  {
+    id: "terminal" as const,
+    title: "Portfolio Terminal",
+    technologies: ["React", "TypeScript", "Framer Motion", "Lucide"],
+    extension: ".tsx",
+    language: "tsx",
+    sourcePath: "src/components/terminal-modal.tsx",
+  },
+];
+
+export default async function Page() {
   const posts = getPostsByCategory("components");
+  const featuredComponents = await Promise.all(
+    FEATURED_COMPONENTS.map(async (component) => {
+      const source = fs.readFileSync(
+        path.join(process.cwd(), component.sourcePath),
+        "utf8"
+      );
+      const [highlightedSourceLight, highlightedSourceDark] = await Promise.all(
+        [
+          codeToHtml(source, {
+            lang: component.language,
+            theme: "github-light",
+          }),
+          codeToHtml(source, {
+            lang: component.language,
+            theme: "github-dark",
+          }),
+        ]
+      );
+
+      return {
+        id: component.id,
+        title: component.title,
+        technologies: component.technologies,
+        extension: component.extension,
+        source,
+        highlightedSourceLight,
+        highlightedSourceDark,
+      };
+    })
+  );
 
   return (
     <div className="min-h-svh">
       <div className="screen-line-after px-4">
-        <h1 className="text-3xl font-semibold">Components</h1>
+        <h1 className="text-3xl font-semibold">
+          <LocalizedText en="Components" es="Componentes" />
+        </h1>
       </div>
 
       <div className="screen-line-after p-4">
         <p className="font-mono text-sm text-balance text-muted-foreground">
-          {metadata.description}
+          <LocalizedText
+            en="A collection of reusable components."
+            es="Una colección de componentes reutilizables."
+          />
         </p>
       </div>
+
+      <PortfolioComponentShowcase components={featuredComponents} />
 
       {posts.map((post) => (
         <Link

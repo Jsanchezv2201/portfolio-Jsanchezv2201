@@ -1,5 +1,7 @@
 import React from "react";
 
+import { LocalizedText } from "@/components/localized-text";
+
 import { DEPLOYMENTS } from "../data/deployments";
 import { DeploymentItem } from "./deployment-item";
 import { Panel } from "./panel";
@@ -8,7 +10,9 @@ export function Deployments() {
   return (
     <Panel id="blog" withOuterLines={false}>
       <div className="screen-line-before screen-line-after px-4">
-        <h2 className="text-3xl font-semibold">Blog</h2>
+        <h2 className="text-3xl font-semibold">
+          <LocalizedText en="Blog" es="Blog" />
+        </h2>
       </div>
 
       <div className="px-4 pt-4 pb-0">

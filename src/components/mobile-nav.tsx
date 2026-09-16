@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/nav";
 
@@ -21,6 +22,17 @@ export function MobileNav({
   className?: string;
   defaultOpen?: boolean;
 }) {
+  const { language } = useLanguage();
+  const localizedItems = items.map((item) => ({
+    ...item,
+    title:
+      language === "es"
+        ? { Home: "Inicio", Blog: "Blog", Components: "Componentes" }[
+            item.title
+          ] || item.title
+        : item.title,
+  }));
+
   return (
     <DropdownMenu defaultOpen={defaultOpen}>
       <DropdownMenuTrigger asChild>
@@ -36,7 +48,7 @@ export function MobileNav({
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="w-64" align="end" sideOffset={8}>
-        {items.map((link) => (
+        {localizedItems.map((link) => (
           <DropdownMenuItem key={link.href} asChild>
             <Link href={link.href}>{link.title}</Link>
           </DropdownMenuItem>

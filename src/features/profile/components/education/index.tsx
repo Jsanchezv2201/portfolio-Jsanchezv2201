@@ -1,4 +1,5 @@
 import { CollapsibleList } from "@/components/collapsible-list";
+import { LocalizedText } from "@/components/localized-text";
 
 import { EDUCATION } from "../../data/education";
 import { ExperienceItem } from "../experiences/experience-item";
@@ -13,7 +14,9 @@ export function Education() {
   return (
     <Panel id="education">
       <PanelHeader>
-        <PanelTitle>Education</PanelTitle>
+        <PanelTitle>
+          <LocalizedText en="Education" es="Formación" />
+        </PanelTitle>
       </PanelHeader>
 
       <PanelContent>

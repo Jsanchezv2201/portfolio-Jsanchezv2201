@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { LocalizedText } from "@/components/localized-text";
+
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 import { PhotographyGallery } from "./photography-gallery";
 
@@ -77,12 +79,16 @@ export function Photography() {
   return (
     <Panel>
       <PanelHeader>
-        <PanelTitle>Photography</PanelTitle>
+        <PanelTitle>
+          <LocalizedText en="Photography" es="Fotografía" />
+        </PanelTitle>
       </PanelHeader>
       <PanelContent>
         <p className="mb-4 text-sm text-muted-foreground">
-          Beyond the code — a selection of moments I have captured while
-          traveling and exploring the world of engineering and design.
+          <LocalizedText
+            en="Beyond the code — a selection of moments I have captured while traveling and exploring the world of engineering and design."
+            es="Más allá del código: una selección de momentos que he capturado mientras viajo y exploro el mundo de la ingeniería y el diseño."
+          />
         </p>
         <PhotographyGallery items={PHOTOS} />
 

@@ -1,4 +1,5 @@
 import { CollapsibleList } from "@/components/collapsible-list";
+import { LocalizedText } from "@/components/localized-text";
 
 import { PROJECTS } from "../../data/projects";
 import { Panel, PanelHeader, PanelTitle } from "../panel";
@@ -9,7 +10,7 @@ export function Projects() {
     <Panel id="projects">
       <PanelHeader>
         <PanelTitle>
-          Projects
+          <LocalizedText en="Projects" es="Proyectos" />
           <sup className="ml-1 font-mono text-sm text-muted-foreground select-none">
             ({PROJECTS.length})
           </sup>
