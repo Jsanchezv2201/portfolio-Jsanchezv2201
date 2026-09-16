@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
+import { CvDownload } from "@/components/cv-download";
 import { DesktopNav } from "@/components/desktop-nav";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { LazyCommandMenu } from "@/components/lazy-command-menu";
@@ -49,6 +50,7 @@ export function SiteHeader() {
           <TerminalTrigger />
           <LazyCommandMenu posts={posts} />
           <NavItemGitHub />
+          <CvDownload />
           <LanguageSwitcher />
           <ToggleTheme />
           <LazyMobileNav className="sm:hidden" items={MAIN_NAV} />

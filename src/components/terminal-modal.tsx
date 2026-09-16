@@ -5,6 +5,8 @@ import {
   Check,
   Copy,
   CornerDownLeft,
+  Download,
+  ExternalLink,
   Maximize2,
   Minimize2,
   Terminal as TerminalIcon,
@@ -118,6 +120,8 @@ const UI_COPY = {
     copyCv: "Copy formatted CV",
     copied: "Copied",
     copy: "Copy CV",
+    openCv: "Open CV",
+    downloadCv: "Download CV",
     placeholder: "type a command...",
     shortcuts: "Shortcuts:",
     hint: "Tab autocompletes · Esc exits",
@@ -149,6 +153,8 @@ const UI_COPY = {
     copyCv: "Copiar CV formateado",
     copied: "Copiado",
     copy: "Copiar CV",
+    openCv: "Abrir CV",
+    downloadCv: "Descargar CV",
     placeholder: "escribe un comando...",
     shortcuts: "Atajos:",
     hint: "Tab autocompleta · Esc sale",
@@ -565,6 +571,27 @@ export function TerminalModal() {
                     </>
                   )}
                 </button>
+                <a
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={copy.openCv}
+                  aria-label={copy.openCv}
+                  className="flex items-center gap-1 rounded bg-zinc-800/80 px-2 py-0.5 font-mono text-[11px] text-zinc-300 hover:bg-zinc-700 hover:text-white"
+                >
+                  <ExternalLink className="size-3" />
+                  {copy.openCv}
+                </a>
+                <a
+                  href="/cv.pdf"
+                  download="CV-Juan-Sanchez-Vinuesa.pdf"
+                  title={copy.downloadCv}
+                  aria-label={copy.downloadCv}
+                  className="flex items-center gap-1 rounded bg-zinc-800/80 px-2 py-0.5 font-mono text-[11px] text-zinc-300 hover:bg-zinc-700 hover:text-white"
+                >
+                  <Download className="size-3" />
+                  {copy.downloadCv}
+                </a>
                 <button
                   type="button"
                   onClick={() => setIsMaximized((previous) => !previous)}

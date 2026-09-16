@@ -20,7 +20,7 @@ export function About() {
           <Prose>
             <LocalizedMarkdown
               en={USER.about}
-              es={`Soy estudiante de último año de **Ingeniería Telemática** en la **Universidad Rey Juan Carlos** de Madrid y terminaré el grado este año.
+              es={`Soy estudiante de último año de **Ingeniería Telemática** en la **Universidad Rey Juan Carlos** de Madrid.
 
 Quiero continuar una tradición familiar de ingeniería trabajando en la intersección entre **redes**, **software de bajo nivel** e **inteligencia artificial**.
 

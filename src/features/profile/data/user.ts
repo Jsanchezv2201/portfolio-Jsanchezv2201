@@ -45,7 +45,7 @@ export const USER: User = {
 
   // Expanded "About Me" section (Markdown supported)
   about: `
-I am a **last-year Telematic Engineering student** at **Universidad Rey Juan Carlos** in Madrid, and I will complete my degree this year.
+I am a **last-year Telematic Engineering student** at **Universidad Rey Juan Carlos** in Madrid.
 
 I also want to carry forward a family tradition of engineering through work at the intersection of **networking, low-level software, and AI**.
 

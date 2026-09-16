@@ -1,7 +1,16 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Bot, RefreshCw, Send, Sparkles, User, X } from "lucide-react";
+import {
+  Bot,
+  Download,
+  ExternalLink,
+  RefreshCw,
+  Send,
+  Sparkles,
+  User,
+  X,
+} from "lucide-react";
 import * as React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -38,6 +47,8 @@ const UI_COPY = {
     suggestions: "Suggested questions:",
     placeholder: "Ask a question about Juan...",
     send: "Send message",
+    openCv: "Open CV",
+    downloadCv: "Download CV",
     assistantLabel: "Ask Juan (AI assistant)",
   },
   es: {
@@ -61,6 +72,8 @@ const UI_COPY = {
     suggestions: "Preguntas sugeridas:",
     placeholder: "Haz una pregunta sobre Juan...",
     send: "Enviar mensaje",
+    openCv: "Abrir CV",
+    downloadCv: "Descargar CV",
     assistantLabel: "Pregúntale a Juan (asistente de IA)",
   },
 };
@@ -359,6 +372,25 @@ export function AskJuanAssistant() {
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
+                  <a
+                    href="/cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={copy.openCv}
+                    aria-label={copy.openCv}
+                    className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <ExternalLink className="size-3.5" />
+                  </a>
+                  <a
+                    href="/cv.pdf"
+                    download="CV-Juan-Sanchez-Vinuesa.pdf"
+                    title={copy.downloadCv}
+                    aria-label={copy.downloadCv}
+                    className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <Download className="size-3.5" />
+                  </a>
                   <button
                     id="reset-chat-btn"
                     onClick={resetChat}
