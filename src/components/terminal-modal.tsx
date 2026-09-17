@@ -106,7 +106,12 @@ const UI_COPY = {
       ["clear", "Clears the console"],
       ["exit", "Closes the terminal"],
     ],
-    welcome: "Type help to see the available commands.",
+    welcome: (
+      <>
+        Type <span className="text-yellow-400">help</span> to see the available
+        commands.
+      </>
+    ),
     missingFile: "cat: missing file. Try: cat cv.txt",
     unknownFile: "cat: {file}: does not exist. Type ls.",
     missingDirectory: "bash: cd: {destination}: directory does not exist",
@@ -139,7 +144,12 @@ const UI_COPY = {
       ["clear", "Limpia la consola"],
       ["exit", "Cierra la terminal"],
     ],
-    welcome: "Escribe help para ver los comandos disponibles.",
+    welcome: (
+      <>
+        Escribe <span className="text-yellow-400">help</span> para ver los
+        comandos disponibles.
+      </>
+    ),
     missingFile: "cat: falta el archivo. Prueba: cat cv.txt",
     unknownFile: "cat: {file}: no existe. Escribe ls.",
     missingDirectory: "bash: cd: {destination}: no existe el directorio",
@@ -581,16 +591,6 @@ export function TerminalModal() {
                 >
                   <ExternalLink className="size-3" />
                   {copy.openCv}
-                </a>
-                <a
-                  href="/cv.pdf"
-                  download="CV-Juan-Sanchez-Vinuesa.pdf"
-                  title={copy.downloadCv}
-                  aria-label={copy.downloadCv}
-                  className="flex items-center gap-1 rounded bg-zinc-800/80 px-2 py-0.5 font-mono text-[11px] text-zinc-300 hover:bg-zinc-700 hover:text-white"
-                >
-                  <Download className="size-3" />
-                  {copy.downloadCv}
                 </a>
                 <button
                   type="button"

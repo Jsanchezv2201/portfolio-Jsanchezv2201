@@ -33,13 +33,24 @@ ${SOCIAL_LINKS.map((item) => `- [${item.title}](${item.href})`).join("\n")}
 
 ${TECH_STACK.map((item) => `- [${item.title}](${item.href})`).join("\n")}\n`;
 
+/** Resolves a Localizable value to its English string for LLM output. */
+function resolveEN(
+  value: string | { en: string; es: string } | undefined
+): string | undefined {
+  if (!value) return undefined;
+  if (typeof value === "string") return value;
+  return value.en;
+}
+
 const experienceText = `## Experience
 
 ${EXPERIENCES.map((item) =>
   item.positions
     .map((position) => {
+      const title = resolveEN(position.title) ?? "";
       const skills = position.skills?.map((skill) => skill).join(", ") || "N/A";
-      return `### ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${position.description?.trim()}`;
+      const description = resolveEN(position.description);
+      return `### ${title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${description?.trim() ?? ""}`;
     })
     .join("\n\n")
 ).join("\n\n")}
@@ -48,9 +59,11 @@ ${EXPERIENCES.map((item) =>
 const projectsText = `## Projects
 
 ${PROJECTS.map((item) => {
+  const title = resolveEN(item.title) ?? "";
   const skills = `\n\nSkills: ${item.skills.join(", ")}`;
-  const description = item.description ? `\n\n${item.description.trim()}` : "";
-  return `### ${item.title}\n\nProject URL: ${item.link}${skills}${description}`;
+  const description = resolveEN(item.description);
+  const descriptionText = description ? `\n\n${description.trim()}` : "";
+  return `### ${title}\n\nProject URL: ${item.link}${skills}${descriptionText}`;
 }).join("\n\n")}
 `;
 

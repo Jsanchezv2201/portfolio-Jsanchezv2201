@@ -1,7 +1,9 @@
+"use client";
+
 import { InfinityIcon } from "lucide-react";
 import React from "react";
 
-import { Markdown } from "@/components/markdown";
+import { MarkdownClient } from "@/components/markdown-client";
 import {
   CollapsibleChevronsIcon,
   CollapsibleContent,
@@ -11,6 +13,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Tag } from "@/components/ui/tag";
 import { Prose } from "@/components/ui/typography";
+import { useLanguage, useLocalizable } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import type { ExperiencePosition } from "../../types/experiences";
@@ -23,8 +26,15 @@ export function ExperiencePositionItem({
   position: ExperiencePosition;
   extraContent?: React.ReactNode;
 }) {
+  const { language } = useLanguage();
   const { start, end } = position.employmentPeriod;
   const isOngoing = !end;
+
+  const title = useLocalizable(position.title) ?? "";
+  const employmentType = useLocalizable(position.employmentType);
+  const description = useLocalizable(position.description);
+
+  const presentLabel = language === "es" ? "Presente" : "Present";
 
   return (
     <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
@@ -47,9 +57,7 @@ export function ExperiencePositionItem({
               <ExperienceIcon className="size-4" icon={position.icon} />
             </div>
 
-            <h4 className="flex-1 font-medium text-balance">
-              {position.title}
-            </h4>
+            <h4 className="flex-1 font-medium text-balance">{title}</h4>
 
             <div
               className="shrink-0 text-muted-foreground [&_svg]:size-4"
@@ -60,11 +68,13 @@ export function ExperiencePositionItem({
           </div>
 
           <div className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
-            {position.employmentType && (
+            {employmentType && (
               <>
                 <dl>
-                  <dt className="sr-only">Employment Type</dt>
-                  <dd>{position.employmentType}</dd>
+                  <dt className="sr-only">
+                    {language === "es" ? "Tipo de empleo" : "Employment Type"}
+                  </dt>
+                  <dd>{employmentType}</dd>
                 </dl>
 
                 <Separator
@@ -75,7 +85,9 @@ export function ExperiencePositionItem({
             )}
 
             <dl>
-              <dt className="sr-only">Employment Period</dt>
+              <dt className="sr-only">
+                {language === "es" ? "Período" : "Employment Period"}
+              </dt>
               <dd className="flex items-center gap-0.5">
                 <span>{start}</span>
                 <span className="font-mono">—</span>
@@ -85,7 +97,7 @@ export function ExperiencePositionItem({
                       className="size-4.5 translate-y-[0.5px]"
                       aria-hidden
                     />
-                    <span className="sr-only">Present</span>
+                    <span className="sr-only">{presentLabel}</span>
                   </>
                 ) : (
                   <span>{end}</span>
@@ -96,9 +108,9 @@ export function ExperiencePositionItem({
         </CollapsibleTrigger>
 
         <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down">
-          {position.description && (
+          {description && (
             <Prose className="pt-2 pl-9">
-              <Markdown>{position.description}</Markdown>
+              <MarkdownClient>{description}</MarkdownClient>
             </Prose>
           )}
 

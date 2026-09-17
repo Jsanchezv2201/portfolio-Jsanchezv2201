@@ -63,3 +63,16 @@ export function useTranslation<T>(translations: { en: T; es: T }) {
   const { language } = useLanguage();
   return translations[language];
 }
+
+/**
+ * Resolves a localizable value (plain string or {en, es} object) to a string
+ * for the current language. Returns undefined if value is undefined.
+ */
+export function useLocalizable(
+  value: string | { en: string; es: string } | undefined
+): string | undefined {
+  const { language } = useLanguage();
+  if (!value) return undefined;
+  if (typeof value === "string") return value;
+  return value[language];
+}

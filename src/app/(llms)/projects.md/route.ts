@@ -1,11 +1,22 @@
 import { PROJECTS } from "@/features/profile/data/projects";
 
+/** Resolves a Localizable value to its English string for LLM output. */
+function resolveEN(
+  value: string | { en: string; es: string } | undefined
+): string | undefined {
+  if (!value) return undefined;
+  if (typeof value === "string") return value;
+  return value.en;
+}
+
 const content = `# Projects
 
 ${PROJECTS.map((item) => {
+  const title = resolveEN(item.title) ?? "";
   const skills = `\n\nSkills: ${item.skills.join(", ")}`;
-  const description = item.description ? `\n\n${item.description.trim()}` : "";
-  return `## ${item.title}\n\nProject URL: ${item.link}${skills}${description}`;
+  const description = resolveEN(item.description);
+  const descriptionText = description ? `\n\n${description.trim()}` : "";
+  return `## ${title}\n\nProject URL: ${item.link}${skills}${descriptionText}`;
 }).join("\n\n")}
 `;
 

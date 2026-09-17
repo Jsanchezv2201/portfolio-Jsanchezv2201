@@ -1,7 +1,10 @@
+import type { Localizable } from "./experiences";
+
 export type Project = {
   /** Stable unique identifier (used as list key/anchor). */
   id: string;
-  title: string;
+  /** Project title – can be a plain string or localized {en, es}. */
+  title: Localizable;
   /**
    * Project period for display and sorting.
    * Use "MM.YYYY" format. Omit `end` for ongoing projects.
@@ -16,8 +19,8 @@ export type Project = {
   link: string;
   /** Tags/technologies for chips or filtering. */
   skills: string[];
-  /** Optional rich description; Markdown and line breaks supported. */
-  description?: string;
+  /** Optional rich description; Markdown and line breaks supported. Can be localized {en, es}. */
+  description?: Localizable;
   /** Logo image URL (absolute or path under /public). */
   logo?: string;
   /** Preview/banner image URL shown inside the expanded card. */

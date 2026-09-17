@@ -1,9 +1,12 @@
+"use client";
+
 import dayjs from "dayjs";
 import { ArrowUpRightIcon } from "lucide-react";
 import React from "react";
 
 import { getIcon, Icons } from "@/components/icons";
 import { Separator } from "@/components/ui/separator";
+import { useLanguage } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import type { Certification } from "../../types/certifications";
@@ -15,6 +18,8 @@ export function CertificationItem({
   className?: string;
   certification: Certification;
 }) {
+  const { language } = useLanguage();
+
   return (
     <a
       className={cn("group/cert flex items-center pr-2", className)}
@@ -51,7 +56,9 @@ export function CertificationItem({
 
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
           <dl>
-            <dt className="sr-only">Issued by</dt>
+            <dt className="sr-only">
+              {language === "es" ? "Emitido por" : "Issued by"}
+            </dt>
             <dd>
               <span aria-hidden>@</span>
               <span className="ml-0.5">{certification.issuer}</span>
@@ -64,7 +71,9 @@ export function CertificationItem({
           />
 
           <dl>
-            <dt className="sr-only">Issued on</dt>
+            <dt className="sr-only">
+              {language === "es" ? "Emitido el" : "Issued on"}
+            </dt>
             <dd>
               <time dateTime={dayjs(certification.issueDate).toISOString()}>
                 {dayjs(certification.issueDate).format("DD.MM.YYYY")}
@@ -76,7 +85,9 @@ export function CertificationItem({
 
       {certification.credentialURL && (
         <span className="mr-4 flex shrink-0 items-center gap-1 text-sm text-muted-foreground transition-colors group-hover/cert:text-foreground">
-          <span>Show certificate</span>
+          <span>
+            {language === "es" ? "Ver certificado" : "Show certificate"}
+          </span>
           <ArrowUpRightIcon className="size-4" aria-hidden />
         </span>
       )}

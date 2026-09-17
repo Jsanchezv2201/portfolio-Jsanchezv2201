@@ -1,8 +1,10 @@
+"use client";
+
 import { LinkIcon } from "lucide-react";
 import React from "react";
 
 import { Icons } from "@/components/icons";
-import { Markdown } from "@/components/markdown";
+import { MarkdownClient } from "@/components/markdown-client";
 import {
   CollapsibleChevronsIcon,
   CollapsibleContent,
@@ -13,6 +15,7 @@ import { Tag } from "@/components/ui/tag";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { UTM_PARAMS } from "@/config/site";
+import { useLanguage, useLocalizable } from "@/lib/i18n";
 import { addQueryParams } from "@/utils/url";
 
 import type { Project } from "../../types/projects";
@@ -29,7 +32,15 @@ export function ProjectItem({
   project: Project;
 }) {
   const { start, end } = project.period;
+  const { language } = useLanguage();
   const isOngoing = !end;
+
+  const title = useLocalizable(project.title) ?? "";
+  const description = useLocalizable(project.description);
+
+  const presentLabel = language === "es" ? "Presente" : "Present";
+  const openLinkLabel =
+    language === "es" ? "Abrir enlace del proyecto" : "Open Project Link";
 
   // Logos que son negros/oscuros y necesitan invertirse en modo oscuro
   const blackLogos = [
@@ -49,7 +60,7 @@ export function ProjectItem({
             <div className="mx-4 flex size-6 shrink-0 items-center justify-center select-none">
               <img
                 src={project.logo}
-                alt={project.title}
+                alt={title}
                 width="24"
                 height="24"
                 className={`h-full w-full object-contain ${logoScaleClass} ${needsInvert ? "dark:brightness-0 dark:contrast-200 dark:invert" : ""}`}
@@ -69,20 +80,26 @@ export function ProjectItem({
             <CollapsibleTrigger className="flex w-full items-center gap-4 p-4 pr-2 text-left select-none">
               <div className="flex-1">
                 <h3 className="mb-1 leading-snug font-medium text-balance">
-                  {project.title}
+                  {title}
                 </h3>
 
                 <dl className="text-sm text-muted-foreground">
-                  <dt className="sr-only">Period</dt>
+                  <dt className="sr-only">
+                    {language === "es" ? "Período" : "Period"}
+                  </dt>
                   <dd className="flex items-center gap-0.5">
                     <span>{start}</span>
                     <span className="font-mono">—</span>
-                    {isOngoing ? <span>Present</span> : <span>{end}</span>}
+                    {isOngoing ? (
+                      <span>{presentLabel}</span>
+                    ) : (
+                      <span>{end}</span>
+                    )}
                   </dd>
                 </dl>
               </div>
 
-              <SimpleTooltip content="Open Project Link">
+              <SimpleTooltip content={openLinkLabel}>
                 <a
                   className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
                   href={addQueryParams(project.link, UTM_PARAMS)}
@@ -90,7 +107,7 @@ export function ProjectItem({
                   rel="noopener"
                 >
                   <LinkIcon className="pointer-events-none size-4" />
-                  <span className="sr-only">Open Project Link</span>
+                  <span className="sr-only">{openLinkLabel}</span>
                 </a>
               </SimpleTooltip>
 
@@ -111,7 +128,7 @@ export function ProjectItem({
                 <div className="overflow-hidden rounded-lg border border-edge">
                   <img
                     src={project.image}
-                    alt={`${project.title} preview`}
+                    alt={`${title} preview`}
                     className="max-h-72 w-full object-cover"
                     style={{
                       objectPosition: project.imagePosition ?? "center",
@@ -121,9 +138,9 @@ export function ProjectItem({
                 </div>
               )}
 
-              {project.description && (
+              {description && (
                 <Prose>
-                  <Markdown>{project.description}</Markdown>
+                  <MarkdownClient>{description}</MarkdownClient>
                 </Prose>
               )}
 

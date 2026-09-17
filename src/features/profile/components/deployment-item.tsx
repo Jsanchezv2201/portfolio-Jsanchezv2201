@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { Tag } from "@/components/ui/tag";
+import { useLanguage } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 import type { Deployment } from "../data/deployments";
 
 export function DeploymentItem({ deployment }: { deployment: Deployment }) {
+  const { language } = useLanguage();
+
   return (
     <Link
       href={deployment.href}
@@ -30,7 +35,9 @@ export function DeploymentItem({ deployment }: { deployment: Deployment }) {
           <div className="flex aspect-1200/630 items-end bg-[linear-gradient(135deg,var(--color-muted),var(--color-background)_65%)] p-4">
             <div>
               <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                Live deployment
+                {language === "es"
+                  ? "Despliegue en producción"
+                  : "Live deployment"}
               </p>
               <p className="mt-2 text-xl font-semibold text-balance">
                 {deployment.title}
