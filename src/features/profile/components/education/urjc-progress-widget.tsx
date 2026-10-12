@@ -281,7 +281,7 @@ export function UrjcProgressWidget() {
               <span
                 className={[
                   "flex-1",
-                  isFinal ? "text-amber-200" : "text-muted-foreground",
+                  isFinal ? "text-foreground" : "text-muted-foreground",
                 ].join(" ")}
               >
                 {name}
@@ -290,7 +290,7 @@ export function UrjcProgressWidget() {
                 <span
                   className={[
                     "text-[10px]",
-                    isFinal ? "text-amber-300/80" : "text-muted-foreground/50",
+                    isFinal ? "text-foreground" : "text-muted-foreground/50",
                   ].join(" ")}
                 >
                   {note}

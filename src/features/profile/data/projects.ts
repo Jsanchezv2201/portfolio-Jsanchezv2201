@@ -6,6 +6,7 @@ export const PROJECTS: Project[] = [
     title: "ChatIA Web",
     period: {
       start: "04.2026",
+      end: "07.2026",
     },
     link: "https://chatia-228425879204.europe-west2.run.app/",
     skills: [

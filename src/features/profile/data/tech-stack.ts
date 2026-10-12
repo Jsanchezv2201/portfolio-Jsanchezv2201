@@ -220,6 +220,12 @@ export const TECH_STACK: TechStack[] = [
     href: "https://www.virtualbox.org/",
     categories: ["Tools", "Virtualization"],
   },
+  {
+    key: "vagrant",
+    title: "Vagrant",
+    href: "https://developer.hashicorp.com/vagrant",
+    categories: ["Tools", "Virtualization", "Development Environment"],
+  },
   /*
   {
     key: "mysql",
