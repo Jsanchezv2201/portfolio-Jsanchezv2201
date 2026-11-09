@@ -22,20 +22,20 @@ export const PROJECTS: Project[] = [
       en: `Academic chat application powered by real LLMs. Originally built with Django & HTMX, and later migrated to a modern React, Node.js, and TypeScript architecture.
 
 🔗 **Project links:**
-- [Django + Python version](https://juansv22.pythonanywhere.com/)
-- [TypeScript migration](https://chatia-228425879204.europe-west2.run.app/)
-- [Source code (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
-- [Demo video — Basic](https://youtu.be/NwHQRQ5agu4)
-- [Demo video — Advanced](https://youtu.be/QM8VW4ZUVvg)
+- 🌐 [Django + Python version](https://juansv22.pythonanywhere.com/)
+- 🌐 [TypeScript migration](https://chatia-228425879204.europe-west2.run.app/)
+- 🦊 [Source code (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
+- 🎥 [Demo video — Basic](https://youtu.be/NwHQRQ5agu4)
+- 🎥 [Demo video — Advanced](https://youtu.be/QM8VW4ZUVvg)
 `,
       es: `Aplicación de chat académica impulsada por LLMs reales. Desarrollada originalmente con Django & HTMX y posteriormente migrada a una arquitectura moderna con React, Node.js y TypeScript.
 
 🔗 **Enlaces del proyecto:**
-- [Versión Django + Python](https://juansv22.pythonanywhere.com/)
-- [Migración a TypeScript](https://chatia-228425879204.europe-west2.run.app/)
-- [Código fuente (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
-- [Vídeo demo — Básico](https://youtu.be/NwHQRQ5agu4)
-- [Vídeo demo — Avanzado](https://youtu.be/QM8VW4ZUVvg)
+- 🌐 [Versión Django + Python](https://juansv22.pythonanywhere.com/)
+- 🌐 [Migración a TypeScript](https://chatia-228425879204.europe-west2.run.app/)
+- 🦊 [Código fuente (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
+- 🎥 [Vídeo demo — Básico](https://youtu.be/NwHQRQ5agu4)
+- 🎥 [Vídeo demo — Avanzado](https://youtu.be/QM8VW4ZUVvg)
 `,
     },
     logo: "/icons/tech/django.svg",
@@ -64,11 +64,19 @@ export const PROJECTS: Project[] = [
       en: `Design and development of this minimalist personal portfolio focused on performance and user experience.
 - Architecture based on **Next.js 14 (App Router)** for hybrid rendering (SSR/SSG) and SEO optimization.
 - Responsive and accessible UI built with **Tailwind CSS** and **Shadcn UI** components.
-- MDX content management system integration for blog and dynamic project rendering.`,
+- MDX content management system integration for blog and dynamic project rendering.
+
+🔗 **Project links:**
+- 🐙 [Source code (GitHub)](https://github.com/Jsanchezv2201/portfolio-Jsanchezv2201)
+- 🌐 [Live site](https://juan-sanchez-portfolio.vercel.app/)`,
       es: `Diseño y desarrollo de este portfolio personal minimalista centrado en rendimiento y experiencia de usuario.
 - Arquitectura basada en **Next.js 14 (App Router)** para renderizado híbrido (SSR/SSG) y optimización SEO.
 - UI responsiva y accesible construida con **Tailwind CSS** y componentes de **Shadcn UI**.
-- Integración de sistema de gestión de contenido MDX para blog y renderizado dinámico de proyectos.`,
+- Integración de sistema de gestión de contenido MDX para blog y renderizado dinámico de proyectos.
+
+🔗 **Enlaces del proyecto:**
+- 🐙 [Código fuente (GitHub)](https://github.com/Jsanchezv2201/portfolio-Jsanchezv2201)
+- 🌐 [Web en producción](https://juan-sanchez-portfolio.vercel.app/)`,
     },
     logo: "/icons/tech/nextjs2.svg",
     mainLanguage: "TypeScript",
@@ -103,10 +111,10 @@ export const PROJECTS: Project[] = [
 - **P4** — Advanced concurrency patterns with statistical analysis and performance metrics.
 
 🔗 **Repositories:**
-- [Practice 1](https://github.com/Jsanchezv2201/Dist-Practica1)
-- [Practice 2](https://github.com/Jsanchezv2201/Dist-Practica2)
-- [Practice 3](https://github.com/Jsanchezv2201/Dist-Practica3)
-- [Practice 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
+- 🐙 [Practice 1](https://github.com/Jsanchezv2201/Dist-Practica1)
+- 🐙 [Practice 2](https://github.com/Jsanchezv2201/Dist-Practica2)
+- 🐙 [Practice 3](https://github.com/Jsanchezv2201/Dist-Practica3)
+- 🐙 [Practice 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
       es: `Proyecto progresivo de 4 prácticas que simula un taller de coches concurrente, añadiendo complejidad en cada entrega.
 - **P1** — Sistema CRUD secuencial: gestión de clientes, vehículos, mecánicos e incidencias.
 - **P2** — Simulación concurrente con **goroutines** y **channels** para procesamiento paralelo de vehículos.
@@ -114,10 +122,10 @@ export const PROJECTS: Project[] = [
 - **P4** — Patrones avanzados de concurrencia con análisis estadístico y métricas de rendimiento.
 
 🔗 **Repositorios:**
-- [Práctica 1](https://github.com/Jsanchezv2201/Dist-Practica1)
-- [Práctica 2](https://github.com/Jsanchezv2201/Dist-Practica2)
-- [Práctica 3](https://github.com/Jsanchezv2201/Dist-Practica3)
-- [Práctica 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
+- 🐙 [Práctica 1](https://github.com/Jsanchezv2201/Dist-Practica1)
+- 🐙 [Práctica 2](https://github.com/Jsanchezv2201/Dist-Practica2)
+- 🐙 [Práctica 3](https://github.com/Jsanchezv2201/Dist-Practica3)
+- 🐙 [Práctica 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
     },
     logo: "icon:go",
     mainLanguage: "Go",
@@ -148,17 +156,19 @@ export const PROJECTS: Project[] = [
 - Shared state synchronization and memory safety using primitives such as **Arc** and **Mutex**.
 - Custom communication protocol for room management (create, join, list) and real-time messaging.
 
-🔗 **Project Demos:**
-- [ View Code Walkthrough](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
-- [ View Execution Demo](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
+🔗 **Project links:**
+- 🐙 [Source code (GitHub)](https://github.com/Jsanchezv2201/Concurrent-TCP-GroupChat)
+- 🎥 [Code walkthrough](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
+- 🎥 [Execution demo](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
       es: `Diseño e implementación de un sistema de chat distribuido usando arquitectura **Cliente-Servidor** sobre sockets **TCP** puros.
 - Gestión de concurrencia mediante **Multihilo**, soportando múltiples clientes simultáneos sin bloqueos.
 - Sincronización de estado compartido y seguridad de memoria usando primitivas como **Arc** y **Mutex**.
 - Protocolo de comunicación propio para gestión de salas (crear, unirse, listar) y mensajería en tiempo real.
 
-🔗 **Demos del proyecto:**
-- [ Ver explicación del código](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
-- [ Ver demo de ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
+🔗 **Enlaces del proyecto:**
+- 🐙 [Código fuente (GitHub)](https://github.com/Jsanchezv2201/Concurrent-TCP-GroupChat)
+- 🎥 [Explicación del código](https://drive.google.com/file/d/1FeUJZe0dRnOydD9XFfOTasWbzX8juY0N/view?usp=sharing)
+- 🎥 [Demo de ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
     },
     logo: "/icons/tech/rust.svg",
     mainLanguage: "Rust",
@@ -188,11 +198,17 @@ export const PROJECTS: Project[] = [
       en: `120-class image classification system based on 2D digital signal processing.
 - Implementation of **Convolutional Neural Networks (CNNs)** as adaptive filter banks for feature extraction.
 - **Signal preprocessing**: normalization, downsampling and data augmentation for robustness against noise and variations.
-- Evaluation of **Transfer Learning** architectures (Xception, NASNet) optimizing the accuracy-computational cost tradeoff.`,
+- Evaluation of **Transfer Learning** architectures (Xception, NASNet) optimizing the accuracy-computational cost tradeoff.
+
+🔗 **Project links:**
+- 🐙 [Source code (GitHub)](https://github.com/Jsanchezv2201/CNNs-Dog_Breed_Identification/tree/main)`,
       es: `Sistema de clasificación de imágenes en 120 clases basado en procesamiento de señal digital 2D.
 - Implementación de **Redes Neuronales Convolucionales (CNNs)** como bancos de filtros adaptativos para extracción de características.
 - **Preprocesado de señal**: normalización, downsampling y data augmentation para robustez frente a ruido y variaciones.
-- Evaluación de arquitecturas de **Transfer Learning** (Xception, NASNet) optimizando el compromiso precisión-coste computacional.`,
+- Evaluación de arquitecturas de **Transfer Learning** (Xception, NASNet) optimizando el compromiso precisión-coste computacional.
+
+🔗 **Enlaces del proyecto:**
+- 🐙 [Código fuente (GitHub)](https://github.com/Jsanchezv2201/CNNs-Dog_Breed_Identification/tree/main)`,
     },
     logo: "/icons/tech/tensorflow.svg",
     mainLanguage: "Python",

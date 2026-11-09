@@ -94,7 +94,7 @@ export function ProjectItem({
 
           <div className="flex-1 border-l border-dashed border-edge">
             <CollapsibleTrigger className="flex w-full items-center gap-4 p-4 pr-2 text-left select-none">
-              <div className="flex-1">
+              <div className="min-w-0 flex-1">
                 <h3 className="mb-1 leading-snug font-medium text-balance">
                   {title}
                   {project.mainLanguage && (
@@ -119,6 +119,25 @@ export function ProjectItem({
                   </dd>
                 </dl>
               </div>
+
+              {project.image && (
+                <div
+                  className="shrink-0 overflow-hidden rounded-lg border border-edge shadow-sm"
+                  aria-hidden="true"
+                >
+                  <img
+                    src={project.image}
+                    alt=""
+                    width="192"
+                    height="52"
+                    className="h-13 w-48 object-cover"
+                    style={{
+                      objectPosition: project.imagePosition ?? "center",
+                    }}
+                    loading="eager"
+                  />
+                </div>
+              )}
 
               <SimpleTooltip content={openLinkLabel}>
                 <a
