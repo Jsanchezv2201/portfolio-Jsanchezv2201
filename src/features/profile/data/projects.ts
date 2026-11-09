@@ -25,6 +25,8 @@ export const PROJECTS: Project[] = [
 - [Django + Python version](https://juansv22.pythonanywhere.com/)
 - [TypeScript migration](https://chatia-228425879204.europe-west2.run.app/)
 - [Source code (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
+- [Demo video — Basic](https://youtu.be/NwHQRQ5agu4)
+- [Demo video — Advanced](https://youtu.be/QM8VW4ZUVvg)
 `,
       es: `Aplicación de chat académica impulsada por LLMs reales. Desarrollada originalmente con Django & HTMX y posteriormente migrada a una arquitectura moderna con React, Node.js y TypeScript.
 
@@ -32,6 +34,8 @@ export const PROJECTS: Project[] = [
 - [Versión Django + Python](https://juansv22.pythonanywhere.com/)
 - [Migración a TypeScript](https://chatia-228425879204.europe-west2.run.app/)
 - [Código fuente (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
+- [Vídeo demo — Básico](https://youtu.be/NwHQRQ5agu4)
+- [Vídeo demo — Avanzado](https://youtu.be/QM8VW4ZUVvg)
 `,
     },
     logo: "/icons/tech/django.svg",
