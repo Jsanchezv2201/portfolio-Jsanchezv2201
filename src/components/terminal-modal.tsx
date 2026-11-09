@@ -86,6 +86,11 @@ carrier = FULL DUPLEX 1000BaseT`,
 const PROJECTS = [
   ["concurrent-tcp-chat", "Rust", "Chat multihilo en sockets TCP"],
   ["chatia-web", "Python/Django", "Plataforma de conversación con IA"],
+  [
+    "advanced-telematic-systems",
+    "C++",
+    "Sistema invernadero y 9 prácticas C++ (AST)",
+  ],
   ["dog-breed-classifier", "TensorFlow", "Clasificación con CNNs"],
   ["ros2-navigation-robot", "C++/ROS2", "Navegación autónoma con SLAM"],
   ["riscv-guide", "Assembly", "Guía interactiva RISC-V"],

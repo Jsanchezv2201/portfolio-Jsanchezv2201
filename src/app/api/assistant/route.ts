@@ -29,6 +29,7 @@ PROYECTOS
 - Portfolio web full-stack con Next.js, TypeScript, Tailwind CSS, React y shadcn/ui.
 - ChatIA: aplicación de chat con LLM desarrollada con Python, Django, HTMX y Nvidia Build API.
 - Sistema de chat distribuido TCP en Rust, con arquitectura cliente-servidor, sockets TCP y concurrencia.
+- Ampliación de Sistemas Telemáticos (AST): Sistema de monitorización para invernadero desarrollado en C++ a lo largo de 9 prácticas progresivas (UML, POO, STL con std::set, excepciones, depuración con GDB/Valgrind, persistencia binaria, concurrencia en robot con std::thread y chat multiusuario con Boost.Asio).
 - Clasificación multiclase de 120 razas mediante TensorFlow, Keras, Python y redes neuronales convolucionales, incluyendo preprocesamiento, diezmado y data augmentation.
 - Navegación autónoma de robots con C++, ROS 2, Gazebo, Nav2 y SLAM.
 

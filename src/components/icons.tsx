@@ -21,7 +21,7 @@ export const Icons = {
       />
     </svg>
   ),
-  c: (props: IconProps) => (
+  cpp: (props: IconProps) => (
     <svg
       viewBox="0 0 256 288"
       xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export const Icons = {
       />
     </svg>
   ),
-  cpp: (props: IconProps) => (
+  c: (props: IconProps) => (
     <svg
       viewBox="32.18585611720149 20.47 223.6851360941233 247.05999999999997"
       xmlns="http://www.w3.org/2000/svg"

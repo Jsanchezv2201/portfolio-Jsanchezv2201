@@ -104,28 +104,16 @@ export const PROJECTS: Project[] = [
       "Distributed Systems",
     ],
     description: {
-      en: `4-part progressive project simulating a concurrent car workshop, each practice adding a layer of complexity.
-- **P1** — Sequential CRUD system: clients, vehicles, mechanics and incidents management.
-- **P2** — Concurrent simulation using **goroutines** and **channels** for parallel vehicle processing.
-- **P3** — 4-phase pipeline (entry, repair, cleaning, revision) with **RWMutex** and **WaitGroup**, priority queues and comparative benchmarks.
-- **P4** — Advanced concurrency patterns with statistical analysis and performance metrics.
-
-🔗 **Repositories:**
-- 🐙 [Practice 1](https://github.com/Jsanchezv2201/Dist-Practica1)
-- 🐙 [Practice 2](https://github.com/Jsanchezv2201/Dist-Practica2)
-- 🐙 [Practice 3](https://github.com/Jsanchezv2201/Dist-Practica3)
-- 🐙 [Practice 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
-      es: `Proyecto progresivo de 4 prácticas que simula un taller de coches concurrente, añadiendo complejidad en cada entrega.
-- **P1** — Sistema CRUD secuencial: gestión de clientes, vehículos, mecánicos e incidencias.
-- **P2** — Simulación concurrente con **goroutines** y **channels** para procesamiento paralelo de vehículos.
-- **P3** — Pipeline de 4 fases (entrada, reparación, limpieza, revisión) con **RWMutex** y **WaitGroup**, colas de prioridad y benchmarks comparativos.
-- **P4** — Patrones avanzados de concurrencia con análisis estadístico y métricas de rendimiento.
-
-🔗 **Repositorios:**
-- 🐙 [Práctica 1](https://github.com/Jsanchezv2201/Dist-Practica1)
-- 🐙 [Práctica 2](https://github.com/Jsanchezv2201/Dist-Practica2)
-- 🐙 [Práctica 3](https://github.com/Jsanchezv2201/Dist-Practica3)
-- 🐙 [Práctica 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
+      en: `4-part progressive project simulating a concurrent car workshop, each practice adding a layer of complexity:
+- [**P1 — Sequential CRUD System**](https://github.com/Jsanchezv2201/Dist-Practica1): Management of clients, vehicles, mechanics, and incidents.
+- [**P2 — Concurrent Simulation**](https://github.com/Jsanchezv2201/Dist-Practica2): Parallel vehicle processing with **goroutines** and **channels**.
+- [**P3 — 4-Phase Pipeline**](https://github.com/Jsanchezv2201/Dist-Practica3): Entry, repair, cleaning, and revision using **RWMutex**, **WaitGroup**, and priority queues.
+- [**P4 — Advanced Concurrency**](https://github.com/Jsanchezv2201/Dist-Practica4): Optimization patterns with statistical analysis and performance benchmarks.`,
+      es: `Proyecto progresivo de 4 prácticas que simula un taller de coches concurrente, añadiendo complejidad en cada entrega:
+- [**P1 — Sistema CRUD Secuencial**](https://github.com/Jsanchezv2201/Dist-Practica1): Gestión de clientes, vehículos, mecánicos e incidencias.
+- [**P2 — Simulación Concurrente**](https://github.com/Jsanchezv2201/Dist-Practica2): Procesamiento paralelo de vehículos con **goroutines** y **channels**.
+- [**P3 — Pipeline de 4 Fases**](https://github.com/Jsanchezv2201/Dist-Practica3): Entrada, reparación, lavado y revisión con **RWMutex**, **WaitGroup** y colas de prioridad.
+- [**P4 — Concurrencia Avanzada**](https://github.com/Jsanchezv2201/Dist-Practica4): Patrones avanzados con análisis estadístico y benchmarks comparativos.`,
     },
     logo: "icon:go",
     mainLanguage: "Go",
@@ -173,6 +161,63 @@ export const PROJECTS: Project[] = [
     logo: "/icons/tech/rust.svg",
     mainLanguage: "Rust",
     image: "/assets/projects/tcp-chat.jpg",
+  },
+
+  {
+    id: "advanced-telematic-systems-cpp",
+    title: {
+      en: "Advanced Telematic Systems",
+      es: "Ampliación de Sistemas Telemáticos",
+    },
+    period: {
+      start: "02.2025",
+      end: "05.2025",
+    },
+    link: "https://github.com/clases-julio/p1-introcpp-Jsanchezv2201",
+    skills: [
+      "C++",
+      "OOP",
+      "STL",
+      "Operator Overloading",
+      "Multithreading",
+      "TCP Sockets",
+      "Boost.Asio",
+      "GDB",
+      "Valgrind",
+      "Doxygen",
+    ],
+    description: {
+      en: `Coursework for **Advanced Telematic Systems (AST)** in the Telematic Engineering degree (URJC), combining an evolving core **C++** project (the greenhouse system) with specialized standalone laboratories:
+
+🌱 **Core Project — Greenhouse Monitoring System:**
+- [**P2 — Software Design (UML)**](https://github.com/clases-julio/p2-introds-Jsanchezv2201): Object-oriented architecture and UML class diagrams (sensors, RGB/thermal cameras, auth, dashboard).
+- [**P3 — Class Implementation**](https://github.com/clases-julio/p3-implclases-Jsanchezv2201): Modular C++ implementation (.h/.cpp) with Makefile for greenhouse domain classes.
+- [**P5 — STL Containers (std::set)**](https://github.com/clases-julio/p5-setusers-Jsanchezv2201): Duplicate-free storage auto-sorted by NIF (\`operator<\`), plus interactive terminal login.
+- [**P6 — Exceptions, GDB & Doxygen**](https://github.com/clases-julio/p6-excep-gdb-doxygen-Jsanchezv2201): Custom exception hierarchies, GDB debugging, Valgrind leak elimination, and Doxygen docs.
+- [**P7 — Binary File Persistence**](https://github.com/clases-julio/p7-ficheros-Jsanchezv2201): Persistent disk storage for greenhouse credentials in \`users.dat\` with binary streams (\`ios::binary\`).
+
+⚡ **Specialized & Standalone Labs:**
+- [**P1 — Introduction to C++**](https://github.com/clases-julio/p1-introcpp-Jsanchezv2201): Syntax fundamentals, stream I/O, mathematical series, and patterns.
+- [**P4 — Operator Overloading**](https://github.com/clases-julio/p4-sobrecarga-Jsanchezv2201): Custom dynamic \`Coleccion\` container with heap memory management, bounds checks, and operators.
+- [**P8 — Concurrent Robot Control**](https://github.com/clases-julio/p8-threads-Jsanchezv2201): Real-time concurrent robot control for sensors and actuators with \`std::thread\`, \`std::mutex\`, and queues.
+- [**P9 — Multi-Client Network Chat**](https://github.com/clases-julio/p9-chat-Jsanchezv2201): Distributed real-time client-server chat over TCP sockets with **Boost.Asio** and per-client worker threads.`,
+      es: `Asignatura de **Ampliación de Sistemas Telemáticos (AST)** en el Grado de Ingeniería Telemática (URJC), combinando un proyecto troncal en **C++** (el sistema del invernadero) con laboratorios especializados de estructuras, concurrencia y sockets de red:
+
+🌱 **Proyecto Central — Monitorización de Invernadero:**
+- [**P2 — Diseño Software (UML)**](https://github.com/clases-julio/p2-introds-Jsanchezv2201): Modelado con diagramas de clases (sensores, cámaras RGB/térmicas, autenticación y dashboard).
+- [**P3 — Implementación de Clases**](https://github.com/clases-julio/p3-implclases-Jsanchezv2201): Codificación modular en C++ (.h/.cpp) con Makefile de la arquitectura del invernadero.
+- [**P5 — Contenedores STL (std::set)**](https://github.com/clases-julio/p5-setusers-Jsanchezv2201): Gestión de empleados sin duplicados y ordenados por NIF (\`operator<\`), más login interactivo.
+- [**P6 — Excepciones, GDB & Doxygen**](https://github.com/clases-julio/p6-excep-gdb-doxygen-Jsanchezv2201): Control de errores personalizado, depuración en GDB, análisis Valgrind y docs con Doxygen.
+- [**P7 — Persistencia en Ficheros Binarios**](https://github.com/clases-julio/p7-ficheros-Jsanchezv2201): Almacenamiento persistente en disco (\`users.dat\`) mediante streams binarios (\`ios::binary\`).
+
+⚡ **Módulos Complementarios & Especializados:**
+- [**P1 — Introducción a C++**](https://github.com/clases-julio/p1-introcpp-Jsanchezv2201): Sintaxis básica, flujos de E/S, series matemáticas y patrones.
+- [**P4 — Sobrecarga de Operadores**](https://github.com/clases-julio/p4-sobrecarga-Jsanchezv2201): Clase \`Coleccion\` dinámica con memoria en heap, límites y operadores sobrecargados (\`[]\`, \`=\`, \`==\`, \`!=\`, \`<<\`, \`>>\`).
+- [**P8 — Concurrencia con Hilos (Robot)**](https://github.com/clases-julio/p8-threads-Jsanchezv2201): Control en tiempo real de sensores y motores con \`std::thread\`, \`std::mutex\`, \`std::condition_variable\` y colas protegidas.
+- [**P9 — Chat Multiusuario TCP (Boost.Asio)**](https://github.com/clases-julio/p9-chat-Jsanchezv2201): Chat cliente-servidor distribuido sobre sockets TCP con **Boost.Asio** y multihilo independiente por cliente.`,
+    },
+    logo: "icon:cpp",
+    mainLanguage: "C++",
   },
 
   {

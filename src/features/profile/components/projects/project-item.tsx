@@ -120,25 +120,6 @@ export function ProjectItem({
                 </dl>
               </div>
 
-              {project.image && (
-                <div
-                  className="shrink-0 overflow-hidden rounded-md border border-edge shadow-sm sm:rounded-lg"
-                  aria-hidden="true"
-                >
-                  <img
-                    src={project.image}
-                    alt=""
-                    width="192"
-                    height="52"
-                    className="size-10 object-cover sm:h-13 sm:w-48"
-                    style={{
-                      objectPosition: project.imagePosition ?? "center",
-                    }}
-                    loading="eager"
-                  />
-                </div>
-              )}
-
               <SimpleTooltip content={openLinkLabel}>
                 <a
                   className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
