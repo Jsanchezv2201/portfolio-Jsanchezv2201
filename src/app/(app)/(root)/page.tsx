@@ -56,17 +56,17 @@ export default function Page() {
         <Education />
         <Separator />
 
-        <Deployments />
+        <Projects />
         <Separator />
 
-        <Projects />
+        <Certifications />
+        <Separator />
+
+        <Deployments />
         <Separator />
 
         {/* <Awards />
         <Separator /> */}
-
-        <Certifications />
-        <Separator />
 
         <Photography />
         <Separator />

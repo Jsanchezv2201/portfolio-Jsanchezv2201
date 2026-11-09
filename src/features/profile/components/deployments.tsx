@@ -8,10 +8,10 @@ import { Panel } from "./panel";
 
 export function Deployments() {
   return (
-    <Panel id="blog" withOuterLines={false}>
+    <Panel id="my-webs" withOuterLines={false}>
       <div className="screen-line-before screen-line-after px-4">
         <h2 className="text-3xl font-semibold">
-          <LocalizedText en="Blog" es="Blog" />
+          <LocalizedText en="My Webs" es="Mis Webs" />
         </h2>
       </div>
 

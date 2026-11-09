@@ -33,6 +33,7 @@ export const PROJECTS: Project[] = [
 `,
     },
     logo: "/icons/tech/django.svg",
+    mainLanguage: "Python",
   },
 
   {
@@ -64,6 +65,56 @@ export const PROJECTS: Project[] = [
 - Integración de sistema de gestión de contenido MDX para blog y renderizado dinámico de proyectos.`,
     },
     logo: "/icons/tech/nextjs2.svg",
+    mainLanguage: "TypeScript",
+  },
+
+  {
+    id: "distributed-systems-go",
+    title: {
+      en: "Distributed Systems — Car Workshop (Go)",
+      es: "Sistemas Distribuidos — Taller de Coches (Go)",
+    },
+    period: {
+      start: "11.2025",
+      end: "01.2026",
+    },
+    link: "https://github.com/Jsanchezv2201/Dist-Practica1",
+    skills: [
+      "Go",
+      "Goroutines",
+      "Channels",
+      "Concurrency",
+      "Mutexes",
+      "RWMutex",
+      "WaitGroup",
+      "Distributed Systems",
+    ],
+    description: {
+      en: `4-part progressive project simulating a concurrent car workshop, each practice adding a layer of complexity.
+- **P1** — Sequential CRUD system: clients, vehicles, mechanics and incidents management.
+- **P2** — Concurrent simulation using **goroutines** and **channels** for parallel vehicle processing.
+- **P3** — 4-phase pipeline (entry, repair, cleaning, revision) with **RWMutex** and **WaitGroup**, priority queues and comparative benchmarks.
+- **P4** — Advanced concurrency patterns with statistical analysis and performance metrics.
+
+🔗 **Repositories:**
+- [Practice 1](https://github.com/Jsanchezv2201/Dist-Practica1)
+- [Practice 2](https://github.com/Jsanchezv2201/Dist-Practica2)
+- [Practice 3](https://github.com/Jsanchezv2201/Dist-Practica3)
+- [Practice 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
+      es: `Proyecto progresivo de 4 prácticas que simula un taller de coches concurrente, añadiendo complejidad en cada entrega.
+- **P1** — Sistema CRUD secuencial: gestión de clientes, vehículos, mecánicos e incidencias.
+- **P2** — Simulación concurrente con **goroutines** y **channels** para procesamiento paralelo de vehículos.
+- **P3** — Pipeline de 4 fases (entrada, reparación, limpieza, revisión) con **RWMutex** y **WaitGroup**, colas de prioridad y benchmarks comparativos.
+- **P4** — Patrones avanzados de concurrencia con análisis estadístico y métricas de rendimiento.
+
+🔗 **Repositorios:**
+- [Práctica 1](https://github.com/Jsanchezv2201/Dist-Practica1)
+- [Práctica 2](https://github.com/Jsanchezv2201/Dist-Practica2)
+- [Práctica 3](https://github.com/Jsanchezv2201/Dist-Practica3)
+- [Práctica 4](https://github.com/Jsanchezv2201/Dist-Practica4)`,
+    },
+    logo: "icon:go",
+    mainLanguage: "Go",
   },
 
   {
@@ -104,6 +155,7 @@ export const PROJECTS: Project[] = [
 - [ Ver demo de ejecución](https://drive.google.com/file/d/1FbBsI290kuxJYQ0g28hkYejcB7Mg4JhQ/view?usp=sharing)`,
     },
     logo: "/icons/tech/rust.svg",
+    mainLanguage: "Rust",
     image: "/assets/projects/tcp-chat.jpg",
   },
 
@@ -137,6 +189,7 @@ export const PROJECTS: Project[] = [
 - Evaluación de arquitecturas de **Transfer Learning** (Xception, NASNet) optimizando el compromiso precisión-coste computacional.`,
     },
     logo: "/icons/tech/tensorflow.svg",
+    mainLanguage: "Python",
     image: "/assets/projects/dog-breed.jpg",
     imagePosition: "center 30%",
   },
@@ -164,6 +217,7 @@ export const PROJECTS: Project[] = [
 - Programación de nodos de control y planificación de trayectorias en **C++ y Python**.`,
     },
     logo: "/icons/tech/ros2.svg",
+    mainLanguage: "C++ / Python",
     image: "/assets/projects/ros2-robot.jpg",
   },
 
@@ -198,6 +252,7 @@ export const PROJECTS: Project[] = [
 - Manejo robusto de errores, detección de colisiones y limpieza automática de entornos temporales.`,
     },
     logo: "/icons/tech/bash.svg",
+    mainLanguage: "Bash",
   },
 
   {
@@ -230,5 +285,6 @@ export const PROJECTS: Project[] = [
 - Referencia técnica rápida para gestión de registros, llamadas al sistema (Syscalls) y manejo de pila.`,
     },
     logo: "/icons/tech/riscv.svg",
+    mainLanguage: "Assembly",
   },
 ];

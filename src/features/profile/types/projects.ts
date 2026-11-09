@@ -29,4 +29,6 @@ export type Project = {
   imagePosition?: string;
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
+  /** Main language or technology shown as a text badge next to the title (e.g. "Rust", "Python"). */
+  mainLanguage?: string;
 };

@@ -18,7 +18,7 @@ const PROGRESS_PCT = Math.round((DONE_ECTS / TOTAL_ECTS) * 100); // 75
 
 const STATS = [
   { label: "Approved subjects", value: 32, color: "text-emerald-500" },
-  { label: "Remaining", value: 8, color: "text-blue-400" },
+  { label: "Remaining", value: 6, color: "text-blue-400" },
 ] as const;
 
 const PENDING_REQUIRED: {
@@ -243,10 +243,9 @@ export function UrjcProgressWidget() {
             Open to internship opportunities
           </p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            The 8 remaining items include the TFG and the external internship,
-            so the count is lower than the ECTS gap — available to join your
-            team, hit the ground running, and grow through real engineering
-            challenges.
+            6 subjects left plus the TFG and external internship — available to
+            join your team, hit the ground running, and grow through real
+            engineering challenges.
           </p>
         </div>
       </div>
@@ -255,7 +254,7 @@ export function UrjcProgressWidget() {
       <AccordionPanel
         id="urjc-pending"
         label="What’s left to graduate (2026–2027)"
-        count={8}
+        count={6}
         dotClass="bg-blue-400"
         delay={0.35}
       >

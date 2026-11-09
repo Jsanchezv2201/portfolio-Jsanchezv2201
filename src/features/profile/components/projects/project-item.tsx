@@ -50,7 +50,11 @@ export function ProjectItem({
   ];
   const needsInvert = project.logo && blackLogos.includes(project.logo);
   const logoScaleClass =
-    project.logo === "/icons/tech/django.svg" ? "scale-150" : "";
+    project.logo === "/icons/tech/django.svg"
+      ? "scale-150"
+      : project.logo === "icon:go"
+        ? "scale-150"
+        : "";
 
   return (
     <ProjectItemAnimated className={className}>
@@ -58,14 +62,26 @@ export function ProjectItem({
         <ProjectRowAnimated>
           {project.logo ? (
             <div className="mx-4 flex size-6 shrink-0 items-center justify-center select-none">
-              <img
-                src={project.logo}
-                alt={title}
-                width="24"
-                height="24"
-                className={`h-full w-full object-contain ${logoScaleClass} ${needsInvert ? "dark:brightness-0 dark:contrast-200 dark:invert" : ""}`}
-                aria-hidden
-              />
+              {project.logo.startsWith("icon:") ? (
+                (() => {
+                  const iconKey = project.logo.replace("icon:", "");
+                  const IconComponent = Icons[iconKey as keyof typeof Icons];
+                  return typeof IconComponent === "function"
+                    ? IconComponent({
+                        className: `h-full w-full ${logoScaleClass}`,
+                      })
+                    : null;
+                })()
+              ) : (
+                <img
+                  src={project.logo}
+                  alt={title}
+                  width="24"
+                  height="24"
+                  className={`h-full w-full object-contain ${logoScaleClass} ${needsInvert ? "dark:brightness-0 dark:contrast-200 dark:invert" : ""}`}
+                  aria-hidden
+                />
+              )}
             </div>
           ) : (
             <div
@@ -81,6 +97,11 @@ export function ProjectItem({
               <div className="flex-1">
                 <h3 className="mb-1 leading-snug font-medium text-balance">
                   {title}
+                  {project.mainLanguage && (
+                    <span className="ml-2 inline-flex items-center rounded border border-edge bg-muted px-1.5 py-0.5 align-middle font-mono text-[10px] font-normal text-muted-foreground">
+                      {project.mainLanguage}
+                    </span>
+                  )}
                 </h3>
 
                 <dl className="text-sm text-muted-foreground">
