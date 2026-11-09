@@ -122,7 +122,7 @@ export function ProjectItem({
 
               {project.image && (
                 <div
-                  className="shrink-0 overflow-hidden rounded-lg border border-edge shadow-sm"
+                  className="shrink-0 overflow-hidden rounded-md border border-edge shadow-sm sm:rounded-lg"
                   aria-hidden="true"
                 >
                   <img
@@ -130,7 +130,7 @@ export function ProjectItem({
                     alt=""
                     width="192"
                     height="52"
-                    className="h-13 w-48 object-cover"
+                    className="size-10 object-cover sm:h-13 sm:w-48"
                     style={{
                       objectPosition: project.imagePosition ?? "center",
                     }}
