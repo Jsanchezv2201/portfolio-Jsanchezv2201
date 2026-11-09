@@ -23,4 +23,8 @@ export type Certification = {
    * Public verification URL or link to the certificate document. Used as the anchor href.
    */
   credentialURL: string;
+  /**
+   * Override logo display size. Defaults to 'md' (36px). Use 'sm' for smaller logos (28px).
+   */
+  logoSize?: "sm" | "md";
 };

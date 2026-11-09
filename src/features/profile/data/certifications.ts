@@ -11,6 +11,7 @@ export const CERTIFICATIONS: Certification[] = [
     credentialID: "PON_AQUI_EL_ID_DEL_DIPLOMA",
     credentialURL:
       "https://drive.google.com/file/d/1mvwZeoQMerTc7y1KUX4lX50yIFX-BVZk/view?usp=sharing",
+    logoSize: "sm",
   },
   {
     title: "MATLAB Onramp",
@@ -20,6 +21,7 @@ export const CERTIFICATIONS: Certification[] = [
     credentialID: "MATLAB-ONRAMP",
     credentialURL:
       "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=d699036e-b8b6-4a63-8216-8b7d096e526c",
+    logoSize: "sm",
   },
   {
     title: "Generative AI for Students",
@@ -29,6 +31,7 @@ export const CERTIFICATIONS: Certification[] = [
     credentialID: "Certificado URJCx",
     credentialURL:
       "https://drive.google.com/file/d/1No-cM0dipbSJ-xLQrguofxz5wGIZngg4/view?usp=sharing",
+    logoSize: "sm",
   },
 
   /*

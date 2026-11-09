@@ -35,7 +35,7 @@ export function ExperienceLogoAnimated({
 }) {
   return (
     <motion.div
-      className="flex size-6 shrink-0 items-center justify-center select-none"
+      className="flex size-10 shrink-0 items-center justify-center select-none"
       initial={{ scale: 0, rotate: -20 }}
       whileInView={{ scale: 1, rotate: 0 }}
       viewport={{ once: true, margin: "0px 0px -60px 0px" }}

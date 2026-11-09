@@ -85,8 +85,8 @@ export const PROJECTS: Project[] = [
   {
     id: "distributed-systems-go",
     title: {
-      en: "Distributed Car Workshop: From CRUD to Concurrency",
-      es: "Taller de Coches Distribuido: De CRUD a Concurrencia",
+      en: "Distributed Systems — Car Workshop",
+      es: "Sistemas Distribuidos — Taller de Coches",
     },
     period: {
       start: "11.2025",

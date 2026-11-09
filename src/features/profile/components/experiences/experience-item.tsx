@@ -25,17 +25,17 @@ export function ExperienceItem({
               <img
                 src={experience.companyLogo.replace(".svg", "-light.svg")}
                 alt={experience.companyName}
-                width={24}
-                height={24}
-                className="h-6 w-6 rounded-full dark:hidden"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full dark:hidden"
                 aria-hidden
               />
               <img
                 src={experience.companyLogo.replace(".svg", "-dark.svg")}
                 alt={experience.companyName}
-                width={24}
-                height={24}
-                className="hidden h-6 w-6 rounded-full dark:block"
+                width={40}
+                height={40}
+                className="hidden h-10 w-10 rounded-full dark:block"
                 aria-hidden
               />
             </>
