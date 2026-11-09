@@ -24,12 +24,14 @@ export const PROJECTS: Project[] = [
 🔗 **Project links:**
 - [Django + Python version](https://juansv22.pythonanywhere.com/)
 - [TypeScript migration](https://chatia-228425879204.europe-west2.run.app/)
+- [Source code (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
 `,
       es: `Aplicación de chat académica impulsada por LLMs reales. Desarrollada originalmente con Django & HTMX y posteriormente migrada a una arquitectura moderna con React, Node.js y TypeScript.
 
 🔗 **Enlaces del proyecto:**
 - [Versión Django + Python](https://juansv22.pythonanywhere.com/)
 - [Migración a TypeScript](https://chatia-228425879204.europe-west2.run.app/)
+- [Código fuente (GitLab)](https://gitlab.eif.urjc.es/juansv1/final-chatia)
 `,
     },
     logo: "/icons/tech/django.svg",
@@ -71,8 +73,8 @@ export const PROJECTS: Project[] = [
   {
     id: "distributed-systems-go",
     title: {
-      en: "Distributed Systems — Car Workshop (Go)",
-      es: "Sistemas Distribuidos — Taller de Coches (Go)",
+      en: "Distributed Car Workshop: From CRUD to Concurrency",
+      es: "Taller de Coches Distribuido: De CRUD a Concurrencia",
     },
     period: {
       start: "11.2025",
