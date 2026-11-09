@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: "01.2026",
     },
-    link: "https://github.com/Jsanchezv2201/portfolio",
+    link: "https://github.com/Jsanchezv2201/portfolio-Jsanchezv2201",
     skills: [
       "Next.js 14",
       "TypeScript",
