@@ -46,11 +46,12 @@ Ubicación: Madrid, España
 * TensorFlow, Keras, CNNs y APIs de LLMs
 
 [PROYECTOS DESTACADOS]
-1. Concurrent TCP Group Chat (Rust, sockets raw, multithreading)
-2. ChatIA Web (Django, HTMX, integración de LLMs)
-3. Dog Breed Classification (TensorFlow/Keras, CNNs)
-4. Autonomous Navigation Robot (ROS 2, Gazebo, SLAM, Nav2)
-5. Interactive RISC-V Guide (Assembly, arquitectura de computadores)
+1. TFG: Simulación Determinista de Sistemas Distribuidos en Rust (madsim & turmoil)
+2. Concurrent TCP Group Chat (Rust, sockets raw, multithreading)
+3. ChatIA Web (Django, HTMX, integración de LLMs)
+4. Dog Breed Classification (TensorFlow/Keras, CNNs)
+5. Autonomous Navigation Robot (ROS 2, Gazebo, SLAM, Nav2)
+6. Interactive RISC-V Guide (Assembly, arquitectura de computadores)
 ======================================================================`,
   "skills.md": `# Competencias Técnicas & Herramientas
 
@@ -84,6 +85,11 @@ carrier = FULL DUPLEX 1000BaseT`,
 };
 
 const PROJECTS = [
+  [
+    "tfg-deterministic-simulation-rust",
+    "Rust",
+    "TFG: Sistemas distribuidos con simulación determinista (madsim & turmoil)",
+  ],
   ["concurrent-tcp-chat", "Rust", "Chat multihilo en sockets TCP"],
   ["chatia-web", "Python/Django", "Plataforma de conversación con IA"],
   [

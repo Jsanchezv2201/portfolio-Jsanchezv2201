@@ -2,6 +2,40 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
+    id: "tfg-simulacion-determinista-rust",
+    title: {
+      en: "TFG — Distributed Systems Programming with Deterministic Simulation Testing",
+      es: "TFG — Programación de Sistemas Distribuidos con Verificación Mediante Pruebas de Simulación Determinista",
+    },
+    period: {
+      start: "11.2026",
+    },
+    link: "https://github.com/Jsanchezv2201",
+    skills: [
+      "Rust",
+      "Distributed Systems",
+      "Deterministic Simulation Testing",
+      "madsim",
+      "turmoil",
+      "Fault Injection",
+      "Concurrency",
+      "Software Verification",
+      "Network Simulation",
+    ],
+    description: {
+      en: `Bachelor's Thesis (TFG) exploring the application of deterministic simulation testing to the verification and reliability of distributed systems developed in **Rust**.
+- **Controlled simulation**: Study of tools such as **madsim** and **turmoil** to deterministically simulate concurrency, virtual time progression, network communications, and component failures.
+- **Adversarial scenarios**: Designing and implementing test suites to reproduce adverse conditions, network partitions, and edge-case errors that are hard to identify through conventional testing.
+- **Comparative evaluation**: Assessing the capabilities, limitations, and key differences of both environments, analyzing their effectiveness in enhancing distributed system reliability.`,
+      es: `Trabajo de Fin de Grado (TFG) centrado en la exploración y aplicación de pruebas de simulación determinista a la verificación de sistemas distribuidos desarrollados en **Rust**.
+- **Simulación controlada**: Estudio de cómo herramientas como **madsim** y **turmoil** permiten simular de forma controlada la concurrencia, el paso del tiempo, las comunicaciones de red y los fallos de los componentes.
+- **Escenarios adversos**: Diseño e implementación de pruebas para reproducir escenarios adversos y detectar errores difíciles de identificar mediante pruebas convencionales.
+- **Evaluación comparativa**: Evaluación de las capacidades, limitaciones y diferencias de ambos entornos, así como su utilidad para mejorar la fiabilidad de los sistemas distribuidos.`,
+    },
+    logo: "/icons/tech/rust.svg",
+    mainLanguage: "Rust",
+  },
+  {
     id: "chatia-django-practice",
     title: "ChatIA Web",
     period: {
